@@ -49,7 +49,7 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: 0 0% 100%;
+  --primary: #f9f9f9;
   --primary-foreground: 0 0% 74%;
   --glpval: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
   --secondary: oklch(0.967 0.001 286.375);
@@ -117,6 +117,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: auto;
   }
 }
 /* for navbar only start*/
@@ -146,3 +147,31 @@
   -webkit-text-fill-color: transparent;
   border: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #f9fd9e;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none; 
+} */

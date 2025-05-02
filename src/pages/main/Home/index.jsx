@@ -1,14 +1,13 @@
-import { Button } from "@/components/ui/button";
+import Banner from "@/components/main/home/banner";
+import HowItWork from "@/components/main/home/howitwork";
 
 const Home = () => {
   return (
     <>
-      <Button
-        variant="destructive"
-        className="bg-glpval text-gbtn text-primary text-2xl"
-      >
-        dfdf
-      </Button>
+      <div>
+        <Banner />
+        <HowItWork />
+      </div>
     </>
   );
 };
