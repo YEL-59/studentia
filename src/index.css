@@ -119,3 +119,30 @@
     @apply bg-background text-foreground;
   }
 }
+/* for navbar only start*/
+.gradient-text {
+  background: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.gradient-text::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
+}
+/* for navbar only end*/
+
+.default-text {
+  background: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
+}
