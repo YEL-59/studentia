@@ -1,3 +1,8 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -49,10 +54,10 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: #f9f9f9;
+  --primary: #7a43a4;
   --primary-foreground: 0 0% 74%;
   --glpval: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
-  --secondary: oklch(0.967 0.001 286.375);
+  --secondary: #6049bc;
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
@@ -75,6 +80,8 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --font-grotesk: "Space Grotesk", sans-serif;
+  --font-adlam: "ADLaM Display", sans-serif;
 }
 
 .dark {
