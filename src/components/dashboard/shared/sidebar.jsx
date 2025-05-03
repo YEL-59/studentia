@@ -140,10 +140,10 @@ function Sidebar() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#1C202B]">
-      <div className="basis-[10%] p-[10px] bg-[#1C202B] bg-gradient-to-t from-[rgba(96,73,188,0.17)] to-[rgba(122,67,164,0.3)]">
+      <div className="h-[80px] p-[10px] bg-[#1C202B] bg-gradient-to-t from-[rgba(96,73,188,0.17)] to-[rgba(122,67,164,0.3)]">
         <img src={logo} alt="logo" />
       </div>
-      <div className="basis-[90%] flex flex-col font-['Space_Grotesk'] px-8">
+      <div className="h-[100dvh-calc(80px)] flex flex-col font-['Space_Grotesk'] px-8">
         <div className="flex items-center gap-1 p-[10px]">
           <img src={dashboardIcon} alt="dashboard-icon" />
           <p className="text-3xl font-bold leading-[132%] tracking-[-0.237px] text-[#6A4690]">
