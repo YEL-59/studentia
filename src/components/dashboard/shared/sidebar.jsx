@@ -11,7 +11,7 @@ import revisionToolsIcon from '@/assets/icons/revision-tools-icon.svg';
 import subscriptionPanelIcon from '@/assets/icons/subscription-panel-icon.svg';
 import writingToolsIcon from '@/assets/icons/writing-tools-icon.svg';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router'
 
 function Sidebar() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
