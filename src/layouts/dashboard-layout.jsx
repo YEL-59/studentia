@@ -37,14 +37,14 @@ function DashboardLayout() {
         ref={sidebarRef}
         className={`${
           isSidebarOpen ? 'ml-[2px]' : 'ml-[-280px]'
-        } transition-all duration-300 w-[280px] fixed bottom-0 top-0 left-0 bg-white z-[2000] border-r border-[#D4D4D4] lg:ml-0`}
+        } transition-all duration-300 w-[320px] fixed bottom-0 top-0 left-0 bg-white z-[2000] border-r border-[#D4D4D4] lg:ml-0`}
       >
         <Sidebar handleCloseSidebar={handleCloseSidebar} />
       </div>
 
       {/* Main Content */}
       <div
-        className={`w-full h-full lg:w-[calc(100vw-280px)] ml-0 lg:ml-[280px] flex flex-col min-h-screen`}
+        className={`w-full h-full lg:w-[calc(100vw-280px)] ml-0 lg:ml-[320px] flex flex-col min-h-screen`}
       >
         <div className="basis-[10%] sticky top-0 bg-white z-[450] border-b border-[#D4D4D4]">
           <Navbar
