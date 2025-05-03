@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import bannerbg from "../../../../assets/Stars.png";
 import AvatarGroup from "../AvatarGroup";
 import { VideoThumbnail } from "../VideoThumbnail";
@@ -61,12 +62,12 @@ const Banner = () => {
           {/* Buttons */}
           <div data-aos="fade-up" data-aos-delay="700">
             <div className="flex gap-4">
-              <button className="bg-[#7b2cbf] hover:bg-[#9d4edd] text-white font-medium capitalize text-[16px] py-3 px-5 rounded-[12px] shadow-md transition duration-300 ease-in-out">
+              <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out">
                 Start Explore now
-              </button>
-              <button className="bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] border border-[#9d4edd] py-3 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out">
+              </Button>
+              <Button className="bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] border border-[#9d4edd] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out">
                 See feature
-              </button>
+              </Button>
             </div>
           </div>
 
