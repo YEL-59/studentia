@@ -7,6 +7,7 @@ import aiAssistant from '@/assets/icons/ai-assistant-icon.svg';
 import aiTutor from '@/assets/icons/ai-tutor-icon.svg';
 import learnCode from '@/assets/icons/learn-code-icon.svg';
 import podcastIa from '@/assets/icons/padcast-ia-icon.svg';
+import { Link } from 'react-router';
 
 function AllAiTools() {
     const allAiTools = [
@@ -54,8 +55,9 @@ function AllAiTools() {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 h-full">
       {allAiTools.map((data, index) => (
-        <div
+        <Link
           key={index}
+          to={`/dashboard/image-generator`}
           className="flex gap-[18px] items-center rounded-[18px] border border-[#D24AC966] px-6 py-8 bg-transparent"
         >
           <img src={data?.icon} alt="icon" />
@@ -67,7 +69,7 @@ function AllAiTools() {
               {data?.text}
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

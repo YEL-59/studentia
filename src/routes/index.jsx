@@ -5,6 +5,7 @@ import AiTutors from '@/pages/dashboard/ai-tutors';
 import Articles from '@/pages/dashboard/articles';
 import Dashboard from '@/pages/dashboard/dashboard';
 import Documents from '@/pages/dashboard/documents';
+import ImageGenerator from '@/pages/dashboard/image-generator';
 import RevisionTools from '@/pages/dashboard/revision-tools';
 import SubscriptionPanel from '@/pages/dashboard/subscription-panel';
 import WritingTools from '@/pages/dashboard/writing-tools';
@@ -37,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'writing-tools/article',
-        element: <Articles/>,
+        element: <Articles />,
       },
       {
         path: 'revision-tools',
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: 'account',
         element: <Account />,
+      },
+      {
+        path: 'image-generator',
+        element: <ImageGenerator />,
       },
     ],
   },

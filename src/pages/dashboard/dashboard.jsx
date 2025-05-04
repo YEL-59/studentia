@@ -1,7 +1,6 @@
-import React from 'react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Statistic from '@/components/dashboard/statistic';
 import AllAiTools from '@/components/dashboard/all-ai-tools';
+import Statistic from '@/components/dashboard/statistic';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 function Dashboard() {
   return (
@@ -25,10 +24,10 @@ function Dashboard() {
         </div>
 
         <TabsContent value="statistic">
-          <Statistic/>
+          <Statistic />
         </TabsContent>
         <TabsContent value="ai-tools">
-            <AllAiTools/>
+          <AllAiTools />
         </TabsContent>
       </Tabs>
     </div>

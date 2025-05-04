@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from 'react';
-import { Outlet } from 'react-router';
 import Navbar from '@/components/dashboard/shared/navbar';
 import Sidebar from '@/components/dashboard/shared/sidebar';
+import { useEffect, useRef, useState } from 'react';
+import { Outlet } from 'react-router';
 
 function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -52,7 +52,9 @@ function DashboardLayout() {
             setIsSidebarOpen={setIsSidebarOpen}
           />
         </div>
-        <div className={`flex-1 overflow-y-auto`}>
+        <div
+          className={`flex-1 overflow-y-auto bg-[#1C202B] [box-shadow:inset_5px_5px_20px_rgba(122,67,164,0.3),inset_3px_3px_40px_rgba(96,73,188,0.17)] text-[#FFF] min-h-[calc(100svh-80px)] px-4 py-5`}
+        >
           <Outlet />
         </div>
       </div>
