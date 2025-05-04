@@ -182,3 +182,22 @@
 .scrollbar-hide {
   scrollbar-width: none; 
 } */
+
+/* scrollbar */
+.gradient-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.gradient-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gradient-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: linear-gradient(180deg, #7A43A4 0%, #6049BC 100%);
+}
+
+.gradient-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6A38A4 0%, #5040BC 100%);
+}

@@ -11,7 +11,8 @@ import revisionToolsIcon from '@/assets/icons/revision-tools-icon.svg';
 import subscriptionPanelIcon from '@/assets/icons/subscription-panel-icon.svg';
 import writingToolsIcon from '@/assets/icons/writing-tools-icon.svg';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router';
+import whiteDashboardIcon from '@/assets/icons/dashboard-mobile-icon.svg';
 
 function Sidebar() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -144,21 +145,33 @@ function Sidebar() {
         <img src={logo} alt="logo" />
       </div>
       <div className="h-[100dvh-calc(80px)] flex flex-col font-['Space_Grotesk'] px-8">
-        <div className="flex items-center gap-1 p-[10px]">
-          <img src={dashboardIcon} alt="dashboard-icon" />
-          <p className="text-3xl font-bold leading-[132%] tracking-[-0.237px] text-[#6A4690]">
+        <Link
+          to={`/dashboard`}
+          className={`flex items-center gap-1 p-[10px] rounded-[6px] ${
+            location.pathname === '/dashboard' ||
+            location.pathname === '/dashboard/'
+              ? 'text-[#6A4690]'
+              : 'text-white'
+          } transition-all duration-200`}
+          onClick={() => {
+            setOpenSubmenu(null);
+            setActiveSubItem(null);
+          }}
+        >
+          <img src={location.pathname === '/dashboard' || location.pathname === '/dashboard/' ? dashboardIcon : whiteDashboardIcon} alt="dashboard-icon" />
+          <p className="text-3xl font-bold leading-[132%] tracking-[-0.237px]">
             Dashboards
           </p>
-        </div>
+        </Link>
         <div className="text-[#FFF]">
           <h2 className="text-base leading-[132%] tracking-[-0.158px] px-8 py-[10px] font-bold">
             Ai Panel
           </h2>
           <div className="flex flex-col gap-3 px-4">
             {aiTools.map((tool) => {
-              const isActive = location.pathname.startsWith(routeMap[tool.title]) || 
-                              isSubmenuActive(tool.title);
-
+              const isActive =
+                location.pathname.startsWith(routeMap[tool.title]) ||
+                isSubmenuActive(tool.title);
               return (
                 <div key={tool.title}>
                   <div
@@ -197,10 +210,16 @@ function Sidebar() {
                           className={`flex items-center gap-4 pl-8 py-1 rounded ${
                             activeSubItem === item.name ? 'bg-[#2D3240]' : ''
                           }`}
-                          onClick={() => handleSubItemClick(item.name, item.route)}
+                          onClick={() =>
+                            handleSubItemClick(item.name, item.route)
+                          }
                         >
                           <img
-                            src={activeSubItem === item.name ? activeIcon : unActiveIcon}
+                            src={
+                              activeSubItem === item.name
+                                ? activeIcon
+                                : unActiveIcon
+                            }
                             alt="icon"
                           />
                           <p className="text-sm">{item.name}</p>

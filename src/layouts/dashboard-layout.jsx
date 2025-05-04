@@ -31,7 +31,7 @@ function DashboardLayout() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex">
       {/* Sidebar */}
       <div
         ref={sidebarRef}
@@ -44,7 +44,7 @@ function DashboardLayout() {
 
       {/* Main Content */}
       <div
-        className={`w-full h-full lg:w-[calc(100dvw-320px)] ml-0 lg:ml-[320px] flex flex-col min-h-screen`}
+        className={`w-full h-full lg:w-[calc(100dvw-320px)] ml-0 lg:ml-[320px] flex flex-col`}
       >
         <div className="h-[80px] sticky top-0 z-[450] w-full">
           <Navbar
@@ -52,7 +52,7 @@ function DashboardLayout() {
             setIsSidebarOpen={setIsSidebarOpen}
           />
         </div>
-        <div className={`min-h-[100dvh-calc(80px)] h-full flex-1 overflow-y-auto`}>
+        <div className={`flex-1 overflow-y-auto`}>
           <Outlet />
         </div>
       </div>
