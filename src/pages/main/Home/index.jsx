@@ -1,4 +1,5 @@
 import Banner from "@/components/main/home/banner";
+import BlogCarousel from "@/components/main/home/blog";
 
 import FAQSection from "@/components/main/home/faq";
 import HowItWork from "@/components/main/home/howitwork";
@@ -18,7 +19,7 @@ const Home = () => {
         <PricingTabs />
         <Platform />
         <FAQSection />
-        {/* <BlogCarousel /> */}
+        <BlogCarousel />
       </div>
     </>
   );
