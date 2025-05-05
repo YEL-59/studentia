@@ -5,6 +5,7 @@ import AiTutors from '@/pages/dashboard/ai-tutors';
 import Articles from '@/pages/dashboard/articles';
 import Dashboard from '@/pages/dashboard/dashboard';
 import Documents from '@/pages/dashboard/documents';
+import Humanizer from '@/pages/dashboard/humanizer';
 import ImageGenerator from '@/pages/dashboard/image-generator';
 import RevisionTools from '@/pages/dashboard/revision-tools';
 import SubscriptionPanel from '@/pages/dashboard/subscription-panel';
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
       {
         path: 'image-generator',
         element: <ImageGenerator />,
+      },
+      {
+        path: 'humanizer',
+        element: <Humanizer />,
       },
     ],
   },
