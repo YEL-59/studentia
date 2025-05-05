@@ -4,16 +4,12 @@ import chart from '@/assets/icons/charts.svg';
 import documentIcon from '@/assets/icons/document-icon.svg';
 import documentSavedIcon from '@/assets/icons/document-saved-icon.svg';
 import fillStarIcon from '@/assets/icons/fill-star-icon.svg';
-import filterIcon from '@/assets/icons/filter-icon.svg';
 import franceFlag from '@/assets/icons/france-flag.svg';
 import humanizeGeneratedIcon from '@/assets/icons/humanize-generated-icon.svg';
 import imageCreatedIcon from '@/assets/icons/image-created-icon.svg';
-import searchIcon from '@/assets/icons/search-icon.svg';
 import timeSave from '@/assets/icons/time-save-icon.svg';
 import ukFlag from '@/assets/icons/uk-flag.svg';
 import wordGeneratorIcon from '@/assets/icons/word-generator.svg';
-import editIcon from '@/assets/icons/edit-icon.svg';
-import deleteIcon from '@/assets/icons/delete-icon.svg';
 import {
   Pagination,
   PaginationContent,
@@ -26,14 +22,13 @@ import {
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-
+import DocumentTable from './shared/document-table';
+import DocumentTableHeader from './shared/document-table-header';
 
 function Statistic() {
   const countLimit = [
@@ -84,8 +79,7 @@ function Statistic() {
       text: 'Create Creative academic essays for  various  subject just in a second',
     },
   ];
-  const allDocuments =
-  [
+  const allDocuments = [
     {
       id: 1,
       document: documentIcon,
@@ -94,7 +88,7 @@ function Statistic() {
       wordsBook: 'All',
       created: 'July 15, 2026',
       categories: 'Content',
-      flag: 'ukFlag',
+      flag: ukFlag,
       language: 'En-Uk',
       wordsUsed: 634,
     },
@@ -106,7 +100,7 @@ function Statistic() {
       wordsBook: 'Tous',
       created: 'June 15, 2025',
       categories: 'Contenu',
-      flag: 'franceFlag',
+      flag: franceFlag,
       language: 'French',
       wordsUsed: 720,
     },
@@ -118,7 +112,7 @@ function Statistic() {
       wordsBook: 'All',
       created: 'May 22, 2025',
       categories: 'Technical',
-      flag: 'ukFlag',
+      flag: ukFlag,
       language: 'En-Uk',
       wordsUsed: 890,
     },
@@ -130,7 +124,7 @@ function Statistic() {
       wordsBook: 'Santé',
       created: 'April 10, 2025',
       categories: 'Médical',
-      flag: 'franceFlag',
+      flag: franceFlag,
       language: 'French',
       wordsUsed: 450,
     },
@@ -142,7 +136,7 @@ function Statistic() {
       wordsBook: 'All',
       created: 'March 5, 2025',
       categories: 'Business',
-      flag: 'ukFlag',
+      flag: ukFlag,
       language: 'En-Uk',
       wordsUsed: 1020,
     },
@@ -154,7 +148,7 @@ function Statistic() {
       wordsBook: 'Droit',
       created: 'February 28, 2025',
       categories: 'Legal',
-      flag: 'franceFlag',
+      flag: franceFlag,
       language: 'French',
       wordsUsed: 1500,
     },
@@ -166,7 +160,7 @@ function Statistic() {
       wordsBook: 'All',
       created: 'January 15, 2025',
       categories: 'Education',
-      flag: 'ukFlag',
+      flag: ukFlag,
       language: 'En-Uk',
       wordsUsed: 2100,
     },
@@ -178,7 +172,7 @@ function Statistic() {
       wordsBook: 'Cuisine',
       created: 'December 20, 2024',
       categories: 'Food',
-      flag: 'franceFlag',
+      flag: franceFlag,
       language: 'French',
       wordsUsed: 380,
     },
@@ -190,7 +184,7 @@ function Statistic() {
       wordsBook: 'All',
       created: 'November 8, 2024',
       categories: 'Technology',
-      flag: 'ukFlag',
+      flag: ukFlag,
       language: 'En-Uk',
       wordsUsed: 1750,
     },
@@ -202,7 +196,7 @@ function Statistic() {
       wordsBook: 'Voyage',
       created: 'October 30, 2024',
       categories: 'Travel',
-      flag: 'franceFlag',
+      flag: franceFlag,
       language: 'French',
       wordsUsed: 920,
     },
@@ -292,26 +286,7 @@ function Statistic() {
       {/* all document & favourite ai writer template */}
       <div className="flex flex-col xl:flex-row gap-5">
         <div className="flex-1 flex flex-col bg-[#070622] border border-[#7A43A4] rounded-[24px] p-6">
-          <div className="flex items-center justify-between">
-            <h1 className="text-lg font-bold leading-[24px] tracking-[-0.142px] text-[#F9F9F9]">
-              All My Documents
-            </h1>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-3 border border-[#BCBCBC] rounded-[124px] px-3 py-1 cursor-pointer">
-                <Input
-                  placeholder="Search..."
-                  className={`flex-1 border-none outline-none focus-visible:ring-0 text-base font-medium leading-[22px] tracking-[-0.11px] text-[#E2E2E2]`}
-                />
-                <img src={searchIcon} alt="icon" />
-              </div>
-              <div className="flex items-center gap-3 px-4 py-[10px] border border-[#CBD5E1] rounded-[124px] cursor-pointer">
-                <img src={filterIcon} alt="icon" />
-                <p className="text-[#D9D9D9] text-sm font-bold leading-[22px] tracking-[-0.083px]">
-                  Filter
-                </p>
-              </div>
-            </div>
-          </div>
+          <DocumentTableHeader />
           {/* table */}
           <div className="flex flex-col h-full">
             <div className="flex-1 overflow-hidden">
@@ -338,59 +313,7 @@ function Statistic() {
                   </TableHeader>
                   <TableBody>
                     {allDocuments.map((data, index) => (
-                      <TableRow key={index} className="whitespace-nowrap">
-                        <TableCell className="font-medium py-3 px-6 flex items-center gap-2 min-w-[200px]">
-                          <img
-                            src={data?.document}
-                            alt="icon"
-                            className="w-10 h-10"
-                          />
-                          <div className="flex flex-col gap-1">
-                            <p className="text-base font-bold leading-[132%] tracking-[-0.158px]">
-                              {data?.title}
-                            </p>
-                            <p className="text-sm leading-[164%] text-[#BCBCBC]">
-                              {data?.type}
-                            </p>
-                          </div>
-                        </TableCell>
-                        <TableCell className="min-w-[120px] text-center">
-                          {data?.wordsBook}
-                        </TableCell>
-                        <TableCell className="min-w-[120px]">
-                          {data?.created}
-                        </TableCell>
-                        <TableCell className="min-w-[120px]">
-                          {data?.categories}
-                        </TableCell>
-                        <TableCell className="min-w-[120px]">
-                          <div className=" flex items-center gap-1">
-                            <img src={data?.flag} alt="" />
-                            <p>{data?.language}</p>
-                          </div>
-                        </TableCell>
-                        <TableCell className="min-w-[120px] text-center">
-                          {data?.wordsUsed}
-                        </TableCell>
-                        <TableCell className="min-w-[120px]">
-                          <div className="flex items-center gap-2">
-                            <div className=" flex items-center justify-center p-2 bg-[#FFF] rounded-full">
-                              <img
-                                src={editIcon}
-                                alt="icon"
-                                className="w-5 h-5"
-                              />
-                            </div>
-                            <div className=" flex items-center justify-center p-2 bg-[#FFF] rounded-full">
-                              <img
-                                src={deleteIcon}
-                                alt="icon"
-                                className="w-5 h-5"
-                              />
-                            </div>
-                          </div>
-                        </TableCell>
-                      </TableRow>
+                      <DocumentTable data={data} key={index} />
                     ))}
                   </TableBody>
                 </Table>

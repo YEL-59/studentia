@@ -7,7 +7,7 @@ import aiAssistant from '@/assets/icons/ai-assistant-icon.svg';
 import aiTutor from '@/assets/icons/ai-tutor-icon.svg';
 import learnCode from '@/assets/icons/learn-code-icon.svg';
 import podcastIa from '@/assets/icons/padcast-ia-icon.svg';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 function AllAiTools() {
     const allAiTools = [
@@ -25,11 +25,13 @@ function AllAiTools() {
         icon: humanizer,
         title: ' Humanizer',
         text: ' make content sound more natural and relatable',
+        path: '/dashboard/humanizer',
       },
       {
         icon: imagesGenerator,
         title: ' Images Generator',
         text: ' Create  visually  appealling  images with AI',
+        path: '/dashboard/image-generator',
       },
       {
         icon: aiAssistant,
@@ -55,9 +57,9 @@ function AllAiTools() {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 h-full">
       {allAiTools.map((data, index) => (
-        <Link
+        <NavLink
           key={index}
-          to={`/dashboard/image-generator`}
+          to={data?.path}
           className="flex gap-[18px] items-center rounded-[18px] border border-[#D24AC966] px-6 py-8 bg-transparent"
         >
           <img src={data?.icon} alt="icon" />
@@ -69,7 +71,7 @@ function AllAiTools() {
               {data?.text}
             </p>
           </div>
-        </Link>
+        </NavLink>
       ))}
     </div>
   );

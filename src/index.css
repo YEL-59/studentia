@@ -201,3 +201,46 @@
 .gradient-scrollbar::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #6A38A4 0%, #5040BC 100%);
 }
+
+/* text editor */
+.quill{
+    padding: 24px;
+    box-shadow: 17px 5px 50px 0px rgba(114, 75, 150, 0.25);
+    border-radius: 16px;
+}
+.ql-snow .ql-toolbar {
+  background: #1C202B;
+  border: none !important;
+}
+.ql-snow .ql-container {
+  background: #1C202B;
+  border: none !important;
+  font-family: inherit;
+}
+
+.ql-snow .ql-editor {
+  color: white;
+  height: calc(80svh - 80px);
+}
+
+.ql-snow .ql-picker-label {
+  color: white !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: white !important;
+}
+
+.ql-snow .ql-fill{
+    fill: #FFFF !important;
+}
+
+.quill .ql-toolbar.ql-snow{
+    border: none !important;
+}
+.quill .ql-container.ql-snow{
+     border: none !important;
+}
+.ql-editor.ql-blank::before {
+  color: #BCBCBC !important;
+}
