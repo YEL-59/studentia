@@ -134,7 +134,7 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
 
 export default function PricingTabs() {
   return (
-    <section className="bg-[#090a1a] py-16 px-4 text-center">
+    <section className="bg-[#070622] py-16 px-4 text-center">
       <h2 className="text-white text-center font-bold text-[48px] leading-[63.36px] tracking-[-0.48px] font-['Space_Grotesk']">
         Our Pricing
       </h2>
