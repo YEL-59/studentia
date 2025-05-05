@@ -19,7 +19,6 @@ const schema = z.object({
   artistName: z.string().optional(),
 });
 
-let i = 0;
 const items = [
   {
     id: 1,
