@@ -1,15 +1,19 @@
+import AiAssistantLayout from "@/layouts/ai-assistant-layout";
 import DashboardLayout from "@/layouts/dashboard-layout";
 import MainLayout from "@/layouts/MainLayout";
+import AiAssistant from "@/pages/ai-assistant/ai-assistant";
 import Account from "@/pages/dashboard/account";
 import AiTutors from "@/pages/dashboard/ai-tutors";
 import Aicode from "@/pages/dashboard/aicode";
 import Articles from "@/pages/dashboard/articles";
+import Codes from "@/pages/dashboard/codes";
 import Dashboard from "@/pages/dashboard/dashboard";
 import Documents from "@/pages/dashboard/documents";
 import Humanizer from "@/pages/dashboard/humanizer";
 import ImageGenerator from "@/pages/dashboard/image-generator";
 import RevisionTools from "@/pages/dashboard/revision-tools";
 import SubscriptionPanel from "@/pages/dashboard/subscription-panel";
+import Workbooks from "@/pages/dashboard/workbooks";
 import WritingTools from "@/pages/dashboard/writing-tools";
 import Signin from "@/pages/main/auth/signin";
 import Signup from "@/pages/main/auth/signup";
@@ -51,20 +55,19 @@ export const router = createBrowserRouter([
         element: <AiTutors />,
       },
       {
-        path: "documents",
+        path: "/dashboard/documents",
         element: <Documents />,
       },
       {
-
-        path: 'codes',
+        path: "/dashboard/documents/codes",
         element: <Codes />,
       },
       {
-        path: 'workbooks',
+        path: "/dashboard/documents/workbooks",
         element: <Workbooks />,
       },
       {
-        path: 'subscription-panel',
+        path: "subscription-panel",
 
         element: <SubscriptionPanel />,
       },
@@ -83,8 +86,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-
-    path: '/ai-assistant',
+    path: "/ai-assistant",
     element: <AiAssistantLayout />,
     children: [
       {
@@ -92,8 +94,8 @@ export const router = createBrowserRouter([
         element: <AiAssistant />,
       },
     ],
-}
-
+  },
+  {
     path: "sign-up",
     element: <Signup />,
   },
@@ -101,5 +103,4 @@ export const router = createBrowserRouter([
     path: "sign-in",
     element: <Signin />,
   },
-
 ]);

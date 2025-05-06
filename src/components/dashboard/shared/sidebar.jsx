@@ -47,9 +47,6 @@ function Sidebar() {
       { name: "All documents", route: "/dashboard/documents" },
       { name: "All Codes", route: "/dashboard/documents/codes" },
       { name: "Workbooks", route: "/dashboard/documents/workbooks" },
-      { name: "All documents", route: "/dashboard/documents" },
-      { name: "All Codes", route: "/dashboard/codes" },
-      { name: "Workbooks", route: "/dashboard/workbooks" },
     ],
   };
 
