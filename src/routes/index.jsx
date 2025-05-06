@@ -2,6 +2,7 @@ import DashboardLayout from "@/layouts/dashboard-layout";
 import MainLayout from "@/layouts/MainLayout";
 import Account from "@/pages/dashboard/account";
 import AiTutors from "@/pages/dashboard/ai-tutors";
+import Aicode from "@/pages/dashboard/aicode";
 import Articles from "@/pages/dashboard/articles";
 import Dashboard from "@/pages/dashboard/dashboard";
 import Documents from "@/pages/dashboard/documents";
@@ -19,13 +20,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      //   {
-      //     path: "about",
-      //     element: <About />,
-      //   },
-    ],
+    children: [{ index: true, element: <Home /> }],
   },
   {
     path: "/dashboard",
@@ -38,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "writing-tools/ai-writers",
         element: <WritingTools />,
+      },
+      {
+        path: "writing-tools/ai-code",
+        element: <Aicode />,
       },
       {
         path: "writing-tools/article",

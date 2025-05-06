@@ -1,71 +1,69 @@
-import logo from '@/assets/dashboard-logo.png';
-import accountIcon from '@/assets/icons/account-icon.svg';
-import activeIcon from '@/assets/icons/active-icon.svg';
-import adminPanelIcon from '@/assets/icons/admin-panel-icon.svg';
-import aiTutorsIcon from '@/assets/icons/ai-tutors-icon.svg';
-import dashboardIcon from '@/assets/icons/dashboard-icon.svg';
-import documentIcon from '@/assets/icons/documents-icon.svg';
-import unActiveIcon from '@/assets/icons/inactive-icon.svg';
-import downArrowIcon from '@/assets/icons/lower-arrow-icon.svg';
-import revisionToolsIcon from '@/assets/icons/revision-tools-icon.svg';
-import subscriptionPanelIcon from '@/assets/icons/subscription-panel-icon.svg';
-import writingToolsIcon from '@/assets/icons/writing-tools-icon.svg';
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
-import whiteDashboardIcon from '@/assets/icons/dashboard-mobile-icon.svg';
+import logo from "@/assets/dashboard-logo.png";
+import accountIcon from "@/assets/icons/account-icon.svg";
+import activeIcon from "@/assets/icons/active-icon.svg";
+import adminPanelIcon from "@/assets/icons/admin-panel-icon.svg";
+import aiTutorsIcon from "@/assets/icons/ai-tutors-icon.svg";
+import dashboardIcon from "@/assets/icons/dashboard-icon.svg";
+import documentIcon from "@/assets/icons/documents-icon.svg";
+import unActiveIcon from "@/assets/icons/inactive-icon.svg";
+import downArrowIcon from "@/assets/icons/lower-arrow-icon.svg";
+import revisionToolsIcon from "@/assets/icons/revision-tools-icon.svg";
+import subscriptionPanelIcon from "@/assets/icons/subscription-panel-icon.svg";
+import writingToolsIcon from "@/assets/icons/writing-tools-icon.svg";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import whiteDashboardIcon from "@/assets/icons/dashboard-mobile-icon.svg";
 
 function Sidebar() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
-  const [activeSubItem, setActiveSubItem] = useState('Ai Writer');
+  const [activeSubItem, setActiveSubItem] = useState("Ai Writer");
   const location = useLocation();
   const navigate = useNavigate();
 
   // Map sidebar items to their corresponding routes
   const routeMap = {
-    'Writing tools': '/dashboard/writing-tools/ai-writers',
-    'Revision Tools': '/dashboard/revision-tools',
-    'Ai Tutor': '/dashboard/ai-tutors',
-    Documents: '/dashboard/documents',
-    'Subscription Panel': '/dashboard/subscription-panel',
-    Account: '/dashboard/account',
-    'Admin Panel': '/dashboard/admin-panel',
+    "Writing tools": "/dashboard/writing-tools/ai-writers",
+    "Revision Tools": "/dashboard/revision-tools",
+    "Ai Tutor": "/dashboard/ai-tutors",
+    Documents: "/dashboard/documents",
+    "Subscription Panel": "/dashboard/subscription-panel",
+    Account: "/dashboard/account",
+    "Admin Panel": "/dashboard/admin-panel",
   };
 
   // Submenu items with their routes
   const subMenuItems = {
-    'Writing tools': [
-      { name: 'Ai Writer', route: '/dashboard/writing-tools/ai-writers' },
-      { name: 'Article Writer', route: '/dashboard/writing-tools/article' },
-      { name: 'Ai Code', route: '/dashboard/writing-tools/code' },
+    "Writing tools": [
+      { name: "Ai Writer", route: "/dashboard/writing-tools/ai-writers" },
+      { name: "Article Writer", route: "/dashboard/writing-tools/article" },
+      { name: "Ai Code", route: "/dashboard/writing-tools/ai-code" },
     ],
-    'Revision Tools': [
-      { name: 'Ai Quiz', route: '/dashboard/revision-tools/quiz' },
-      { name: 'Ai Podcast', route: '/dashboard/revision-tools/podcast' },
-      { name: 'Pdf Scan', route: '/dashboard/revision-tools/scan' },
+    "Revision Tools": [
+      { name: "Ai Quiz", route: "/dashboard/revision-tools/quiz" },
+      { name: "Ai Podcast", route: "/dashboard/revision-tools/podcast" },
+      { name: "Pdf Scan", route: "/dashboard/revision-tools/scan" },
     ],
     Documents: [
-      { name: 'All documents', route: '/dashboard/documents' },
-      { name: 'All Codes', route: '/dashboard/documents/codes' },
-      { name: 'Workbooks', route: '/dashboard/documents/workbooks' },
+      { name: "All documents", route: "/dashboard/documents" },
+      { name: "All Codes", route: "/dashboard/documents/codes" },
+      { name: "Workbooks", route: "/dashboard/documents/workbooks" },
     ],
   };
 
   // Check if any submenu item is active for a given parent
- const isSubmenuActive = (parentTitle) => {
-   if (!subMenuItems[parentTitle]) return false;
-   return subMenuItems[parentTitle].some((item) =>
-     location.pathname.startsWith(item.route)
-   );
- };
-
-
+  const isSubmenuActive = (parentTitle) => {
+    if (!subMenuItems[parentTitle]) return false;
+    return subMenuItems[parentTitle].some((item) =>
+      location.pathname.startsWith(item.route)
+    );
+  };
 
   useEffect(() => {
     // Set active states based on current route
-    Object.keys(subMenuItems).forEach(parentTitle => {
+    Object.keys(subMenuItems).forEach((parentTitle) => {
       if (isSubmenuActive(parentTitle)) {
         setOpenSubmenu(parentTitle);
-        const activeItem = subMenuItems[parentTitle].find(item => 
+        const activeItem = subMenuItems[parentTitle].find((item) =>
           location.pathname.startsWith(item.route)
         );
         if (activeItem) {
@@ -101,40 +99,40 @@ function Sidebar() {
   const aiTools = [
     {
       icon: writingToolsIcon,
-      title: 'Writing tools',
+      title: "Writing tools",
       downArrow: downArrowIcon,
       hasSubmenu: true,
     },
     {
       icon: revisionToolsIcon,
-      title: 'Revision Tools',
+      title: "Revision Tools",
       downArrow: downArrowIcon,
       hasSubmenu: true,
     },
     {
       icon: aiTutorsIcon,
-      title: 'Ai Tutor',
+      title: "Ai Tutor",
       hasSubmenu: false,
     },
     {
       icon: documentIcon,
-      title: 'Documents',
+      title: "Documents",
       downArrow: downArrowIcon,
       hasSubmenu: true,
     },
     {
       icon: subscriptionPanelIcon,
-      title: 'Subscription Panel',
+      title: "Subscription Panel",
       hasSubmenu: false,
     },
     {
       icon: accountIcon,
-      title: 'Account',
+      title: "Account",
       hasSubmenu: false,
     },
     {
       icon: adminPanelIcon,
-      title: 'Admin Panel',
+      title: "Admin Panel",
       hasSubmenu: false,
     },
   ];
@@ -148,17 +146,25 @@ function Sidebar() {
         <Link
           to={`/dashboard`}
           className={`flex items-center gap-1 p-[10px] rounded-[6px] ${
-            location.pathname === '/dashboard' ||
-            location.pathname === '/dashboard/'
-              ? 'text-[#6A4690]'
-              : 'text-white'
+            location.pathname === "/dashboard" ||
+            location.pathname === "/dashboard/"
+              ? "text-[#6A4690]"
+              : "text-white"
           } transition-all duration-200`}
           onClick={() => {
             setOpenSubmenu(null);
             setActiveSubItem(null);
           }}
         >
-          <img src={location.pathname === '/dashboard' || location.pathname === '/dashboard/' ? dashboardIcon : whiteDashboardIcon} alt="dashboard-icon" />
+          <img
+            src={
+              location.pathname === "/dashboard" ||
+              location.pathname === "/dashboard/"
+                ? dashboardIcon
+                : whiteDashboardIcon
+            }
+            alt="dashboard-icon"
+          />
           <p className="text-3xl font-bold leading-[132%] tracking-[-0.237px]">
             Dashboards
           </p>
@@ -177,8 +183,8 @@ function Sidebar() {
                   <div
                     className={`flex items-center justify-between rounded-[6px] px-4 py-[10px] cursor-pointer ${
                       isActive
-                        ? 'bg-[linear-gradient(180deg,#7A43A4_0%,#6049BC_100%)]'
-                        : 'border border-[#E6A0E2] hover:bg-[#2D3240]'
+                        ? "bg-[linear-gradient(180deg,#7A43A4_0%,#6049BC_100%)]"
+                        : "border border-[#E6A0E2] hover:bg-[#2D3240]"
                     } transition-all duration-300`}
                     onClick={() => handleMenuItemClick(tool.title)}
                   >
@@ -186,7 +192,7 @@ function Sidebar() {
                       <img src={tool.icon} alt="icon" />
                       <p
                         className={`text-base font-medium leading-[132%] tracking-[-0.316px] ${
-                          isActive ? 'text-white' : 'text-[#E6A0E2]'
+                          isActive ? "text-white" : "text-[#E6A0E2]"
                         }`}
                       >
                         {tool.title}
@@ -208,7 +214,7 @@ function Sidebar() {
                         <div
                           key={item.name}
                           className={`flex items-center gap-4 pl-8 py-1 rounded ${
-                            activeSubItem === item.name ? 'bg-[#2D3240]' : ''
+                            activeSubItem === item.name ? "bg-[#2D3240]" : ""
                           }`}
                           onClick={() =>
                             handleSubItemClick(item.name, item.route)
