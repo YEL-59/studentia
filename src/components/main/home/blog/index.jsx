@@ -1,152 +1,175 @@
-"use client";
-
-import { useRef, useState, useEffect } from "react";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import img1 from "../../../../assets/blog1.png";
+import img2 from "../../../../assets/blog2.png";
+import img3 from "../../../../assets/blog3.png";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useRef } from "react";
 
-const blogData = [
+const blogs = [
   {
     title: "How Our AI Startup is Transforming Industries",
-    category: "Technology",
     date: "Jul 21",
-    image: "/blog1.png",
-    excerpt:
-      "In an age where innovation reigns supreme, artificial intelligence (AI) has emerged...",
+    tag: "Technology",
+    image: img1,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
   },
   {
     title: "Notre vision",
-    category: "Technology",
     date: "Jul 21",
-    image: "/blog2.png",
-    excerpt:
-      "In an age where innovation reigns supreme, artificial intelligence (AI) has emerged...",
+    tag: "Technology",
+    image: img2,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
   },
   {
-    title: "STUDENT-IA",
-    category: "Technology",
+    title: "Student-IA",
     date: "Jul 21",
-    image: "/blog3.png",
-    excerpt:
-      "In an age where innovation reigns supreme, artificial intelligence (AI) has emerged...",
+    tag: "Technology",
+    image: img3,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
   },
   {
-    title: "AI-Powered Solutions for Modern Challenges",
-    category: "Technology",
+    title: "Notre vision",
     date: "Jul 21",
-    image: "/blog4.png",
-    excerpt:
-      "In an age where innovation reigns supreme, artificial intelligence (AI) has emerged...",
+    tag: "Technology",
+    image: img2,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
   },
   {
-    title: "The Future of AI in Everyday Life",
-    category: "Technology",
+    title: "Student-IA",
     date: "Jul 21",
-    image: "/blog5.png",
-    excerpt:
-      "In an age where innovation reigns supreme, artificial intelligence (AI) has emerged...",
+    tag: "Technology",
+    image: img3,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
+  },
+  {
+    title: "Student-IA",
+    date: "Jul 21",
+    tag: "Technology",
+    image: img3,
+    desc: "In an age where innovation reigns supreme, AI has emerged as the trailblazer...",
   },
 ];
 
 export default function BlogCarousel() {
-  const containerRef = useRef < HTMLDivElement > null;
-  const [current, setCurrent] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
 
-  const scrollTo = (idx: number) => {
-    const container = containerRef.current;
-    if (!container) return;
-    const cardWidth = container.offsetWidth;
-    container.scrollTo({ left: idx * cardWidth, behavior: "smooth" });
-    setCurrent(idx);
-  };
+  const [sliderInstanceRef, slider] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 3,
+      spacing: 24,
+    },
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
+    },
+    created(s) {
+      setCurrentSlide(s.track.details.rel);
+    },
+  });
 
+  // Auto Slide
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const onScroll = () => {
-      const idx = Math.round(el.scrollLeft / el.offsetWidth);
-      setCurrent(idx);
-    };
-    el.addEventListener("scroll", onScroll, { passive: true });
-    return () => el.removeEventListener("scroll", onScroll);
-  }, []);
+    let interval;
+    if (slider.current) {
+      interval = setInterval(() => {
+        slider.current?.next();
+      }, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [slider]);
 
   return (
-    <div className="relative w-full py-16 bg-[#0b0c2a] text-white">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold">Our latest blogs</h2>
-        <p className="text-sm text-gray-400 mt-1">Stay updated</p>
-      </div>
-
-      {/* Carousel */}
-      <div
-        ref={containerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-6 px-6 scrollbar-none"
+    <section className="py-16 bg-[#0F0C29] text-white text-center">
+      <h2
+        className="text-white text-center font-['Space_Grotesk'] text-[48px] font-bold leading-[132%] tracking-[-0.48px]"
+        data-aos="fade-up"
       >
-        {blogData.map((blog, index) => (
+        Our latest blogs
+      </h2>
+      <p
+        className="text-white font-['Space_Grotesk'] text-[18px] font-normal leading-[164%]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        Stay updated
+      </p>
+
+      <div
+        //ref={sliderRef}
+        className="keen-slider mt-10  container mx-auto"
+        ref={sliderInstanceRef}
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        {blogs.map((blog, idx) => (
           <div
-            key={index}
-            className="flex-shrink-0 w-[85%] sm:w-[60%] md:w-[45%] lg:w-[30%] snap-center"
+            key={idx}
+            className="keen-slider__slide bg-[#1A1730] text-left rounded-xl overflow-hidden "
           >
-            <Card className="bg-[#1b1e3c] rounded-2xl overflow-hidden shadow-md transition hover:shadow-xl h-full">
+            <Card
+              className="bg-gradient-to-br from-[#221C4A] via-[#30255A] to-[#3B2B6C]
+               shadow-none p-5 border-2 border-transparent rounded-xl
+               hover:border-[#7A43A4] transition-all duration-300"
+            >
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-[180px] object-cover"
+                className="w-full h-48 object-cover rounded-[10px]"
+                style={{
+                  boxShadow: `
+      0px 1px 3px 0px rgba(50, 50, 50, 0.20),
+      0px 2px 1px -1px rgba(50, 50, 50, 0.12),
+      0px 1px 1px 0px rgba(50, 50, 50, 0.14)
+    `,
+                }}
               />
-              <CardContent className="p-5">
-                <div className="flex items-center gap-3 mb-3 text-sm">
-                  <Badge
-                    variant="outline"
-                    className="border-gray-500 text-white px-2 py-1"
+
+              <CardContent className="p-0">
+                <div className="flex items-center space-x-2 text-xs text-[#9CA3AF] mb-2 px-2 py-1 rounded w-[fit-content]">
+                  <span
+                    className="px-2 py-1 rounded"
+                    style={{
+                      borderRadius: "8px",
+                      background:
+                        "linear-gradient(0deg, rgba(180, 180, 180, 0.12) 0%, rgba(180, 180, 180, 0.12) 100%)",
+                    }}
                   >
-                    {blog.category}
-                  </Badge>
-                  <span className="text-gray-400">{blog.date}</span>
+                    {blog.tag}
+                  </span>
+                  <span className="rounded-full bg-white h-2 w-2"></span>
+                  <span>{blog.date}</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 leading-snug">
+
+                <h3 className="overflow-hidden text-white text-ellipsis whitespace-nowrap font-sans text-[24px] font-semibold leading-[110%] mb-1">
                   {blog.title}
                 </h3>
-                <p className="text-sm text-gray-400">{blog.excerpt}</p>
+                <p className="overflow-hidden text-[#BCBCBC] text-ellipsis whitespace-nowrap font-sans text-base font-normal leading-[160%] ">
+                  {blog.desc}
+                </p>
               </CardContent>
             </Card>
           </div>
         ))}
       </div>
 
-      {/* Arrows */}
-      <Button
-        size="icon"
-        variant="ghost"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#1b1e3c]/50 hover:bg-[#1b1e3c]/80"
-        onClick={() => scrollTo(Math.max(current - 1, 0))}
-        disabled={current === 0}
-      >
-        <ChevronLeft className="text-white" />
-      </Button>
-      <Button
-        size="icon"
-        variant="ghost"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#1b1e3c]/50 hover:bg-[#1b1e3c]/80"
-        onClick={() => scrollTo(Math.min(current + 1, blogData.length - 1))}
-        disabled={current === blogData.length - 1}
-      >
-        <ChevronRight className="text-white" />
-      </Button>
-
-      {/* Pagination */}
-      <div className="mt-8 flex justify-center space-x-2">
-        {blogData.map((_, idx) => (
-          <span
-            key={idx}
-            onClick={() => scrollTo(idx)}
-            className={`h-2 w-2 rounded-full cursor-pointer transition ${
-              idx === current ? "bg-white" : "bg-gray-500"
+      {/* Pagination Dots */}
+      <div className="mt-6 flex justify-center space-x-2">
+        {blogs.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => slider.current?.moveToIdx(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-200 border-2 ${
+              currentSlide === i
+                ? "bg-primary border-primary"
+                : "bg-[#6B7280] border-transparent hover:border-purple-500"
             }`}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
