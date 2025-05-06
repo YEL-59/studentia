@@ -55,7 +55,17 @@ export const router = createBrowserRouter([
         element: <Documents />,
       },
       {
-        path: "subscription-panel",
+
+        path: 'codes',
+        element: <Codes />,
+      },
+      {
+        path: 'workbooks',
+        element: <Workbooks />,
+      },
+      {
+        path: 'subscription-panel',
+
         element: <SubscriptionPanel />,
       },
       {
@@ -73,6 +83,17 @@ export const router = createBrowserRouter([
     ],
   },
   {
+
+    path: '/ai-assistant',
+    element: <AiAssistantLayout />,
+    children: [
+      {
+        index: true,
+        element: <AiAssistant />,
+      },
+    ],
+}
+
     path: "sign-up",
     element: <Signup />,
   },
@@ -80,4 +101,5 @@ export const router = createBrowserRouter([
     path: "sign-in",
     element: <Signin />,
   },
+
 ]);

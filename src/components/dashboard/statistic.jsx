@@ -4,31 +4,13 @@ import chart from '@/assets/icons/charts.svg';
 import documentIcon from '@/assets/icons/document-icon.svg';
 import documentSavedIcon from '@/assets/icons/document-saved-icon.svg';
 import fillStarIcon from '@/assets/icons/fill-star-icon.svg';
-import franceFlag from '@/assets/icons/france-flag.svg';
 import humanizeGeneratedIcon from '@/assets/icons/humanize-generated-icon.svg';
 import imageCreatedIcon from '@/assets/icons/image-created-icon.svg';
 import timeSave from '@/assets/icons/time-save-icon.svg';
-import ukFlag from '@/assets/icons/uk-flag.svg';
 import wordGeneratorIcon from '@/assets/icons/word-generator.svg';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import { Button } from '../ui/button';
 import DocumentTable from './shared/document-table';
-import DocumentTableHeader from './shared/document-table-header';
+
 
 function Statistic() {
   const countLimit = [
@@ -79,128 +61,6 @@ function Statistic() {
       text: 'Create Creative academic essays for  various  subject just in a second',
     },
   ];
-  const allDocuments = [
-    {
-      id: 1,
-      document: documentIcon,
-      title: 'Project Proposal',
-      type: 'Articles Generator',
-      wordsBook: 'All',
-      created: 'July 15, 2026',
-      categories: 'Content',
-      flag: ukFlag,
-      language: 'En-Uk',
-      wordsUsed: 634,
-    },
-    {
-      id: 2,
-      document: documentIcon,
-      title: 'Analyse de Marché',
-      type: "Générateur d'Articles",
-      wordsBook: 'Tous',
-      created: 'June 15, 2025',
-      categories: 'Contenu',
-      flag: franceFlag,
-      language: 'French',
-      wordsUsed: 720,
-    },
-    {
-      id: 3,
-      document: documentIcon,
-      title: 'Technical Report',
-      type: 'Articles Generator',
-      wordsBook: 'All',
-      created: 'May 22, 2025',
-      categories: 'Technical',
-      flag: ukFlag,
-      language: 'En-Uk',
-      wordsUsed: 890,
-    },
-    {
-      id: 4,
-      document: documentIcon,
-      title: 'Rapport Médical',
-      type: 'Générateur Médical',
-      wordsBook: 'Santé',
-      created: 'April 10, 2025',
-      categories: 'Médical',
-      flag: franceFlag,
-      language: 'French',
-      wordsUsed: 450,
-    },
-    {
-      id: 5,
-      document: documentIcon,
-      title: 'Marketing Strategy',
-      type: 'Articles Generator',
-      wordsBook: 'All',
-      created: 'March 5, 2025',
-      categories: 'Business',
-      flag: ukFlag,
-      language: 'En-Uk',
-      wordsUsed: 1020,
-    },
-    {
-      id: 6,
-      document: documentIcon,
-      title: 'Contrat Juridique',
-      type: 'Générateur Légal',
-      wordsBook: 'Droit',
-      created: 'February 28, 2025',
-      categories: 'Legal',
-      flag: franceFlag,
-      language: 'French',
-      wordsUsed: 1500,
-    },
-    {
-      id: 7,
-      document: documentIcon,
-      title: 'Academic Paper',
-      type: 'Articles Generator',
-      wordsBook: 'All',
-      created: 'January 15, 2025',
-      categories: 'Education',
-      flag: ukFlag,
-      language: 'En-Uk',
-      wordsUsed: 2100,
-    },
-    {
-      id: 8,
-      document: documentIcon,
-      title: 'Recette de Cuisine',
-      type: 'Générateur Culinaire',
-      wordsBook: 'Cuisine',
-      created: 'December 20, 2024',
-      categories: 'Food',
-      flag: franceFlag,
-      language: 'French',
-      wordsUsed: 380,
-    },
-    {
-      id: 9,
-      document: documentIcon,
-      title: 'Software Documentation',
-      type: 'Articles Generator',
-      wordsBook: 'All',
-      created: 'November 8, 2024',
-      categories: 'Technology',
-      flag: ukFlag,
-      language: 'En-Uk',
-      wordsUsed: 1750,
-    },
-    {
-      id: 10,
-      document: documentIcon,
-      title: 'Guide de Voyage',
-      type: 'Générateur Touristique',
-      wordsBook: 'Voyage',
-      created: 'October 30, 2024',
-      categories: 'Travel',
-      flag: franceFlag,
-      language: 'French',
-      wordsUsed: 920,
-    },
-  ];
   return (
     <div className="flex flex-col gap-8">
       <div className="grid xl:grid-cols-2 gap-6">
@@ -248,7 +108,6 @@ function Statistic() {
         </div>
       </div>
       {/* count limit card */}
-
       <div className="grid grid-cols-3 gap-5">
         {countLimit.map((data, index) => (
           <div
@@ -285,66 +144,7 @@ function Statistic() {
       </div>
       {/* all document & favourite ai writer template */}
       <div className="flex flex-col xl:flex-row gap-5">
-        <div className="flex-1 flex flex-col bg-[#070622] border border-[#7A43A4] rounded-[24px] p-6">
-          <DocumentTableHeader />
-          {/* table */}
-          <div className="flex flex-col h-full">
-            <div className="flex-1 overflow-hidden">
-              <div className="overflow-auto max-h-[500px] w-full gradient-scrollbar">
-                <Table className="w-[60dvh]">
-                  <TableHeader className="sticky top-0 z-10">
-                    <TableRow>
-                      <TableHead className="w-[100px] py-[14px] px-6 min-w-[100px]">
-                        Documents Name
-                      </TableHead>
-                      <TableHead className="min-w-[120px]">
-                        Words Book
-                      </TableHead>
-                      <TableHead className="min-w-[120px]">Created</TableHead>
-                      <TableHead className="min-w-[120px]">
-                        Categories
-                      </TableHead>
-                      <TableHead className="min-w-[120px]">Language</TableHead>
-                      <TableHead className="min-w-[120px]">
-                        Words Used
-                      </TableHead>
-                      <TableHead className="min-w-[120px]">Actions</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {allDocuments.map((data, index) => (
-                      <DocumentTable data={data} key={index} />
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            </div>
-            <Pagination className={`px-6 py-3`}>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#">1</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#" isActive>
-                    2
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#">3</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext href="#" />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          </div>
-        </div>
+        <DocumentTable className="w-[60dvh]"/>
         <div className="p-6 bg-[#070622] border border-[#7A43A4] rounded-[16px]">
           <div className="flex flex-col gap-4 mb-8">
             <img src={fillStarIcon} alt="icon" className="w-6 h-6" />

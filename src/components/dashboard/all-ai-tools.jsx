@@ -37,6 +37,7 @@ function AllAiTools() {
         icon: aiAssistant,
         title: '  Ai  Assistant',
         text: ' Get instant  answers and guidence  from Ai',
+        path: '/ai-assistant',
       },
       {
         icon: aiTutor,

@@ -3,11 +3,11 @@ import searchIcon from '@/assets/icons/search-icon.svg';
 import filterIcon from '@/assets/icons/filter-icon.svg';
 import { Input } from '@/components/ui/input';
 
-function DocumentTableHeader() {
+function DocumentTableHeader({title}) {
   return (
     <div className="flex items-center justify-between">
         <h1 className="text-lg font-bold leading-[24px] tracking-[-0.142px] text-[#F9F9F9]">
-          All My Documents
+          {title}
         </h1>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-3 border border-[#BCBCBC] rounded-[124px] px-3 py-1 cursor-pointer">
