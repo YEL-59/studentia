@@ -1,5 +1,7 @@
+import AiAssistantLayout from '@/layouts/ai-assistant-layout';
 import DashboardLayout from '@/layouts/dashboard-layout';
 import MainLayout from '@/layouts/MainLayout';
+import AiAssistant from '@/pages/ai-assistant/ai-assistant';
 import Account from '@/pages/dashboard/account';
 import AiTutors from '@/pages/dashboard/ai-tutors';
 import Articles from '@/pages/dashboard/articles';
@@ -81,4 +83,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '/ai-assistant',
+    element: <AiAssistantLayout />,
+    children: [
+      {
+        index: true,
+        element: <AiAssistant />,
+      },
+    ],
+}
 ]);

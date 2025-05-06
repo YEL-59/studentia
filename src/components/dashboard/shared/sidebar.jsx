@@ -144,7 +144,7 @@ function Sidebar() {
       <div className="h-[80px] p-[10px] bg-[#1C202B] bg-gradient-to-t from-[rgba(96,73,188,0.17)] to-[rgba(122,67,164,0.3)]">
         <img src={logo} alt="logo" />
       </div>
-      <div className="h-[100dvh-calc(80px)] flex flex-col font-['Space_Grotesk'] px-8">
+      <div className="h-[calc(100svh-80px)] flex flex-col font-['Space_Grotesk'] px-8">
         <Link
           to={`/dashboard`}
           className={`flex items-center gap-1 p-[10px] rounded-[6px] ${
@@ -158,7 +158,15 @@ function Sidebar() {
             setActiveSubItem(null);
           }}
         >
-          <img src={location.pathname === '/dashboard' || location.pathname === '/dashboard/' ? dashboardIcon : whiteDashboardIcon} alt="dashboard-icon" />
+          <img
+            src={
+              location.pathname === '/dashboard' ||
+              location.pathname === '/dashboard/'
+                ? dashboardIcon
+                : whiteDashboardIcon
+            }
+            alt="dashboard-icon"
+          />
           <p className="text-3xl font-bold leading-[132%] tracking-[-0.237px]">
             Dashboards
           </p>
