@@ -1,9 +1,14 @@
-import React from 'react'
+import TopicGenerator from "@/components/dashboard/aiarticelwriter";
+import React from "react";
 
 function Articles() {
   return (
-    <div>Articles</div>
-  )
+    <>
+      <div>
+        <TopicGenerator />
+      </div>
+    </>
+  );
 }
 
 export default Articles;

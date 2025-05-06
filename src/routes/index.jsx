@@ -1,3 +1,4 @@
+
 import AiAssistantLayout from '@/layouts/ai-assistant-layout';
 import DashboardLayout from '@/layouts/dashboard-layout';
 import MainLayout from '@/layouts/MainLayout';
@@ -17,9 +18,10 @@ import WritingTools from '@/pages/dashboard/writing-tools';
 import Home from '@/pages/main/Home';
 import { createBrowserRouter } from 'react-router';
 
+
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
@@ -30,7 +32,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
@@ -38,26 +40,27 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: 'writing-tools/ai-writers',
+        path: "writing-tools/ai-writers",
         element: <WritingTools />,
       },
       {
-        path: 'writing-tools/article',
+        path: "writing-tools/article",
         element: <Articles />,
       },
       {
-        path: 'revision-tools',
+        path: "revision-tools",
         element: <RevisionTools />,
       },
       {
-        path: 'ai-tutors',
+        path: "ai-tutors",
         element: <AiTutors />,
       },
       {
-        path: 'documents',
+        path: "documents",
         element: <Documents />,
       },
       {
+
         path: 'codes',
         element: <Codes />,
       },
@@ -67,23 +70,25 @@ export const router = createBrowserRouter([
       },
       {
         path: 'subscription-panel',
+
         element: <SubscriptionPanel />,
       },
       {
-        path: 'account',
+        path: "account",
         element: <Account />,
       },
       {
-        path: 'image-generator',
+        path: "image-generator",
         element: <ImageGenerator />,
       },
       {
-        path: 'humanizer',
+        path: "humanizer",
         element: <Humanizer />,
       },
     ],
   },
   {
+
     path: '/ai-assistant',
     element: <AiAssistantLayout />,
     children: [
@@ -93,4 +98,13 @@ export const router = createBrowserRouter([
       },
     ],
 }
+
+    path: "sign-up",
+    element: <Signup />,
+  },
+  {
+    path: "sign-in",
+    element: <Signin />,
+  },
+
 ]);

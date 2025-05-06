@@ -56,19 +56,31 @@ const Navbar = () => {
             <Button
               variant="outline"
               className="rounded-lg bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5"
+              style={{
+                boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
+              }}
             >
               Signin
             </Button>
           </div>
           <div className="hidden md:block">
-            <Button className="rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5">
+            <Button
+              className="relative rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5"
+              style={{
+                boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
+              }}
+            >
               Signup
             </Button>
           </div>
           <div className="hidden md:block">
             <Button
               variant="outline"
-              className="rounded-lg text-[16px] px-5 py-5"
+              className="rounded-lg text-[16px] px-5 py-5 border-0 text-white"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(122, 67, 164, 0.30) 0%, rgba(96, 73, 188, 0.17) 100%)",
+              }}
             >
               En
             </Button>

@@ -1,9 +1,11 @@
-import React from 'react'
+import SubscriptionPrice from "@/components/dashboard/subscribtionprice";
 
 function SubscriptionPanel() {
   return (
-    <div>SubscriptionPanel</div>
-  )
+    <>
+      <SubscriptionPrice />
+    </>
+  );
 }
 
 export default SubscriptionPanel;
