@@ -20,7 +20,7 @@ import DocumentTableHeader from './document-table-header';
 import DocumentTableBody from './document-table-body';
 import documentIcon from '@/assets/icons/document-icon.svg';
 
-function DocumentTable() {
+function DocumentTable({className, title}) {
   const allDocuments = [
     {
       id: 1,
@@ -145,12 +145,12 @@ function DocumentTable() {
   ];
   return (
     <div className="flex-1 flex flex-col bg-[#070622] border border-[#7A43A4] rounded-[24px] p-6">
-      <DocumentTableHeader />
+      <DocumentTableHeader title={title} />
       {/* table */}
       <div className="flex flex-col h-full">
         <div className="flex-1 overflow-hidden">
           <div className="overflow-auto max-h-[500px] w-full gradient-scrollbar">
-            <Table className="w-[60dvh]">
+            <Table className={`${className}`}>
               <TableHeader className="sticky top-0 z-10">
                 <TableRow>
                   <TableHead className="w-[100px] py-[14px] px-6 min-w-[100px]">

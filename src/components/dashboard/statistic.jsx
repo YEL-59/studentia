@@ -4,31 +4,13 @@ import chart from '@/assets/icons/charts.svg';
 import documentIcon from '@/assets/icons/document-icon.svg';
 import documentSavedIcon from '@/assets/icons/document-saved-icon.svg';
 import fillStarIcon from '@/assets/icons/fill-star-icon.svg';
-import franceFlag from '@/assets/icons/france-flag.svg';
 import humanizeGeneratedIcon from '@/assets/icons/humanize-generated-icon.svg';
 import imageCreatedIcon from '@/assets/icons/image-created-icon.svg';
 import timeSave from '@/assets/icons/time-save-icon.svg';
-import ukFlag from '@/assets/icons/uk-flag.svg';
 import wordGeneratorIcon from '@/assets/icons/word-generator.svg';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import { Button } from '../ui/button';
 import DocumentTable from './shared/document-table';
-import DocumentTableHeader from './shared/document-table-header';
+
 
 function Statistic() {
   const countLimit = [
@@ -79,7 +61,6 @@ function Statistic() {
       text: 'Create Creative academic essays for  various  subject just in a second',
     },
   ];
-
   return (
     <div className="flex flex-col gap-8">
       <div className="grid xl:grid-cols-2 gap-6">
@@ -127,7 +108,6 @@ function Statistic() {
         </div>
       </div>
       {/* count limit card */}
-
       <div className="grid grid-cols-3 gap-5">
         {countLimit.map((data, index) => (
           <div
@@ -164,7 +144,7 @@ function Statistic() {
       </div>
       {/* all document & favourite ai writer template */}
       <div className="flex flex-col xl:flex-row gap-5">
-        <DocumentTable/>
+        <DocumentTable className="w-[60dvh]"/>
         <div className="p-6 bg-[#070622] border border-[#7A43A4] rounded-[16px]">
           <div className="flex flex-col gap-4 mb-8">
             <img src={fillStarIcon} alt="icon" className="w-6 h-6" />

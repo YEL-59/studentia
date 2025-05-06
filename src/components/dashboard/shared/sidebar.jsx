@@ -45,8 +45,8 @@ function Sidebar() {
     ],
     Documents: [
       { name: 'All documents', route: '/dashboard/documents' },
-      { name: 'All Codes', route: '/dashboard/documents/codes' },
-      { name: 'Workbooks', route: '/dashboard/documents/workbooks' },
+      { name: 'All Codes', route: '/dashboard/codes' },
+      { name: 'Workbooks', route: '/dashboard/workbooks' },
     ],
   };
 
@@ -182,7 +182,7 @@ function Sidebar() {
                     } transition-all duration-300`}
                     onClick={() => handleMenuItemClick(tool.title)}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 cursor-pointer">
                       <img src={tool.icon} alt="icon" />
                       <p
                         className={`text-base font-medium leading-[132%] tracking-[-0.316px] ${
