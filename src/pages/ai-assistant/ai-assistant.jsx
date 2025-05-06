@@ -17,77 +17,78 @@ import {
   default as aiAssistantEleven,
   default as aiAssistantTwo,
 } from '@/assets/icons/ai-assistant-two.svg';
+import { Link } from 'react-router';
 
 function AiAssistant() {
   const aiAssistants = [
     {
-        id: 1,
+      id: 1,
       profile: aiAssistantOne,
       name: 'Floyd Miles',
       username: 'Wade Warren',
     },
     {
-        id: 2,
+      id: 2,
       profile: aiAssistantTwo,
       name: 'Eleanor Pena',
       username: 'Courtney Henry',
     },
     {
-        id: 3,
+      id: 3,
       profile: aiAssistantThree,
       name: 'Marvin McKinney',
       username: 'Leslie Alexander',
     },
     {
-        id: 4,
+      id: 4,
       profile: aiAssistantFour,
       name: 'Jacob Jones',
       username: 'Guy Hawkins',
     },
     {
-        id: 5,
+      id: 5,
       profile: aiAssistantFive,
       name: 'Devon Lane',
       username: 'Jane Cooper',
     },
     {
-        id: 6,
+      id: 6,
       profile: aiAssistantSix,
       name: 'Kathryn Murphy',
       username: 'Esther Howard',
     },
     {
-        id: 7,
+      id: 7,
       profile: aiAssistantSeven,
       name: 'Ronald Richards',
       username: 'Cameron Williamson',
     },
     {
-        id: 8,
+      id: 8,
       profile: aiAssistantEight,
       name: 'Darlene Robertson',
       username: 'Robert Fox',
     },
     {
-        id: 9,
+      id: 9,
       profile: aiAssistantNine,
       name: 'Arlene McCoy',
       username: 'Bessie Cooper',
     },
     {
-        id: 10,
+      id: 10,
       profile: aiAssistantTen,
       name: 'Jerome Bell',
       username: 'Albert Flores',
     },
     {
-        id: 11,
+      id: 11,
       profile: aiAssistantEleven,
       name: 'Kristin Watson',
       username: 'Jenny Wilson',
     },
     {
-        id: 12,
+      id: 12,
       profile: aiAssistantTwelve,
       name: 'Cody Fisher',
       username: 'Ralph Edwards',
@@ -96,9 +97,10 @@ function AiAssistant() {
   return (
     <div className="grid grid-cols-4 gap-6">
       {aiAssistants.map((data) => (
-        <div
+        <Link
           key={data?.id}
           className="bg-gradient-to-b from-[#7A43A44D] to-[#6049BC2B] rounded-[18px] border border-[#313D4F] relative"
+          to={`/ai-chat/${data?.id}`}
         >
           <img src={cardDeisgn} alt="card design" className="w-full h-full" />
           <div className="flex flex-col items-center gap-6 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100]">
@@ -112,7 +114,7 @@ function AiAssistant() {
               </p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
