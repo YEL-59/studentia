@@ -1,3 +1,4 @@
+import Articelgenerate from "@/components/dashboard/articelgenerate";
 import AiAssistantLayout from "@/layouts/ai-assistant-layout";
 import DashboardLayout from "@/layouts/dashboard-layout";
 import MainLayout from "@/layouts/MainLayout";
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <AiAssistant />,
+      },
+      {
+        path: "articelgenerate",
+        element: <Articelgenerate />,
       },
     ],
   },
