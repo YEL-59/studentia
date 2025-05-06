@@ -15,6 +15,8 @@ import RevisionTools from '@/pages/dashboard/revision-tools';
 import SubscriptionPanel from '@/pages/dashboard/subscription-panel';
 import Workbooks from '@/pages/dashboard/workbooks';
 import WritingTools from '@/pages/dashboard/writing-tools';
+import Signin from '@/pages/main/auth/signin';
+import Signup from '@/pages/main/auth/signup';
 import Home from '@/pages/main/Home';
 import { createBrowserRouter } from 'react-router';
 
@@ -97,7 +99,8 @@ export const router = createBrowserRouter([
         element: <AiAssistant />,
       },
     ],
-}
+},
+{
 
     path: "sign-up",
     element: <Signup />,
