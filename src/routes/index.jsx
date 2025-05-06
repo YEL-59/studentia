@@ -58,7 +58,6 @@ export const router = createBrowserRouter([
         path: "/dashboard/documents",
         element: <Documents />,
       },
-
       {
         path: "/dashboard/documents/codes",
         element: <Codes />,
@@ -96,7 +95,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "sign-up",
     element: <Signup />,
