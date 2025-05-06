@@ -1,19 +1,23 @@
-import DashboardLayout from "@/layouts/dashboard-layout";
-import MainLayout from "@/layouts/MainLayout";
-import Account from "@/pages/dashboard/account";
-import AiTutors from "@/pages/dashboard/ai-tutors";
-import Articles from "@/pages/dashboard/articles";
-import Dashboard from "@/pages/dashboard/dashboard";
-import Documents from "@/pages/dashboard/documents";
-import Humanizer from "@/pages/dashboard/humanizer";
-import ImageGenerator from "@/pages/dashboard/image-generator";
-import RevisionTools from "@/pages/dashboard/revision-tools";
-import SubscriptionPanel from "@/pages/dashboard/subscription-panel";
-import WritingTools from "@/pages/dashboard/writing-tools";
-import Signin from "@/pages/main/auth/signin";
-import Signup from "@/pages/main/auth/signup";
-import Home from "@/pages/main/Home";
-import { createBrowserRouter } from "react-router";
+
+import AiAssistantLayout from '@/layouts/ai-assistant-layout';
+import DashboardLayout from '@/layouts/dashboard-layout';
+import MainLayout from '@/layouts/MainLayout';
+import AiAssistant from '@/pages/ai-assistant/ai-assistant';
+import Account from '@/pages/dashboard/account';
+import AiTutors from '@/pages/dashboard/ai-tutors';
+import Articles from '@/pages/dashboard/articles';
+import Codes from '@/pages/dashboard/codes';
+import Dashboard from '@/pages/dashboard/dashboard';
+import Documents from '@/pages/dashboard/documents';
+import Humanizer from '@/pages/dashboard/humanizer';
+import ImageGenerator from '@/pages/dashboard/image-generator';
+import RevisionTools from '@/pages/dashboard/revision-tools';
+import SubscriptionPanel from '@/pages/dashboard/subscription-panel';
+import Workbooks from '@/pages/dashboard/workbooks';
+import WritingTools from '@/pages/dashboard/writing-tools';
+import Home from '@/pages/main/Home';
+import { createBrowserRouter } from 'react-router';
+
 
 export const router = createBrowserRouter([
   {
@@ -56,7 +60,17 @@ export const router = createBrowserRouter([
         element: <Documents />,
       },
       {
-        path: "subscription-panel",
+
+        path: 'codes',
+        element: <Codes />,
+      },
+      {
+        path: 'workbooks',
+        element: <Workbooks />,
+      },
+      {
+        path: 'subscription-panel',
+
         element: <SubscriptionPanel />,
       },
       {
@@ -74,6 +88,17 @@ export const router = createBrowserRouter([
     ],
   },
   {
+
+    path: '/ai-assistant',
+    element: <AiAssistantLayout />,
+    children: [
+      {
+        index: true,
+        element: <AiAssistant />,
+      },
+    ],
+}
+
     path: "sign-up",
     element: <Signup />,
   },
@@ -81,4 +106,5 @@ export const router = createBrowserRouter([
     path: "sign-in",
     element: <Signin />,
   },
+
 ]);
