@@ -11,6 +11,7 @@ import Summary from '@/components/reverse-tools/summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
 import ChatSystem from './revision-tools/chat-system';
+import NotebookApp from '@/components/reverse-tools/note-taking';
 
 function RevisionTools() {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,6 +134,13 @@ function RevisionTools() {
           value="summary"
         >
           <Summary />
+        </TabsContent>
+        {/* note taking sub sidebars */}
+        <TabsContent
+          className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] bg-[#1C202B] h-full px-[22px] py-[32px]"
+          value="note-taking"
+        >
+          <NotebookApp />
         </TabsContent>
       </Tabs>
     </div>
