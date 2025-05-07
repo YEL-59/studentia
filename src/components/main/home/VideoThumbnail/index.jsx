@@ -26,7 +26,7 @@ export function VideoThumbnail({ videoUrl }) {
   }, [videoUrl]);
 
   return (
-    <div className="relative flex items-center justify-center p-4">
+    <div className="relative flex items-center justify-center p-4 hidden lg:block">
       {/* Glowing Gradient Effect Behind Video */}
       <div className="absolute inset-0 flex items-center justify-center z-0">
         <div
