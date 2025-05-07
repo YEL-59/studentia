@@ -23,7 +23,7 @@ function Sidebar() {
   // Map sidebar items to their corresponding routes
   const routeMap = {
     "Writing tools": "/dashboard/writing-tools/ai-writers",
-    "Revision Tools": "/ai-assistant/quiz",
+    "Revision Tools": "/dashboard/revision-tools",
     "Ai Tutor": "/dashboard/ai-tutors",
     Documents: "/dashboard/documents",
     "Subscription Panel": "/dashboard/subscription-panel",

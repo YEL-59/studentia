@@ -1,12 +1,14 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+
+/* @plugin 'tailwind-scrollbar-hide' ; */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -80,8 +82,8 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --font-grotesk: "Space Grotesk", sans-serif;
-  --font-adlam: "ADLaM Display", sans-serif;
+  --font-grotesk: 'Space Grotesk', sans-serif;
+  --font-adlam: 'ADLaM Display', sans-serif;
 }
 
 .dark {
@@ -137,7 +139,7 @@
 }
 
 .gradient-text::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -171,18 +173,6 @@
   border-radius: 10px;
 }
 
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: #f9fd9e;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  scrollbar-width: none; 
-} */
-
 /* scrollbar */
 .gradient-scrollbar::-webkit-scrollbar {
   width: 8px;
@@ -195,25 +185,25 @@
 
 .gradient-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: linear-gradient(180deg, #7A43A4 0%, #6049BC 100%);
+  background: linear-gradient(180deg, #7a43a4 0%, #6049bc 100%);
 }
 
 .gradient-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #6A38A4 0%, #5040BC 100%);
+  background: linear-gradient(180deg, #6a38a4 0%, #5040bc 100%);
 }
 
 /* text editor */
-.quill{
-    padding: 24px;
-    box-shadow: 17px 5px 50px 0px rgba(114, 75, 150, 0.25);
-    border-radius: 16px;
+.quill {
+  padding: 24px;
+  box-shadow: 17px 5px 50px 0px rgba(114, 75, 150, 0.25);
+  border-radius: 16px;
 }
 .ql-snow .ql-toolbar {
-  background: #1C202B;
+  background: #1c202b;
   border: none !important;
 }
 .ql-snow .ql-container {
-  background: #1C202B;
+  background: #1c202b;
   border: none !important;
   font-family: inherit;
 }
@@ -231,16 +221,16 @@
   stroke: white !important;
 }
 
-.ql-snow .ql-fill{
-    fill: #FFFF !important;
+.ql-snow .ql-fill {
+  fill: #ffff !important;
 }
 
-.quill .ql-toolbar.ql-snow{
-    border: none !important;
+.quill .ql-toolbar.ql-snow {
+  border: none !important;
 }
-.quill .ql-container.ql-snow{
-     border: none !important;
+.quill .ql-container.ql-snow {
+  border: none !important;
 }
 .ql-editor.ql-blank::before {
-  color: #BCBCBC !important;
+  color: #bcbcbc !important;
 }
