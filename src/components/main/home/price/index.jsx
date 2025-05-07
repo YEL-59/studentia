@@ -94,41 +94,51 @@ export const pricingPlans = {
 };
 
 const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
-  <div className="border border-[#7A43A4] rounded-2xl bg-[#0c0d24] p-6 shadow-lg max-w-sm w-full">
-    <div className="text-sm text-white/60 mb-2">{title}</div>
-    <div className="text-3xl font-bold text-white">
-      ${price}{" "}
-      <span className="text-base font-medium text-white/50">/Month</span>
-    </div>
-    <p className="text-sm text-white/60 mt-2 mb-4">
-      Provides for contact management and task tracking. Ideal for small teams.
-    </p>
-    <hr className="border-white/10 mb-4" />
-    <div className="text-sm text-white mb-4">
-      <p className="mb-1">Functionalities includes</p>
-      <ul className="space-y-2 mt-2">
-        <li className="flex items-center gap-2">
-          <Check size={16} className="text-green-400" /> GPT 4: {tokens1}
-        </li>
-        <li className="flex items-center gap-2">
-          <Check size={16} className="text-green-400" /> GPT 3.5: {tokens2}
-        </li>
-        {images && (
+  <div className="border border-[#7A43A4] rounded-2xl bg-transparent hover:bg-[linear-gradient(180deg,rgba(122,67,164,0.3),rgba(96,73,188,0.17))] [box-shadow:0px_6px_15px_-2px_rgba(16,24,40,0.08)] p-6 shadow-lg w-full sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] min-h-[660px] flex flex-col justify-between">
+    <div>
+      <div className="text-sm text-white/60 rounded-full border w-fit mx-auto px-3 py-1 mb-2">
+        {title}
+      </div>
+      <div className="text-3xl font-bold text-white text-start">
+        ${price}{" "}
+        <span className="text-base font-medium text-white/50">/Month</span>
+      </div>
+      <p className="text-white font-['Manrope'] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
+        Provides for contact management and task tracking. Ideal for small
+        teams.
+      </p>
+      <hr className="border-white/10 mb-4" />
+      <div>
+        <p className="mb-1 text-white font-['Space_Grotesk'] text-base font-medium leading-[132%] tracking-[-0.32px] text-start">
+          Functionalities includes
+        </p>
+        <ul className="space-y-2 mt-2 text-white">
           <li className="flex items-center gap-2">
-            <Check size={16} className="text-green-400" /> {images} Images
+            <Check size={16} className="text-white" /> GPT 4: {tokens1}
           </li>
-        )}
-        {features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2">
-            <Check size={16} className="text-green-400" />
-            {feature}
+          <li className="flex items-center gap-2">
+            <Check size={16} className="text-white" /> GPT 3.5: {tokens2}
           </li>
-        ))}
-      </ul>
+          {images && (
+            <li className="flex items-center gap-2">
+              <Check size={16} className="text-white" /> {images} Images
+            </li>
+          )}
+          {features.map((feature, i) => (
+            <li key={i} className="flex items-center gap-2">
+              <Check size={16} className="text-white" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-    <Button className="w-full  text-white mt-4 hover:opacity-90">
-      Get Started
-    </Button>
+
+    <div className="mt-6">
+      <Button className="w-full text-white hover:opacity-90">
+        Get Started
+      </Button>
+    </div>
   </div>
 );
 
