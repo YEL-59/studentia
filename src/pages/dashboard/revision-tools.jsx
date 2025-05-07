@@ -14,19 +14,9 @@ import ChatSystem from "./revision-tools/chat-system";
 import NotebookApp from "@/components/reverse-tools/note-taking";
 import FlashcardApp from "@/components/reverse-tools/flash-card";
 
-import chatIcon from "@/assets/icons/chat.svg";
-import flashcardIcons from "@/assets/icons/flashcards.svg";
-import noteIcon from "@/assets/icons/note-taking.svg";
-import pdfScanIcon from "@/assets/icons/pdf-scan-icon.svg";
-import podcastIcon from "@/assets/icons/podcast-icon.svg";
-import quizIcon from "@/assets/icons/quiz-icon.svg";
-import quizYourselfIcon from "@/assets/icons/quiz-yourself.svg";
-import summaryIcon from "@/assets/icons/summary.svg";
-import Chat from "@/components/reverse-tools/chat";
 import PdfReader from "@/components/reverse-tools/pdfreader";
 import Quiz from "@/components/reverse-tools/quiz";
-import Summary from "@/components/reverse-tools/summary";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import "@/lib/pdfWorkerConfig.js";
 function RevisionTools() {
   const [isOpen, setIsOpen] = useState(false);

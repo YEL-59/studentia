@@ -1,5 +1,6 @@
 import Accountup from "@/components/dashboard/accountupper";
 import React from "react";
+import GeneratedChart from "./GeneratedChart";
 
 function Account() {
   return (
@@ -9,7 +10,9 @@ function Account() {
           <div>
             <Accountup />{" "}
           </div>
-          <div>2</div>
+          <div>
+            <GeneratedChart />
+          </div>
         </div>
       </div>
     </>
