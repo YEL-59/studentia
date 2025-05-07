@@ -2,10 +2,10 @@ import React from 'react'
 import chatWithAi from '@/assets/icons/chat-with-ai.svg';
 
 
-function Chat() {
+function Chat({handleOpenChat}) {
   return (
     <div className="flex flex-col items-center justify-center gap-4">
-      <div className="rounded-[16px] border border-[#D24AC966] px-[54px] py-[32px]">
+      <div onClick={handleOpenChat} className="rounded-[16px] border border-[#D24AC966] px-[54px] py-[32px]">
         <img src={chatWithAi} alt="" />
       </div>
 

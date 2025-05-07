@@ -14,6 +14,7 @@ import Documents from '@/pages/dashboard/documents';
 import Humanizer from '@/pages/dashboard/humanizer';
 import ImageGenerator from '@/pages/dashboard/image-generator';
 import RevisionTools from '@/pages/dashboard/revision-tools';
+import ChatSystem from '@/pages/dashboard/revision-tools/chat-system';
 import SubscriptionPanel from '@/pages/dashboard/subscription-panel';
 import Workbooks from '@/pages/dashboard/workbooks';
 import WritingTools from '@/pages/dashboard/writing-tools';
@@ -28,10 +29,6 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
-      //   {
-      //     path: "about",
-      //     element: <About />,
-      //   },
     ],
   },
   {

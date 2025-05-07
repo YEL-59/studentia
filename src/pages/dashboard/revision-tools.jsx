@@ -9,8 +9,11 @@ import summaryIcon from '@/assets/icons/summary.svg';
 import Chat from '@/components/reverse-tools/chat';
 import Summary from '@/components/reverse-tools/summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from 'react';
+import ChatSystem from './revision-tools/chat-system';
 
 function RevisionTools() {
+  const [isOpen, setIsOpen] = useState(false);
   const mainTabs = [
     {
       value: 'pdf-scan',
@@ -56,6 +59,10 @@ function RevisionTools() {
       title: 'Flashcards',
     },
   ];
+
+  const handleOpenChat = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="flex gap-5 justify-between min-h-[calc(100svh-80px)]">
@@ -104,12 +111,22 @@ function RevisionTools() {
           ))}
         </TabsList>
         {/* chat sub sidebars */}
-        <TabsContent
-          className="mt-4 borderborder-[#D24AC966] flex items-center justify-center rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[90px] py-[139px]"
-          value="chat"
-        >
-          <Chat />
-        </TabsContent>
+        {isOpen ? (
+          <TabsContent
+            className="mt-4 borderborder-[#D24AC966] flex justify-between w-full rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
+            value="chat"
+          >
+            <ChatSystem />
+          </TabsContent>
+        ) : (
+          <TabsContent
+            className="mt-4 borderborder-[#D24AC966] flex items-center justify-center rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[90px] py-[139px]"
+            value="chat"
+          >
+            :
+            <Chat handleOpenChat={handleOpenChat} />
+          </TabsContent>
+        )}
         {/* summary sub sidebars */}
         <TabsContent
           className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
