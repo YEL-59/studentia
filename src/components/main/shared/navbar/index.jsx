@@ -12,15 +12,15 @@ const Navbar = () => {
 
   const list = [
     { label: "Home", to: "/" },
-    { label: "Features", to: "/feature" },
-    { label: "Pricing", to: "/pricing" },
-    { label: "FAQs", to: "/faq" },
-    { label: "Blogs", to: "/blogs" },
+    { label: "Features", to: "#features" },
+    { label: "Pricing", to: "#pricing" },
+    { label: "FAQs", to: "#faq" },
+    { label: "Blogs", to: "#blogs" },
   ];
 
   return (
     <nav
-      className="w-full py-4 relative z-10 shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]"
+      className="w-full py-4 relative z-[1000] sticky top-0 shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]"
       style={{
         backgroundColor: "#070622",
         backgroundImage: `url(${navbg})`,
@@ -38,8 +38,8 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-8">
           {list.map((item, i) => (
             <li key={i}>
-              <Link
-                to={item.to}
+              <a
+                href={item.to} // Using href for anchor links
                 className={`text-[16px] not-italic font-semibold leading-[160%] transition relative ${
                   location.pathname === item.to
                     ? "gradient-text"
@@ -47,7 +47,7 @@ const Navbar = () => {
                 }`}
               >
                 {item.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -91,7 +91,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>

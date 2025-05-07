@@ -1,6 +1,5 @@
 import Banner from "@/components/main/home/banner";
 import BlogCarousel from "@/components/main/home/blog";
-
 import FAQSection from "@/components/main/home/faq";
 import HowItWork from "@/components/main/home/howitwork";
 import Platform from "@/components/main/home/plateform";
@@ -14,14 +13,46 @@ const Home = () => {
     <>
       <div>
         <Banner />
-        <HowItWork />
-        <UltimateModel />
-        <WorkSmater />
-        <PricingTabs />
-        <Testimonials />
-        <Platform />
-        <FAQSection />
-        <BlogCarousel />
+        <div id="features">
+          {" "}
+          {/* Section for Features */}
+          <HowItWork />
+        </div>
+        <div id="unlimitedmodel">
+          {" "}
+          {/* Section for Ultimate Model */}
+          <UltimateModel />
+        </div>
+        <div id="worksmarter">
+          {" "}
+          {/* Section for Work Smarter */}
+          <WorkSmater />
+        </div>
+        <div id="pricing">
+          {" "}
+          {/* Section for Pricing */}
+          <PricingTabs />
+        </div>
+        <div id="testimonials">
+          {" "}
+          {/* Section for Testimonials */}
+          <Testimonials />
+        </div>
+        <div id="platform">
+          {" "}
+          {/* Section for Platform */}
+          <Platform />
+        </div>
+        <div id="faq">
+          {" "}
+          {/* Section for FAQ */}
+          <FAQSection />
+        </div>
+        <div id="blogs">
+          {" "}
+          {/* Section for Blog */}
+          <BlogCarousel />
+        </div>
       </div>
     </>
   );
