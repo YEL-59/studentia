@@ -17,6 +17,7 @@ import DashboardLayout from "@/layouts/dashboard-layout";
 import MainLayout from "@/layouts/MainLayout";
 import AiAssistant from "@/pages/ai-assistant/ai-assistant";
 import AiChat from "@/pages/ai-assistant/chat-with-ai-assistant/ai-chat";
+import AiQuiz from "@/pages/ai-assistant/revision-tools/ai-quiz";
 import Account from "@/pages/dashboard/account";
 import AiTutors from "@/pages/dashboard/ai-tutors";
 import Aicode from "@/pages/dashboard/aicode";
@@ -110,6 +111,18 @@ export const router = createBrowserRouter([
         element: <AiAssistant />,
       },
       {
+        path: "quiz",
+        element: <AiQuiz />,
+      },
+      {
+        path: "podcast",
+        element: <AiQuiz />,
+      },
+      {
+        path: "pdf-scan",
+        element: <AiQuiz />,
+      },
+      {
         path: "articelgenerate",
         element: <Articelgenerate />,
       },
@@ -164,6 +177,10 @@ export const router = createBrowserRouter([
     path: "/ai-chat/:id",
     element: <AiChatLayout />,
     children: [
+      {
+        index: true,
+        element: <AiChat />,
+      },
       {
         index: true,
         element: <AiChat />,
