@@ -124,6 +124,7 @@ function ChatSystem() {
         {messages.map((message, index) => (
           <div
             key={index}
+            
             className={`flex gap-3 py-6 px-4 rounded-[16px] w-full ${
               message.role === 'bot'
                 ? 'rounded-[29px_24px_24px_26px] bg-[rgba(210,74,201,0.20)]'
@@ -137,6 +138,7 @@ function ChatSystem() {
                   message.role === 'user' && 'text-right'
                 }`}
               >
+
                 {message.heading}
               </h1>
               <p className="text-sm leading-[164%] whitespace-pre-wrap break-all break-words w-full overflow-x-visible">
