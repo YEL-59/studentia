@@ -13,6 +13,7 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import Questionpdf from "@/assets/svg/questionpdf";
+import Congo from "@/assets/svg/congo";
 
 const Stepper = ({ totalSteps = 10, currentStep = 0 }) => {
   return (
@@ -207,6 +208,7 @@ export default function QuizPage() {
     return (
       <div className="px-6 py-10 flex flex-col items-center gap-6 text-center text-white">
         {/* <Stepper totalSteps={questions.length} currentStep={currentIndex} /> */}
+        <Congo />
 
         <h2 className="text-3xl font-bold">Congratulations</h2>
         <p>Keep up the Great Work and aim even higher</p>

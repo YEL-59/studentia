@@ -7,10 +7,11 @@ import quizIcon from "@/assets/icons/quiz-icon.svg";
 import quizYourselfIcon from "@/assets/icons/quiz-yourself.svg";
 import summaryIcon from "@/assets/icons/summary.svg";
 import Chat from "@/components/reverse-tools/chat";
+import PdfReader from "@/components/reverse-tools/pdfreader";
 import Quiz from "@/components/reverse-tools/quiz";
 import Summary from "@/components/reverse-tools/summary";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import "@/lib/pdfWorkerConfig.js";
 function RevisionTools() {
   const mainTabs = [
     {
@@ -59,8 +60,8 @@ function RevisionTools() {
   ];
 
   return (
-    <div className="flex gap-5 justify-between min-h-[calc(100svh-80px)]">
-      <div className="flex flex-col lg:flex-row gap-6 w-[55%] min-h-[calc(100svh-80px)]">
+    <div className="flex gap-5 justify-between min-h-[calc(100svh-80px)] w-full">
+      <div className=" w-1/2 min-h-[calc(100svh-80px)]">
         {/* Main Tabs */}
         <Tabs defaultValue="pdf-scan" className="">
           <div className="flex ml-16 mt-4">
@@ -80,16 +81,22 @@ function RevisionTools() {
             </TabsList>
           </div>
 
-          {mainTabs.map((tab) => (
+          {/* {mainTabs.map((tab) => (
             <TabsContent key={tab.value} value={tab.value}>
               {tab?.value}
             </TabsContent>
-          ))}
+          ))} */}
+          <TabsContent
+            className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
+            value="pdf-scan"
+          >
+            <PdfReader />
+          </TabsContent>
         </Tabs>
         <div></div>
       </div>
       {/* chat tab */}
-      <Tabs defaultValue="chat" className="w-[45%] flex flex-col gap-5 h-full">
+      <Tabs defaultValue="chat" className="w-1/2 flex flex-col gap-5 h-full">
         <TabsList className="flex flex-wrap gap-6 p-0 rounded-[20px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] py-5 px-6 w-full h-full">
           {sideTabs.map((tab) => (
             <TabsTrigger
