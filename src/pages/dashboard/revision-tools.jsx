@@ -18,8 +18,14 @@ import PdfReader from "@/components/reverse-tools/pdfreader";
 import Quiz from "@/components/reverse-tools/quiz";
 
 import "@/lib/pdfWorkerConfig.js";
+import { useNavigate } from "react-router";
+import { useParams } from "react-router";
+import { useEffect } from "react";
 function RevisionTools() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const { activeTab } = useParams();
+
   const mainTabs = [
     {
       value: "pdf-scan",
@@ -70,17 +76,26 @@ function RevisionTools() {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    if (!activeTab) {
+      navigate(`/dashboard/revision-tools/pdf-scan`);
+    }
+  }, [activeTab]);
+
   return (
     <div className="flex gap-5 justify-between min-h-[calc(100svh-80px)] w-full">
       <div className=" w-1/2 min-h-[calc(100svh-80px)]">
         {/* Main Tabs */}
-        <Tabs defaultValue="pdf-scan" className="">
+        <Tabs value={activeTab} className="">
           <div className="flex ml-16 mt-4">
             <TabsList className="bg-[#10122e] px-6 py-9 border border-[#D24AC966] rounded-[16px] flex gap-2">
               {mainTabs.map((tab) => (
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
+                  onClick={() =>
+                    navigate(`/dashboard/revision-tools/${tab.value}`)
+                  }
                   className="cursor-pointer data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white px-5 py-6 text-primary border border-[#D24AC966] rounded-[12px] flex items-center gap-2"
                 >
                   <img src={tab.icon} alt="icon" />
@@ -99,7 +114,7 @@ function RevisionTools() {
           ))} */}
           <TabsContent
             className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
-            value="pdf-scan"
+            value={activeTab}
           >
             <PdfReader />
           </TabsContent>

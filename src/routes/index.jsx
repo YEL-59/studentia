@@ -63,6 +63,10 @@ export const router = createBrowserRouter([
         element: <Articles />,
       },
       {
+        path: "revision-tools/:activeTab",
+        element: <RevisionTools />,
+      },
+      {
         path: "revision-tools",
         element: <RevisionTools />,
       },

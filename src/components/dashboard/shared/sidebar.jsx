@@ -39,9 +39,9 @@ function Sidebar() {
       { name: "Ai Code", route: "/dashboard/writing-tools/ai-code" },
     ],
     "Revision Tools": [
-      { name: "Ai Quiz", route: "/ai-assistant/quiz" },
-      { name: "Ai Podcast", route: "/ai-assistant/podcast" },
-      { name: "Pdf Scan", route: "/ai-assistant/pdf-scan" },
+      { name: "Pdf Scan", route: "/dashboard/revision-tools/pdf-scan" },
+      { name: "Ai Quiz", route: "/dashboard/revision-tools/ai-quiz" },
+      { name: "Ai Podcast", route: "/dashboard/revision-tools/podcast" },
     ],
     Documents: [
       { name: "All documents", route: "/dashboard/documents" },
