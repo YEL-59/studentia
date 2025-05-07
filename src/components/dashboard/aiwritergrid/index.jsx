@@ -26,6 +26,7 @@ export const tools = [
   },
   {
     title: "Content Rewriter",
+    path: "contentrewrite",
     description:
       "Take a piece of content and rewrite it to make it more interesting, creative, and engaging",
     bgDefault: articleDefault,
@@ -34,7 +35,8 @@ export const tools = [
     defaultColor: "#5362FF",
   },
   {
-    title: "Article Generator 2",
+    title: "Summarize Text",
+    path: "summarizetext",
     description: "Another powerful generator for long-form articles",
     bgDefault: articleDefault,
     bgHover: articleHover,
@@ -42,7 +44,8 @@ export const tools = [
     defaultColor: "#A687DB",
   },
   {
-    title: "Content Rewriter 2",
+    title: "Dictionary ",
+    path: "dictionary",
     description: "Better, smarter rewriting tools",
     bgDefault: articleDefault,
     bgHover: articleHover,

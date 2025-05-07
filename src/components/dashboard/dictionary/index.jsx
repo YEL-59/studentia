@@ -1,8 +1,9 @@
 import ContentRewriter from "../contentewriter";
+import DictionaryForm from "../dictionaryForm";
 import Editor from "../shared/editor";
 import { ToolSlider } from "../toolslider";
 
-const Articelgenerate = () => {
+const Dictionary = () => {
   return (
     <div className="p-4 ">
       <div className="flex flex-col lg:flex-row gap-6">
@@ -19,11 +20,11 @@ const Articelgenerate = () => {
 
         {/* Right Side: Humanizer Form */}
         <div className="lg:w-1/3 w-full">
-          <ContentRewriter />
+          <DictionaryForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Articelgenerate;
+export default Dictionary;

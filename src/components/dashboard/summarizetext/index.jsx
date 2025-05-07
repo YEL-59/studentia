@@ -1,8 +1,9 @@
 import ContentRewriter from "../contentewriter";
 import Editor from "../shared/editor";
+import SummarizetextForm from "../SummarizetextForm";
 import { ToolSlider } from "../toolslider";
 
-const Articelgenerate = () => {
+const Summarizetext = () => {
   return (
     <div className="p-4 ">
       <div className="flex flex-col lg:flex-row gap-6">
@@ -17,13 +18,12 @@ const Articelgenerate = () => {
           <Editor />
         </div>
 
-        {/* Right Side: Humanizer Form */}
         <div className="lg:w-1/3 w-full">
-          <ContentRewriter />
+          <SummarizetextForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Articelgenerate;
+export default Summarizetext;

@@ -2,7 +2,7 @@ import ContentRewriter from "../contentewriter";
 import Editor from "../shared/editor";
 import { ToolSlider } from "../toolslider";
 
-const Articelgenerate = () => {
+const Contentrewrite = () => {
   return (
     <div className="p-4 ">
       <div className="flex flex-col lg:flex-row gap-6">
@@ -26,4 +26,4 @@ const Articelgenerate = () => {
   );
 };
 
-export default Articelgenerate;
+export default Contentrewrite;

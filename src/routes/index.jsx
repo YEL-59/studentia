@@ -1,4 +1,7 @@
 import Articelgenerate from "@/components/dashboard/articelgenerate";
+import Contentrewrite from "@/components/dashboard/contentrewrite";
+import Dictionary from "@/components/dashboard/dictionary";
+import Summarizetext from "@/components/dashboard/summarizetext";
 import AiAssistantLayout from "@/layouts/ai-assistant-layout";
 import AiChatLayout from "@/layouts/ai-chat-layout";
 import DashboardLayout from "@/layouts/dashboard-layout";
@@ -100,6 +103,18 @@ export const router = createBrowserRouter([
       {
         path: "articelgenerate",
         element: <Articelgenerate />,
+      },
+      {
+        path: "contentrewrite",
+        element: <Contentrewrite />,
+      },
+      {
+        path: "summarizetext",
+        element: <Summarizetext />,
+      },
+      {
+        path: "dictionary",
+        element: <Dictionary />,
       },
     ],
   },
