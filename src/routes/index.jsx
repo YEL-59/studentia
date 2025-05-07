@@ -1,7 +1,16 @@
+import Academicessay from "@/components/dashboard/academicessay";
 import Articelgenerate from "@/components/dashboard/articelgenerate";
 import Contentrewrite from "@/components/dashboard/contentrewrite";
+import Correcteur from "@/components/dashboard/correcteur";
+import Correcteurdexercice from "@/components/dashboard/correcteurdexercice";
 import Dictionary from "@/components/dashboard/dictionary";
+import Grammarchecker from "@/components/dashboard/grammarchecker";
+import Paragraphgenerator from "@/components/dashboard/paragraphgenerator";
+import Summarizefor2Grader from "@/components/dashboard/summarizefor2Grader";
 import Summarizetext from "@/components/dashboard/summarizetext";
+import TextExtender from "@/components/dashboard/textextander";
+import TextExtenderForm from "@/components/dashboard/textextanderForm";
+import ToneChanger from "@/components/dashboard/tonechanger";
 import AiAssistantLayout from "@/layouts/ai-assistant-layout";
 import AiChatLayout from "@/layouts/ai-chat-layout";
 import DashboardLayout from "@/layouts/dashboard-layout";
@@ -115,6 +124,38 @@ export const router = createBrowserRouter([
       {
         path: "dictionary",
         element: <Dictionary />,
+      },
+      {
+        path: "correcteur",
+        element: <Correcteur />,
+      },
+      {
+        path: "tonechanger",
+        element: <ToneChanger />,
+      },
+      {
+        path: "summarizefor2Grader",
+        element: <Summarizefor2Grader />,
+      },
+      {
+        path: "grammarchecker",
+        element: <Grammarchecker />,
+      },
+      {
+        path: "Paragraphgenerator",
+        element: <Paragraphgenerator />,
+      },
+      {
+        path: "academicessay",
+        element: <Academicessay />,
+      },
+      {
+        path: "textextenderForm",
+        element: <TextExtender />,
+      },
+      {
+        path: "correcteurdexercice",
+        element: <Correcteurdexercice />,
       },
     ],
   },

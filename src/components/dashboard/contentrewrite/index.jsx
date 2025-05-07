@@ -1,4 +1,5 @@
-import ContentRewriter from "../contentewriter";
+import ContentewriterForm from "../contentewriterForm";
+import ContentRewriter from "../contentewriterForm";
 import Editor from "../shared/editor";
 import { ToolSlider } from "../toolslider";
 
@@ -19,7 +20,7 @@ const Contentrewrite = () => {
 
         {/* Right Side: Humanizer Form */}
         <div className="lg:w-1/3 w-full">
-          <ContentRewriter />
+          <ContentewriterForm />
         </div>
       </div>
     </div>

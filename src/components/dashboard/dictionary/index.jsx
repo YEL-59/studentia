@@ -1,4 +1,4 @@
-import ContentRewriter from "../contentewriter";
+import ContentRewriter from "../contentewriterForm";
 import DictionaryForm from "../dictionaryForm";
 import Editor from "../shared/editor";
 import { ToolSlider } from "../toolslider";

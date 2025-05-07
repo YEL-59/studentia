@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-export default function DictionaryForm() {
+export default function GrammarCheckerForm() {
   const [text, setText] = useState("");
 
   return (
@@ -14,7 +14,7 @@ export default function DictionaryForm() {
           <span className="flex w-[40px] h-[40px] p-[14px] justify-center items-center gap-2 aspect-square rounded-[28px] border-2 border-[#7A43A4] bg-gradient-to-b from-[rgba(122,67,164,0.3)] to-[rgba(96,73,188,0.17)]">
             🌀
           </span>{" "}
-          Dictionary Form
+          Grammer Checker Form
         </h2>
         <p className="text-[#BCBCBC] font-normal text-[16px] leading-[164%] font-['Space_Grotesk'] mt-2">
           Take a piece of content and rewrite it to make it more interesting,

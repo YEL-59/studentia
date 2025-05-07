@@ -1,4 +1,4 @@
-import ContentRewriter from "../contentewriter";
+import ContentRewriter from "../contentewriterForm";
 import Editor from "../shared/editor";
 import SummarizetextForm from "../SummarizetextForm";
 import { ToolSlider } from "../toolslider";

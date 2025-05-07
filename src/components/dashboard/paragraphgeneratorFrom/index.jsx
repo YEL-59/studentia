@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function DictionaryForm() {
+export default function ParagraphgeneratorFrom() {
   const [text, setText] = useState("");
+  const [text2, setText2] = useState("");
 
   return (
     <div
@@ -14,7 +15,7 @@ export default function DictionaryForm() {
           <span className="flex w-[40px] h-[40px] p-[14px] justify-center items-center gap-2 aspect-square rounded-[28px] border-2 border-[#7A43A4] bg-gradient-to-b from-[rgba(122,67,164,0.3)] to-[rgba(96,73,188,0.17)]">
             🌀
           </span>{" "}
-          Dictionary Form
+          Paragraph Generator From
         </h2>
         <p className="text-[#BCBCBC] font-normal text-[16px] leading-[164%] font-['Space_Grotesk'] mt-2">
           Take a piece of content and rewrite it to make it more interesting,
@@ -40,10 +41,28 @@ export default function DictionaryForm() {
           </div>
         </div>
         <textarea
-          className="w-full h-40 p-4 rounded-lg bg-[#2a2a3b] text-sm resize-none outline-none"
+          className="w-full h-10 p-4 rounded-lg bg-[#2a2a3b] text-sm resize-none outline-none"
           maxLength={8000}
           value={text}
           onChange={(e) => setText(e.target.value)}
+          placeholder="Enter your text to rewrite"
+        />
+      </div>
+
+      <div>
+        <div className="flex justify-between items-center mb-2">
+          <label className="block text-white font-medium text-[14px] leading-[164%] capitalize font-['Space_Grotesk'] mb-1">
+            Focus Keywords(comma separated )
+          </label>
+          <div className="text-right text-sm text-gray-400 mt-1">
+            {text2.length}/8000
+          </div>
+        </div>
+        <textarea
+          className="w-full h-10 p-4 rounded-lg bg-[#2a2a3b] text-sm resize-none outline-none"
+          maxLength={8000}
+          value={text2}
+          onChange={(e) => setText2(e.target.value)}
           placeholder="Enter your text to rewrite"
         />
       </div>

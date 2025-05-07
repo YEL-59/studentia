@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ContentRewriter() {
+export default function CorrecteurForm() {
   const [text, setText] = useState("");
 
   return (
@@ -10,7 +10,7 @@ export default function ContentRewriter() {
     >
       <div>
         <h2 className="text-xl font-semibold flex items-center gap-2">
-          <span>🌀</span> Content Rewriter
+          <span>🌀</span> Correcteur Form
         </h2>
         <p className="text-sm text-gray-400">
           Take a piece of content and rewrite it to make it more interesting,

@@ -1,9 +1,10 @@
-import ArticelgenerateForm from "../articelgenerateForm";
 import ContentRewriter from "../contentewriterForm";
+import DictionaryForm from "../dictionaryForm";
 import Editor from "../shared/editor";
+import Summarizefor2GraderForm from "../summarizefor2GraderForm";
 import { ToolSlider } from "../toolslider";
 
-const Articelgenerate = () => {
+const Summarizefor2Grader = () => {
   return (
     <div className="p-4 ">
       <div className="flex flex-col lg:flex-row gap-6">
@@ -20,11 +21,11 @@ const Articelgenerate = () => {
 
         {/* Right Side: Humanizer Form */}
         <div className="lg:w-1/3 w-full">
-          <ArticelgenerateForm />
+          <Summarizefor2GraderForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Articelgenerate;
+export default Summarizefor2Grader;

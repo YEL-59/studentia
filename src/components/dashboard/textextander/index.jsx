@@ -1,9 +1,8 @@
-import ArticelgenerateForm from "../articelgenerateForm";
-import ContentRewriter from "../contentewriterForm";
 import Editor from "../shared/editor";
+import TextExtenderForm from "../textextanderForm";
 import { ToolSlider } from "../toolslider";
 
-const Articelgenerate = () => {
+const TextExtender = () => {
   return (
     <div className="p-4 ">
       <div className="flex flex-col lg:flex-row gap-6">
@@ -20,11 +19,11 @@ const Articelgenerate = () => {
 
         {/* Right Side: Humanizer Form */}
         <div className="lg:w-1/3 w-full">
-          <ArticelgenerateForm />
+          <TextExtenderForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Articelgenerate;
+export default TextExtender;
