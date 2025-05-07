@@ -23,7 +23,7 @@ function Sidebar() {
   // Map sidebar items to their corresponding routes
   const routeMap = {
     'Writing tools': '/dashboard/writing-tools/ai-writers',
-    'Revision Tools': '/dashboard/revision-tools',
+    'Revision Tools': '/ai-assistant/quiz',
     'Ai Tutor': '/dashboard/ai-tutors',
     Documents: '/dashboard/documents',
     'Subscription Panel': '/dashboard/subscription-panel',
@@ -39,9 +39,9 @@ function Sidebar() {
       { name: 'Ai Code', route: '/dashboard/writing-tools/code' },
     ],
     'Revision Tools': [
-      { name: 'Ai Quiz', route: '/dashboard/revision-tools/quiz' },
-      { name: 'Ai Podcast', route: '/dashboard/revision-tools/podcast' },
-      { name: 'Pdf Scan', route: '/dashboard/revision-tools/scan' },
+      { name: 'Ai Quiz', route: '/ai-assistant/quiz' },
+      { name: 'Ai Podcast', route: '/ai-assistant/podcast' },
+      { name: 'Pdf Scan', route: '/ai-assistant/pdf-scan' },
     ],
     Documents: [
       { name: 'All documents', route: '/dashboard/documents' },
