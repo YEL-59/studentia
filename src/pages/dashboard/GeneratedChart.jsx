@@ -34,7 +34,7 @@ export default function GeneratedChart() {
   };
 
   return (
-    <Card className="p-4 bg-gradient-to-br from-[#1c1c28] to-[#1e1b33] rounded-xl shadow-lg">
+    <Card className="p-4 bg-gradient-to-br from-[#1c1c28] to-[#1e1b33] rounded-xl shadow-lg w-full">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-white text-sm font-medium">
           Word And Image generated
