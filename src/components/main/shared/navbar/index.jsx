@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const list = [
-    { label: "Home", to: "/" },
+    // { label: "Home", to: "/" },
     { label: "Features", to: "#features" },
     { label: "Pricing", to: "#pricing" },
     { label: "FAQs", to: "#faq" },
@@ -36,20 +36,24 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden md:flex gap-8">
-          {list.map((item, i) => (
-            <li key={i}>
-              <a
-                href={item.to} // Using href for anchor links
-                className={`text-[16px] not-italic font-semibold leading-[160%] transition relative ${
-                  location.pathname === item.to
-                    ? "gradient-text"
-                    : "text-[#A1A1A1]"
-                }`}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {list.map((item, i) => {
+            const isActive = item.to.startsWith("#")
+              ? window.location.hash === item.to
+              : location.pathname === item.to;
+
+            return (
+              <li key={i}>
+                <a
+                  href={item.to}
+                  className={`text-[16px] not-italic font-semibold leading-[160%] transition relative ${
+                    isActive ? "gradient-text" : "text-[#A1A1A1]"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
         <div className="hidden md:flex gap-4">
           <div className="hidden md:block">

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import bannerbg from "../../../../assets/Stars.png";
 import AvatarGroup from "../AvatarGroup";
 import { VideoThumbnail } from "../VideoThumbnail";
+import { TypingEffect } from "../typingeffect";
 
 const Banner = () => {
   return (
@@ -12,7 +13,7 @@ const Banner = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="py-[120px]">
+      <div className="py-[50px]">
         <div
           className="flex flex-col justify-center items-center gap-10"
           data-aos="fade-up"
@@ -34,17 +35,9 @@ const Banner = () => {
           <div data-aos="zoom-in" data-aos-delay="400">
             <h1 className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[112px] leading-tight font-bold text-center tracking-tight font-['Space_Grotesk']">
               Ultimate AI Creator For
-              <span
-                className="block"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(90deg, #1C6CFF 32.51%, #9345B7 60.01%, #3E0059 82.73%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                AI Web Analyzer
+              <span className="h-[100px]">
+                {" "}
+                <TypingEffect />
               </span>
             </h1>
 
