@@ -171,7 +171,7 @@ export default function PricingTabs() {
         </div>
 
         <TabsContent value="monthly">
-          <div className="flex flex-wrap justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-10 p-3 md:p-0">
             {pricingPlans.monthly.map((plan) => (
               <PlanCard key={plan.id} {...plan} />
             ))}
@@ -179,7 +179,7 @@ export default function PricingTabs() {
         </TabsContent>
 
         <TabsContent value="yearly">
-          <div className="flex flex-wrap justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-10 p-3 md:p-0">
             {pricingPlans.yearly.map((plan) => (
               <PlanCard key={plan.id} {...plan} />
             ))}

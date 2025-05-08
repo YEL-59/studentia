@@ -38,12 +38,12 @@ const HowItWork = () => {
   }, []);
 
   return (
-    <section className="bg-[#070622] py-30 text-center px-4">
-      <div className="container mx-auto mb-30">
+    <section className="bg-[#070622] py-10 md:py-30 text-center px-4">
+      <div className="container mx-auto md:mb-30">
         <LogoMarquee />
       </div>
       <h2
-        className="text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
+        className="text-3xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
         style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-down"
         data-aos-delay="200"
@@ -51,7 +51,7 @@ const HowItWork = () => {
         How does it work?
       </h2>
       <p
-        className="text-[20px] leading-[132%] tracking-[-0.4px] font-medium font-grotesk text-center text-[#F9F9F9] mb-10"
+        className="text-[12px] md:text-[20px] leading-[132%] tracking-[-0.4px] font-medium font-grotesk text-center text-[#F9F9F9] mb-10"
         style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-up"
         data-aos-delay="300"
@@ -85,12 +85,12 @@ const HowItWork = () => {
                   </span>
                 </div>
 
-                <h3 className="text-[var(--60-background-website,#FFF)] font-['Space_Grotesk'] text-center text-[24px] not-italic font-bold leading-[132%] tracking-[-0.24px]">
+                <h3 className="text-[var(--60-background-website,#FFF)] font-['Space_Grotesk'] text-center text-[15px] md:text-[24px] not-italic font-bold leading-[132%] tracking-[-0.24px]">
                   {title}
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-[#9A98B9] text-center font-['Space_Grotesk'] text-[16px] not-italic font-normal leading-[164%]">
+                <p className="text-[#9A98B9] text-center font-['Space_Grotesk'] text-[11px] md:text-[16px] not-italic font-normal leading-[164%]">
                   {description}
                 </p>
               </CardContent>

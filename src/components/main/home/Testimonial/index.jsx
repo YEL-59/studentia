@@ -59,7 +59,7 @@ export default function Testimonials() {
         <p className="text-sm mt-2 text-gray-300">What Saying Our Customers</p>
       </div>
 
-      <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 p-3 md:p-0">
         {visibleTestimonials.map((item, index) => (
           <Card
             key={index}

@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router";
 import logo from "../../../../assets/logo.png";
 import navbg from "../../../../assets/Stars.png";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,32 @@ const Navbar = () => {
     { label: "FAQs", to: "#faq" },
     { label: "Blogs", to: "#blogs" },
   ];
+  const [isSticky, setIsSticky] = useState(false);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      let threshold = 172;
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        threshold = 83;
+      } else if (width >= 768 && width < 1024) {
+        threshold = 92;
+      }
+
+      setIsSticky(window.scrollY > threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
-      className="w-full py-4 relative z-[1000] sticky top-0 shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]"
+      className={`w-full py-4 relative z-[1000] ${
+        isSticky ? "md:sticky md:top-0" : ""
+      } shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]`}
       style={{
         backgroundColor: "#070622",
         backgroundImage: `url(${navbg})`,
@@ -99,7 +122,7 @@ const Navbar = () => {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-64 p-4">
+            <SheetContent side="left" className="w-64 p-4 mt-[5rem]">
               <ul className="space-y-4">
                 {list.map((item, i) => (
                   <li key={i}>

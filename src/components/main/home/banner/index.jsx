@@ -8,7 +8,7 @@ import dashboardbg from "../../../../assets/DashboardBG.png";
 const Banner = () => {
   return (
     <div
-      className="p-20 md:p-10 bg-[#070622] text-white h-full"
+      className="p-5 md:p-10 bg-[#070622] text-white h-full"
       style={{
         backgroundImage: `url(${bannerbg})`,
         backgroundSize: "cover",

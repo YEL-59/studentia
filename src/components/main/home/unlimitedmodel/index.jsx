@@ -93,7 +93,7 @@ export default function UltimateModel() {
   return (
     <section className="bg-[#070622] text-center py-30 px-4 text-white">
       <h2
-        className="text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
+        className="text-2xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
         style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-down"
         data-aos-delay="200"
@@ -171,10 +171,10 @@ export default function UltimateModel() {
 
                   <div className="relative z-10">
                     <CardContent className="text-left space-y-3">
-                      <h3 className="text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] font-['Space_Grotesk']">
+                      <h3 className="text-[18px] md:text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] font-['Space_Grotesk']">
                         {title}
                       </h3>
-                      <p className="text-[20px] font-normal leading-[164%] text-[var(--Light-Neutrals-Website,#BCBCBC)] font-['Space_Grotesk']">
+                      <p className="md:text-[20px] font-normal leading-[164%] text-[var(--Light-Neutrals-Website,#BCBCBC)] font-['Space_Grotesk']">
                         {description}
                       </p>
                     </CardContent>

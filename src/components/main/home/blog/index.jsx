@@ -59,6 +59,20 @@ export default function BlogCarousel() {
 
   const [sliderInstanceRef, slider] = useKeenSlider({
     loop: true,
+    breakpoints: {
+      "(max-width: 640px)": {
+        slides: {
+          perView: 1,
+          spacing: 12,
+        },
+      },
+      "(min-width: 641px) and (max-width: 1023px)": {
+        slides: {
+          perView: 2,
+          spacing: 16,
+        },
+      },
+    },
     slides: {
       perView: 3,
       spacing: 24,

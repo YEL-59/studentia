@@ -44,7 +44,7 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className=" flex items-center justify-center bg-[#070622] py-30 overflow-hidden">
+    <section className=" flex items-center justify-center bg-[#070622] py-10 md:py-30 overflow-hidden p-3 md:p-0">
       <div className="w-full container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative">
         {/* Left Text Area */}
         <div className="text-white space-y-4 relative z-10">

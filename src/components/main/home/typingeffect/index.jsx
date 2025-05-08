@@ -9,6 +9,9 @@ const sentences = [
   "And Many More!",
 ];
 
+// Get the longest sentence length (used to reserve space)
+const longest = sentences.reduce((a, b) => (a.length > b.length ? a : b));
+
 export const TypingEffect = () => {
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
@@ -25,9 +28,8 @@ export const TypingEffect = () => {
       () => {
         if (!reverse) {
           setDisplayText(currentSentence.substring(0, subIndex + 1));
-          setSubIndex(subIndex + 1);
+          setSubIndex((prev) => prev + 1);
 
-          // Pause at full text
           if (subIndex + 1 === currentSentence.length) {
             setPause(true);
             setTimeout(() => setPause(false), 1000);
@@ -35,9 +37,8 @@ export const TypingEffect = () => {
           }
         } else {
           setDisplayText(currentSentence.substring(0, subIndex - 1));
-          setSubIndex(subIndex - 1);
+          setSubIndex((prev) => prev - 1);
 
-          // Move to next word after deleting
           if (subIndex === 0) {
             setReverse(false);
             setIndex((prev) => (prev + 1) % sentences.length);
@@ -52,8 +53,9 @@ export const TypingEffect = () => {
 
   return (
     <span
-      className="block"
+      className="block whitespace-nowrap"
       style={{
+        minHeight: "1.5em", // Or use a fixed height like '24px' based on your font
         backgroundImage:
           "linear-gradient(90deg, #1C6CFF 32.51%, #9345B7 60.01%, #3E0059 82.73%)",
         WebkitBackgroundClip: "text",
@@ -62,6 +64,8 @@ export const TypingEffect = () => {
         fontFamily: "inherit",
       }}
     >
+      {/* Use invisible longest sentence to reserve space */}
+      <span className="invisible absolute">{longest}</span>
       {displayText}
       <span className="inline-block animate-pulse text-white">|</span>
     </span>

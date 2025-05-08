@@ -71,16 +71,16 @@ const WorkSmater = () => {
 
   return (
     <div
-      className="py-30 bg-[#070622] text-white h-full"
+      className="md:py-30 bg-[#070622] text-white h-full"
       style={{
         backgroundImage: `url(${bannerbg})`,
         backgroundSize: "cover",
       }}
     >
-      <h1 className="text-[#F9F9F9] text-center font-[Space_Grotesk] text-[48px] not-italic font-bold leading-[132%] tracking-[-0.48px] mb-15">
+      <h1 className="text-[#F9F9F9] text-center font-[Space_Grotesk] text-[24px] md:text-[48px] not-italic font-bold leading-[132%] tracking-[-0.48px] mb-15">
         Work smarter, not harder with Student-AI!
       </h1>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-10 ">
         {counts.map((stat, index) => (
           <div
             key={index}
