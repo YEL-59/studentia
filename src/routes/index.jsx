@@ -107,7 +107,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/ai-assistant",
-
     element: <AiAssistantLayout />,
     children: [
       {
