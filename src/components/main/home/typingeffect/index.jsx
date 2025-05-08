@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 const sentences = [
-  "Do your homework",
-  "Improve your content",
-  "Humanize your text",
-  "Make revision notes",
-  "Practice with exercises",
-  "And much more!",
+  "Article Generator",
+  "Content Improver",
+  "Image Analyzer",
+  "AI Chat with PDF",
+  "AI Web Analyzer",
+  "And Many More!",
 ];
 
 export const TypingEffect = () => {
