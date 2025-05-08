@@ -3,6 +3,7 @@ import bannerbg from "../../../../assets/Stars.png";
 import AvatarGroup from "../AvatarGroup";
 import { VideoThumbnail } from "../VideoThumbnail";
 import { TypingEffect } from "../typingeffect";
+import dashboardbg from "../../../../assets/DashboardBG.png";
 
 const Banner = () => {
   return (
@@ -65,7 +66,7 @@ const Banner = () => {
           </div>
 
           {/* Video Section */}
-          <div data-aos="fade-up" data-aos-delay="900">
+          <div data-aos="fade-up" data-aos-delay="900" className="mt-12">
             <VideoThumbnail imageUrl="https://i.ytimg.com/vi/NrB6rAi0KXM/maxresdefault.jpg" />
           </div>
         </div>
