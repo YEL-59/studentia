@@ -4,6 +4,7 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [thumbnail, setThumbnail] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (videoUrl) {
@@ -27,70 +28,64 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
     }
   }, [videoUrl]);
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+    videoRef.current?.play();
+  };
+
   return (
     <div
-      className="relative flex items-center justify-center p-4"
+      className="relative flex items-center justify-center w-full aspect-video overflow-hidden"
       style={{
         borderRadius: "16px",
         border: "0px solid rgba(255, 255, 255, 0.13)",
         background: imageUrl
-          ? `url(${imageUrl}) lightgray 0px 0px / 100% 138.367% no-repeat`
+          ? `url(${imageUrl}) lightgray 0px 0px / cover no-repeat`
           : "none",
         boxShadow: `
-          0px 0px 62.395px 0px #82C8E5,
-          0px 0px 35.654px 0px #82C8E5,
-          0px 0px 20.798px 0px #C2FEFF,
-          0px 0px 10.399px 0px #82C8E5,
-          0px 0px 2.971px 0px #82C8E5,
-          0px 0px 1.486px 0px #C2FEFF
-        `,
-        overflow: "hidden",
+      0px 0px 62.395px 0px #82C8E5,
+      0px 0px 35.654px 0px #82C8E5,
+      0px 0px 20.798px 0px #C2FEFF,
+      0px 0px 10.399px 0px #82C8E5,
+      0px 0px 2.971px 0px #82C8E5,
+      0px 0px 1.486px 0px #C2FEFF
+    `,
       }}
     >
-      {/* Hidden video and canvas (only if videoUrl is provided) */}
-      {videoUrl && (
-        <>
+      <div className="relative z-10 w-full h-full">
+        {isPlaying ? (
           <video
             ref={videoRef}
             src={videoUrl}
-            className="hidden"
-            preload="metadata"
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
           />
-          <canvas ref={canvasRef} className="hidden" />
-        </>
-      )}
-
-      {/* Content Display */}
-      <div className="relative z-10 w-full h-full">
-        {videoUrl ? (
-          thumbnail ? (
-            <img
-              src={thumbnail}
-              alt="Video Thumbnail"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="flex items-center justify-center w-full h-full bg-gray-200">
-              <p className="text-gray-600">Loading thumbnail...</p>
-            </div>
-          )
+        ) : thumbnail ? (
+          <img
+            src={thumbnail}
+            alt="Video Thumbnail"
+            className="w-full h-full object-cover"
+          />
         ) : imageUrl ? (
           <img
             src={imageUrl}
-            alt="Video Thumbnail"
+            alt="Fallback Image"
             className="w-full h-full object-cover"
           />
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-gray-200">
-            <p className="text-gray-600">No media provided</p>
+            <p className="text-gray-600">Loading...</p>
           </div>
         )}
 
-        {/* Play button overlay (only shown if it's a video) */}
-        {videoUrl && (
-          <div className="absolute inset-0 flex items-center justify-center">
+        {videoUrl && !isPlaying && (
+          <div
+            className="absolute inset-0 flex items-center justify-center cursor-pointer"
+            onClick={handlePlay}
+          >
             <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-              <div className="w-10 h-10 border-l-8 border-white border-y-transparent border-r-0 transform rotate-45" />
+              <div className="w-0 h-0 border-l-[20px] border-t-[12px] border-b-[12px] border-l-white border-t-transparent border-b-transparent ml-1" />
             </div>
           </div>
         )}

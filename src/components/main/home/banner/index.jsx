@@ -27,7 +27,7 @@ const Banner = () => {
             data-aos-delay="200"
           >
             <div className="h-2 w-2 rounded-full bg-white"></div>
-            <h1 className="text-[12px] text-white font-normal leading-[164%]">
+            <h1 className="text-[12px] text-white font-normal leading-[164%] font-['Space_Grotesk']">
               New feature: Grammar Checker
             </h1>
           </div>
@@ -42,7 +42,7 @@ const Banner = () => {
               </span>
             </h1>
 
-            <p className="text-primary text-center font-bold text-[20px] leading-[132%] tracking-[-0.2px] font-['Space_Grotesk'] mt-4">
+            <p className="text-[#F9F9F9] text-center font-bold text-[20px] leading-[132%] tracking-[-0.2px] font-['Space_Grotesk'] mt-4">
               Our innovative AI enhances your writing and elevates productivity
               while keeping your unique voice intact.
             </p>
@@ -66,8 +66,36 @@ const Banner = () => {
           </div>
 
           {/* Video Section */}
-          <div data-aos="fade-up" data-aos-delay="900" className="mt-12">
-            <VideoThumbnail imageUrl="https://i.ytimg.com/vi/NrB6rAi0KXM/maxresdefault.jpg" />
+          <div
+            className="relative flex items-center justify-center mt-12"
+            data-aos="fade-up"
+            data-aos-delay="900"
+          >
+            {/* Left glow */}
+            <div
+              className="absolute left-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full z-0 blur-[160px]"
+              style={{
+                background:
+                  "radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)",
+              }}
+            />
+
+            {/* Right glow */}
+            <div
+              className="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full z-0 blur-[160px]"
+              style={{
+                background:
+                  "radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)",
+              }}
+            />
+
+            {/* VideoThumbnail in center */}
+            <div className="relative z-10 w-full max-w-3xl">
+              <VideoThumbnail
+                videoUrl="https://cdn.pixabay.com/video/2019/08/29/27024-357845542_large.mp4"
+                imageUrl="https://i.ytimg.com/vi/NrB6rAi0KXM/maxresdefault.jpg"
+              />
+            </div>
           </div>
         </div>
       </div>
