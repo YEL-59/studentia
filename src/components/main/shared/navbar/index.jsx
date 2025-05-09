@@ -6,6 +6,9 @@ import { Link, useLocation } from "react-router";
 import logo from "../../../../assets/logo.png";
 import navbg from "../../../../assets/Stars.png";
 import { useEffect } from "react";
+import { Sun, Moon } from "lucide-react";
+import Enflag from "@/assets/svg/enflag";
+import LanguageSwitcher from "./languageswitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +85,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button
               variant="outline"
-              className="rounded-lg bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5"
+              className="rounded-lg bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5 font-['Space_Grotesk']"
               style={{
                 boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
               }}
@@ -92,7 +95,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <Button
-              className="relative rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5"
+              className="relative rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5 font-['Space_Grotesk']"
               style={{
                 boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
               }}
@@ -100,17 +103,23 @@ const Navbar = () => {
               Signup
             </Button>
           </div>
-          <div className="hidden md:block">
-            <Button
-              variant="outline"
-              className="rounded-lg text-[16px] px-5 py-5 border-0 text-white"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(122, 67, 164, 0.30) 0%, rgba(96, 73, 188, 0.17) 100%)",
-              }}
+
+          <div className="hidden md:flex items-center gap-3">
+            {/* Language Selector */}
+            <LanguageSwitcher />
+
+            {/* Dark/Light Mode Toggle */}
+            <button
+              onClick={() => document.documentElement.classList.toggle("dark")}
+              className="p-2 rounded-md border border-[#6049bc] text-white hover:bg-[#6049bc] transition"
+              aria-label="Toggle Dark Mode"
             >
-              En
-            </Button>
+              {document.documentElement.classList.contains("dark") ? (
+                <Sun size={18} />
+              ) : (
+                <Moon size={18} />
+              )}
+            </button>
           </div>
         </div>
 
