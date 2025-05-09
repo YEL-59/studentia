@@ -10,7 +10,7 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo3, logo4];
 
 const LogoMarquee = () => {
   return (
-    <div className="w-full bg-[#070622] py-8">
+    <div className="w-[1200px] mx-auto bg-[#070622] py-8">
       <Marquee
         speed={40}
         gradient={false}
