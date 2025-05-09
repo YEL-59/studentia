@@ -11,19 +11,19 @@ const statsData = [
   },
   {
     count: 98,
-    label: "satisfaction rate",
+    label: " say they save time",
     type: "percentage",
     image: cardbg,
   },
   {
     count: 25,
-    label: "tools integrated",
+    label: " integrated AI tools",
     type: "number",
     image: cardbg,
   },
   {
     count: 92,
-    label: "time saved",
+    label: "say they understand their courses better",
     type: "percentage",
     image: cardbg,
   },
@@ -70,45 +70,49 @@ const WorkSmater = () => {
   }, []);
 
   return (
-    <div
-      className="md:py-30 bg-[#070622] text-white h-full"
-      style={{
-        backgroundImage: `url(${bannerbg})`,
-        backgroundSize: "cover",
-      }}
-    >
-      <h1 className="text-[#F9F9F9] text-center font-[Space_Grotesk] text-[24px] md:text-[48px] not-italic font-bold leading-[132%] tracking-[-0.48px] mb-15">
+    <>
+      <h1 className="text-[#F9F9F9] bg-[#070622] text-center font-[Space_Grotesk] text-[24px] md:text-[48px] not-italic font-bold leading-[132%] tracking-[-0.48px]">
         Work smarter, not harder with Student-AI!
       </h1>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10 ">
-        {counts.map((stat, index) => (
-          <div
-            key={index}
-            className="p-5 h-[195px] w-[381px] aspect-[381/195]"
-            style={{
-              backgroundImage: `url(${stat.image})`,
-              backgroundSize: "cover",
-            }}
-            data-aos="fade-up"
-            data-aos-delay={200 + index * 100}
-            data-aos-duration="800"
-          >
-            <div>
-              <h1 className="text-center text-[80px] font-bold leading-[124%] tracking-[-1.6px] font-['Space_Grotesk']">
-                {stat.type === "percentage"
-                  ? `${stat.currentCount}%`
-                  : stat.type === "count"
-                  ? `${stat.currentCount / 1000}K`
-                  : stat.currentCount}
-              </h1>
-              <p className="text-[#BCBCBC] text-center font-[Space_Grotesk] text-[24px] not-italic font-medium leading-[132%] tracking-[-0.48px]">
-                {stat.label}
-              </p>
+
+      <div
+        className="md:py-10 bg-[#070622] text-[#7A43A4] "
+        style={{
+          backgroundImage: `url(${bannerbg})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 ">
+          {counts.map((stat, index) => (
+            <div
+              key={index}
+              className="p-5 h-[125px] w-[300px] aspect-[300/195] rounded-2xl border-0  "
+              style={{
+                // borderRight: "2px dashed #e5e7eb",
+                backgroundImage: `url(${stat.image})`,
+                backgroundSize: "cover",
+              }}
+              data-aos="fade-up"
+              data-aos-delay={200 + index * 100}
+              data-aos-duration="800"
+            >
+              <div>
+                <h1 className="text-center text-[40px] font-bold leading-[124%] tracking-[-1.6px] font-['Space_Grotesk']">
+                  {stat.type === "percentage"
+                    ? `${stat.currentCount}%`
+                    : stat.type === "count"
+                    ? `${stat.currentCount / 1000}K`
+                    : stat.currentCount}
+                </h1>
+                <p className="text-[#BCBCBC] text-center font-[Space_Grotesk] text-[20px] not-italic font-medium leading-[132%] tracking-[-0.48px]">
+                  {stat.label}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -8,43 +8,77 @@ const testimonials = [
     name: "Cameron Williamson",
     role: "President of Sales",
     text: "This website is incredibly useful for students! It offers a variety of resources that make studying for exams a breeze.",
-    avatar: "/avatars/avatar1.png",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2PMD90prQN66mAPiwsEMNmMxwhmjBtWxEcg&s",
   },
   {
     name: "Ronald Richards",
     role: "Web Designer",
     text: "Un site incontournable pour les étudiants, idéal pour réviser efficacement et rédiger des dossiers rapidement ! Je le recommande vivement !",
-    avatar: "/avatars/avatar2.png",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXmSSWT-37n83StpUmIehB2iLvKudtsmUqA&s",
   },
   {
     name: "Devon Lane",
     role: "Marketing Coordinator",
     text: "This site is fantastic for learning how to use the humanizer tool; it really eases the worries about AI detectors.",
-    avatar: "/avatars/avatar3.png",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2cYQ6cSH7TSIDevIyAT4NZxCz007ZU6SipQ&s",
   },
   {
     name: "Annette Black",
     role: "Dog Trainer",
     text: "This site is awesome for understanding how to use the humanizer; it really helps us relax about those AI detectors.",
-    avatar: "/avatars/avatar4.png",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGjDZZ9uSjtwnFYUZ3dq5-O-Kf2Aouoh9tzQ&s",
   },
   {
     name: "Esther Howard",
     role: "Marketing Coordinator",
     text: "I can't recommend this website enough! It has truly surpassed my expectations in every aspect.",
-    avatar: "/avatars/avatar5.png",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2cYQ6cSH7TSIDevIyAT4NZxCz007ZU6SipQ&s",
+  },
+  {
+    name: "Eleanor Pena",
+    role: "Web Designer",
+    text: "This website is a game-changer for students! It provides a wealth of resources that make studying for exams a breeze.",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2PMD90prQN66mAPiwsEMNmMxwhmjBtWxEcg&s",
   },
   {
     name: "Jacob Jones",
-    role: "Medical Assistant",
-    text: "This platform is super helpful in mastering the humanizer; dealing with AI detectors a lot easier.",
-    avatar: "/avatars/avatar6.png",
+    role: "President of Sales",
+    text: "Un site incontournable pour les étudiants, idéal pour réviser efficacement et rédiger des dossiers rapidement ! Je le recommande vivement !",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXmSSWT-37n83StpUmIehB2iLvKudtsmUqA&s",
+  },
+  {
+    name: "Cameron Williamson",
+    role: "Web Designer",
+    text: "This site is fantastic for learning how to use the humanizer tool; it really eases the worries about AI detectors.",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2cYQ6cSH7TSIDevIyAT4NZxCz007ZU6SipQ&s",
+  },
+  {
+    name: "Ronald Richards",
+    role: "Dog Trainer",
+    text: "This site is awesome for understanding how to use the humanizer; it really helps us relax about those AI detectors.",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGjDZZ9uSjtwnFYUZ3dq5-O-Kf2Aouoh9tzQ&s",
+  },
+  {
+    name: "Devon Lane",
+    role: "Marketing Coordinator",
+    text: "I can't recommend this website enough! It has truly surpassed my expectations in every aspect.",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2cYQ6cSH7TSIDevIyAT4NZxCz007ZU6SipQ&s",
   },
 ];
 
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
-  const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 4);
+  const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 8);
 
   return (
     <div
@@ -64,7 +98,7 @@ export default function Testimonials() {
           <Card
             key={index}
             className={clsx(
-              "bg-[#11152c]/90 text-white p-4 border border-white/10 transition-all duration-300",
+              "bg-[#11152c]/90 text-white p-4 border border-white/10 transition-all duration-300 max-w-[350px]",
               "hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]"
             )}
           >

@@ -38,7 +38,7 @@ const HowItWork = () => {
   }, []);
 
   return (
-    <section className="bg-[#070622] py-10 md:py-30 text-center px-4">
+    <section className="bg-[#070622] py-10 md:py-20 text-center px-4">
       <div className="container mx-auto md:mb-30">
         <LogoMarquee />
       </div>
