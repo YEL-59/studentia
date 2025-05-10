@@ -38,12 +38,12 @@ import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayout />,
     children: [{ index: true, element: <Home /> }],
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: <DashboardLayout />,
     children: [
       {
@@ -51,54 +51,58 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "writing-tools/ai-writers",
+        path: 'writing-tools/:activeTab',
         element: <WritingTools />,
       },
+    //   {
+    //     path: 'writing-tools/ai-writers',
+    //     element: <WritingTools />,
+    //   },
+    //   {
+    //     path: 'writing-tools/ai-code',
+    //     element: <Aicode />,
+    //   },
+    //   {
+    //     path: 'writing-tools/article',
+    //     element: <Articles />,
+    //   },
       {
-        path: "writing-tools/ai-code",
-        element: <Aicode />,
-      },
-      {
-        path: "writing-tools/article",
-        element: <Articles />,
-      },
-      {
-        path: "revision-tools/:activeTab",
+        path: 'revision-tools/:activeTab',
         element: <RevisionTools />,
       },
       {
-        path: "revision-tools",
+        path: 'revision-tools',
         element: <RevisionTools />,
       },
       {
-        path: "ai-tutors",
+        path: 'ai-tutors',
         element: <AiTutors />,
       },
       {
-        path: "documents/:activeTab",
+        path: 'documents/:activeTab',
         element: <Documents />,
       },
       {
-        path: "subscription-panel",
+        path: 'subscription-panel',
 
         element: <SubscriptionPanel />,
       },
       {
-        path: "account",
+        path: 'account',
         element: <Account />,
       },
       {
-        path: "image-generator",
+        path: 'image-generator',
         element: <ImageGenerator />,
       },
       {
-        path: "humanizer",
+        path: 'humanizer',
         element: <Humanizer />,
       },
     ],
   },
   {
-    path: "/ai-assistant",
+    path: '/ai-assistant',
     element: <AiAssistantLayout />,
     children: [
       {
@@ -106,70 +110,70 @@ export const router = createBrowserRouter([
         element: <AiAssistant />,
       },
       {
-        path: "quiz",
+        path: 'quiz',
         element: <AiQuiz />,
       },
       {
-        path: "podcast",
+        path: 'podcast',
         element: <AiQuiz />,
       },
       {
-        path: "pdf-scan",
+        path: 'pdf-scan',
         element: <AiQuiz />,
       },
       {
-        path: "articelgenerate",
+        path: 'articelgenerate',
         element: <Articelgenerate />,
       },
       {
-        path: "contentrewrite",
+        path: 'contentrewrite',
         element: <Contentrewrite />,
       },
       {
-        path: "summarizetext",
+        path: 'summarizetext',
         element: <Summarizetext />,
       },
       {
-        path: "dictionary",
+        path: 'dictionary',
         element: <Dictionary />,
       },
       {
-        path: "correcteur",
+        path: 'correcteur',
         element: <Correcteur />,
       },
       {
-        path: "tonechanger",
+        path: 'tonechanger',
         element: <ToneChanger />,
       },
       {
-        path: "summarizefor2Grader",
+        path: 'summarizefor2Grader',
         element: <Summarizefor2Grader />,
       },
       {
-        path: "grammarchecker",
+        path: 'grammarchecker',
         element: <Grammarchecker />,
       },
       {
-        path: "Paragraphgenerator",
+        path: 'Paragraphgenerator',
         element: <Paragraphgenerator />,
       },
       {
-        path: "academicessay",
+        path: 'academicessay',
         element: <Academicessay />,
       },
       {
-        path: "textextenderForm",
+        path: 'textextenderForm',
         element: <TextExtender />,
       },
       {
-        path: "correcteurdexercice",
+        path: 'correcteurdexercice',
         element: <Correcteurdexercice />,
       },
     ],
   },
 
   {
-    path: "/ai-chat/:id",
+    path: '/ai-chat/:id',
     element: <AiChatLayout />,
     children: [
       {
@@ -183,11 +187,11 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "sign-up",
+    path: 'sign-up',
     element: <Signup />,
   },
   {
-    path: "sign-in",
+    path: 'sign-in',
     element: <Signin />,
   },
 ]);
