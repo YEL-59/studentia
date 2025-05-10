@@ -44,22 +44,25 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className=" flex items-center justify-center bg-[#070622] py-10 md:py-20 overflow-hidden p-3 md:p-0">
-      <div className="w-full container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+    <section className="flex items-center justify-center bg-[#070622] py-10 md:py-20 overflow-hidden px-4">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 relative">
         {/* Left Text Area */}
-        <div className="text-white space-y-4 relative z-10">
-          <h2 className="text-3xl font-semibold">Frequently Asked Questions</h2>
-          <p className="text-sm text-gray-400">
+        <div className="text-white space-y-6 relative z-10">
+          <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-sm text-gray-400 max-w-md">
             Got Questions? We have you covered. We are always here to provide
-            full support and clear any doubts that you might have
+            full support and clear any doubts that you might have.
           </p>
-          <div className="relative w-full  md:w-80 border-2 border-[#36393B] rounded">
+
+          <div className="relative w-full max-w-md border-2 border-[#36393B] rounded">
             <Input
               placeholder="Your email here"
-              className="bg-[#070622] text-white placeholder:text-white/60 border-none pr-28 py-7"
+              className="bg-[#070622] text-white placeholder:text-white/60 border-none pr-28 py-5 sm:py-6 md:py-7"
             />
             <Button
-              className="absolute right-1 top-1/2 -translate-y-1/2 px-4 bg-[#7b2cbf] hover:bg-[#9d4edd] text-white h-8 text-sm "
+              className="absolute right-1 top-1/2 -translate-y-1/2 px-4 bg-[#7b2cbf] hover:bg-[#9d4edd] text-white h-8 text-xs sm:text-sm"
               size="sm"
             >
               Subscribe
@@ -67,6 +70,7 @@ export default function FAQSection() {
           </div>
         </div>
 
+        {/* FAQ Accordion */}
         <div className="relative space-y-4 z-10">
           <Accordion
             type="single"
@@ -80,14 +84,13 @@ export default function FAQSection() {
                 value={`faq-${item.index}`}
                 className="border border-[#36393B] rounded-lg bg-gradient-to-br from-[#2B2B5C]/30 to-[#1A1A3C]/30 backdrop-blur-md"
               >
-                <AccordionTrigger className="text-white text-sm font-medium px-4 py-3 hover:no-underline ">
+                <AccordionTrigger className="text-white text-sm font-medium px-4 py-3 hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
-
                 {item.answer && (
-                  <AccordionContent className="text-gray-300 text-sm px-4 pb-4 whitespace-pre-line ">
+                  <AccordionContent className="text-gray-300 text-sm px-4 pb-4 whitespace-pre-line">
                     <div className="w-[95%] mx-auto border-t border-[#36393B] mb-4" />
-                    {item.answer ? item.answer : "Answer coming soon."}
+                    {item.answer}
                   </AccordionContent>
                 )}
               </AccordionItem>
@@ -95,9 +98,9 @@ export default function FAQSection() {
           </Accordion>
         </div>
 
-        {/* SVG Background behind the right column */}
-        <div className="absolute inset-0 flex justify-end items-center pointer-events-none ">
-          <div className="translate-x-56">
+        {/* SVG Background */}
+        <div className="absolute inset-0 flex justify-end items-center pointer-events-none">
+          <div className="translate-x-32 sm:translate-x-56">
             <Faqbg />
           </div>
         </div>

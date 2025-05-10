@@ -61,7 +61,7 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="h-15" />
         </Link>
 
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden lg:flex gap-8">
           {list.map((item, i) => {
             const isActive = item.to.startsWith("#")
               ? window.location.hash === item.to

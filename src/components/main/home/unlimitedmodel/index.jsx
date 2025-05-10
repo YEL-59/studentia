@@ -93,7 +93,7 @@ export default function UltimateModel() {
   return (
     <section className="bg-[#070622] text-center py-30 px-4 text-white">
       <h2
-        className="text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
+        className="text-[40px] md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
         style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-down"
         data-aos-delay="200"
@@ -108,7 +108,7 @@ export default function UltimateModel() {
       >
         Custom models
       </p>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-7 justify-center items-stretch">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-7 justify-center items-stretch">
         {tools
           .slice(0, visibleCount)
           .map(
@@ -128,7 +128,7 @@ export default function UltimateModel() {
               >
                 <Card
                   className={clsx(
-                    "relative z-10 bg-transparent border p-6 h-[298px] w-[490px] aspect-[490/298] backdrop-blur",
+                    "relative z-10 bg-transparent border p-6  backdrop-blur",
                     hoveredIdx === idx
                       ? "border-[#82C8E5]"
                       : `border-[${defaultColor}]`
@@ -171,10 +171,10 @@ export default function UltimateModel() {
 
                   <div className="relative z-10">
                     <CardContent className="text-left space-y-3">
-                      <h3 className="text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] font-['Space_Grotesk']">
+                      <h3 className="text-[18px] turncate md:text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] font-['Space_Grotesk']">
                         {title}
                       </h3>
-                      <p className="text-[20px] font-normal leading-[164%] text-[var(--Light-Neutrals-Website,#BCBCBC)] font-['Space_Grotesk']">
+                      <p className="text-[12px] md:text-[20px] font-normal leading-[164%] text-[var(--Light-Neutrals-Website,#BCBCBC)] font-['Space_Grotesk']">
                         {description}
                       </p>
                     </CardContent>
