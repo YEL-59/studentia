@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
         element: <AiTutors />,
       },
       {
-        path: "/dashboard/documents",
+        path: "/dashboard/documents/all",
         element: <Documents />,
       },
       {
