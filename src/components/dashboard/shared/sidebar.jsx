@@ -25,7 +25,7 @@ function Sidebar() {
     "Writing tools": "/dashboard/writing-tools/ai-writers",
     "Revision Tools": "/dashboard/revision-tools",
     "Ai Tutor": "/dashboard/ai-tutors",
-    'Documents': "/dashboard/documents",
+    'Documents': "/dashboard/documents/all",
     "Subscription Panel": "/dashboard/subscription-panel",
     'Account': "/dashboard/account",
     "Admin Panel": "/dashboard/admin-panel",

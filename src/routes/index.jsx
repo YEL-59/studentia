@@ -75,16 +75,8 @@ export const router = createBrowserRouter([
         element: <AiTutors />,
       },
       {
-        path: "/dashboard/documents/all",
+        path: "documents/:activeTab",
         element: <Documents />,
-      },
-      {
-        path: "/dashboard/documents/codes",
-        element: <Codes />,
-      },
-      {
-        path: "/dashboard/documents/workbooks",
-        element: <Workbooks />,
       },
       {
         path: "subscription-panel",

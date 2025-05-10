@@ -106,12 +106,6 @@ function RevisionTools() {
               ))}
             </TabsList>
           </div>
-
-          {/* {mainTabs.map((tab) => (
-            <TabsContent key={tab.value} value={tab.value}>
-              {tab?.value}
-            </TabsContent>
-          ))} */}
           <TabsContent
             className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
             value={activeTab}
@@ -119,9 +113,7 @@ function RevisionTools() {
             <PdfReader />
           </TabsContent>
         </Tabs>
-        <div></div>
       </div>
-      {/* chat tab */}
       <Tabs defaultValue="chat" className="w-1/2 flex flex-col gap-5 h-full">
         <TabsList className="flex flex-wrap gap-6 p-0 rounded-[20px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] py-5 px-6 w-full h-full">
           {sideTabs.map((tab) => (
@@ -137,7 +129,6 @@ function RevisionTools() {
             </TabsTrigger>
           ))}
         </TabsList>
-        {/* chat sub sidebars */}
         {isOpen ? (
           <TabsContent
             className="mt-4 borderborder-[#D24AC966] flex justify-between w-full rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
@@ -154,29 +145,24 @@ function RevisionTools() {
             <Chat handleOpenChat={handleOpenChat} />
           </TabsContent>
         )}
-        {/* summary sub sidebars */}
         <TabsContent
           className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
           value="summary"
         >
           <Summary />
         </TabsContent>
-
-        {/* quize  sidebars */}
         <TabsContent
           className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] bg-[#1C202B] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] h-full px-[22px] py-[32px]"
           value="quiz-yourself"
         >
           <Quiz />
         </TabsContent>
-        {/* note taking sub sidebars */}
         <TabsContent
           className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] bg-[#1C202B] h-full px-[22px] py-[32px]"
           value="note-taking"
         >
           <NotebookApp />
         </TabsContent>
-        {/* flash card sub sidebars */}
         <TabsContent
           className="mt-4 borderborder-[#D24AC966] flex flex-col gap-6 rounded-[16px] shadow-[2px_11px_40px_0px_rgba(114,75,150,0.32)] bg-[#1C202B] h-full px-[22px] py-[32px]"
           value="flashcards"
