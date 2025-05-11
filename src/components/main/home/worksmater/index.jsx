@@ -82,11 +82,11 @@ const WorkSmater = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="flex flex-col md:flex-row justify-center items-center gap-10 ">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center p-3 ">
           {counts.map((stat, index) => (
             <div
               key={index}
-              className="p-5 h-[125px] w-[300px] aspect-[300/195] rounded-2xl border-0  "
+              className="p-5 h-[125px] w-[300px] mx-auto aspect-[300/195] rounded-2xl border-0  "
               style={{
                 // borderRight: "2px dashed #e5e7eb",
                 backgroundImage: `url(${stat.image})`,

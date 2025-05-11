@@ -38,8 +38,8 @@ const HowItWork = () => {
   }, []);
 
   return (
-    <section className="bg-[#070622] py-10 md:py-20 text-center px-4">
-      <div className="container mx-auto md:mb-30">
+    <section className="bg-[#070622] py-10  text-center px-4">
+      <div className="container mx-auto md:mb-10">
         <LogoMarquee />
       </div>
       <h2
@@ -59,11 +59,11 @@ const HowItWork = () => {
         Start Writing in 3 Easy Steps
       </p>
 
-      <div className="container mx-auto flex flex-col md:flex-row items-stretch justify-center gap-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {steps.map(({ step, title, description }) => (
           <Card
             key={step}
-            className="relative w-full max-w-full h-full min-h-[220px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between"
+            className="relative w-full h-full min-h-[260px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between"
             data-aos="zoom-in"
             data-aos-delay={`${step * 200}`}
             data-aos-duration="800"

@@ -82,7 +82,7 @@ export default function Testimonials() {
 
   return (
     <div
-      className="relative bg-[#070622] text-white py-20 px-4 sm:px-8 overflow-hidden"
+      className="relative bg-[#070622] text-white py-10 px-4 sm:px-8 overflow-hidden"
       //   style={{
       //     background:
       //       "linear-gradient(183deg, rgba(9,9,11,0) 2.85%, #070622 94.26%, #000 94.26%)",

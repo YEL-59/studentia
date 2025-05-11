@@ -97,9 +97,9 @@ export default function BlogCarousel() {
   }, [slider]);
 
   return (
-    <section className="py-16 bg-[#0F0C29] text-white text-center">
+    <section className="py-16 bg-[#0F0C29] text-white text-center p-3">
       <h2
-        className="text-white text-center font-['Space_Grotesk'] text-[48px] font-bold leading-[132%] tracking-[-0.48px]"
+        className="text-white text-center font-['Space_Grotesk'] text-3xl md:text-[48px] font-bold leading-[132%] tracking-[-0.48px]"
         data-aos="fade-up"
       >
         Our latest blogs

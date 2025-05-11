@@ -91,9 +91,9 @@ export default function UltimateModel() {
   const [visibleCount, setVisibleCount] = useState(6);
 
   return (
-    <section className="bg-[#070622] text-center py-30 px-4 text-white">
+    <section className="bg-[#070622] text-center py-10 px-4 text-white">
       <h2
-        className="text-[40px] md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
+        className="text-3xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white"
         style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-down"
         data-aos-delay="200"
