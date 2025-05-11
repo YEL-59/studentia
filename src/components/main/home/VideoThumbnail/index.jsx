@@ -52,7 +52,7 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
     `,
       }}
     >
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 w-full h-[435px]">
         {isPlaying ? (
           <video
             ref={videoRef}
@@ -81,7 +81,7 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
 
         {videoUrl && !isPlaying && (
           <div
-            className="absolute inset-0 flex items-center justify-center cursor-pointer"
+            className="absolute inset-0 flex items-center justify-center cursor-pointer shrink-0"
             onClick={handlePlay}
           >
             <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">

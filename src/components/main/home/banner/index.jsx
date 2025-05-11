@@ -92,7 +92,7 @@ const Banner = () => {
             {/* VideoThumbnail in center */}
             <div className="relative z-10 w-full max-w-3xl">
               <VideoThumbnail
-                videoUrl="https://cdn.pixabay.com/video/2019/08/29/27024-357845542_large.mp4"
+                videoUrl="https://www.w3schools.com/html/mov_bbb.mp4"
                 imageUrl="https://i.ytimg.com/vi/NrB6rAi0KXM/maxresdefault.jpg"
               />
             </div>
