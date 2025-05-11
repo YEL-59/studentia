@@ -39,9 +39,9 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
       style={{
         borderRadius: "16px",
         border: "0px solid rgba(255, 255, 255, 0.13)",
-        background: imageUrl
-          ? `url(${imageUrl}) lightgray 0px 0px / cover no-repeat`
-          : "none",
+        // background: imageUrl
+        //   ? `url(${imageUrl}) lightgray 0px 0px / cover no-repeat`
+        //   : "none",
         boxShadow: `
       0px 0px 62.395px 0px #82C8E5,
       0px 0px 35.654px 0px #82C8E5,
@@ -65,13 +65,13 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
           <img
             src={thumbnail}
             alt="Video Thumbnail"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-no-repeat"
           />
         ) : imageUrl ? (
           <img
             src={imageUrl}
             alt="Fallback Image"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-no-repeat"
           />
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-gray-200">

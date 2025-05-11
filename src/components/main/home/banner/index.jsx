@@ -4,6 +4,7 @@ import AvatarGroup from "../AvatarGroup";
 import { VideoThumbnail } from "../VideoThumbnail";
 import { TypingEffect } from "../typingeffect";
 import dashboardbg from "../../../../assets/bashboardbg.png";
+import video from "../../../../assets/dashboard.mp4";
 
 const Banner = () => {
   return (
@@ -90,11 +91,8 @@ const Banner = () => {
             />
 
             {/* VideoThumbnail in center */}
-            <div className="relative z-10 w-full  max-w-3xl">
-              <VideoThumbnail
-                videoUrl="https://www.w3schools.com/html/mov_bbb.mp4"
-                imageUrl={dashboardbg}
-              />
+            <div className="relative z-10 w-full  max-w-4xl">
+              <VideoThumbnail videoUrl={video} imageUrl={dashboardbg} />
             </div>
           </div>
         </div>
