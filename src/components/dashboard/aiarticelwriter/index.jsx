@@ -15,7 +15,7 @@ export default function TopicToolPanel() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0E0B1F] to-[#121025] text-white flex flex-col md:flex-row p-6 gap-6">
+    <div className="min-h-screen  text-white flex flex-col md:flex-row  gap-6">
       {/* Left Side */}
       <div
         className="md:w-1/2 bg-[#0E0B1F] p-6 rounded-xl shadow-lg space-y-4"
