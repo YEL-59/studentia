@@ -118,7 +118,7 @@ export default function UltimateModel() {
             ) => (
               <div
                 key={idx}
-                className="relative w-full group rounded-xl overflow-hidden"
+                className="relative w-full group rounded-xl overflow-hidden "
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 // data-aos="fade-up"
@@ -128,7 +128,7 @@ export default function UltimateModel() {
               >
                 <Card
                   className={clsx(
-                    "relative z-10 bg-transparent border p-6  backdrop-blur",
+                    "relative z-10 bg-transparent border p-6  backdrop-blur h-full flex flex-col justify-between",
                     hoveredIdx === idx
                       ? "border-[#82C8E5]"
                       : `border-[${defaultColor}]`
@@ -170,7 +170,7 @@ export default function UltimateModel() {
                   </CardHeader>
 
                   <div className="relative z-10">
-                    <CardContent className="text-left space-y-3">
+                    <CardContent className="text-left space-y-3 flex-grow">
                       <h3 className="text-[18px] turncate md:text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] font-['Space_Grotesk']">
                         {title}
                       </h3>
