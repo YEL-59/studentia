@@ -3,7 +3,7 @@ import bannerbg from "../../../../assets/Stars.png";
 import AvatarGroup from "../AvatarGroup";
 import { VideoThumbnail } from "../VideoThumbnail";
 import { TypingEffect } from "../typingeffect";
-import dashboardbg from "../../../../assets/DashboardBG.png";
+import dashboardbg from "../../../../assets/bashboardbg.png";
 
 const Banner = () => {
   return (
@@ -90,10 +90,10 @@ const Banner = () => {
             />
 
             {/* VideoThumbnail in center */}
-            <div className="relative z-10 w-full max-w-3xl">
+            <div className="relative z-10 w-full  max-w-3xl">
               <VideoThumbnail
                 videoUrl="https://www.w3schools.com/html/mov_bbb.mp4"
-                imageUrl="https://i.ytimg.com/vi/NrB6rAi0KXM/maxresdefault.jpg"
+                imageUrl={dashboardbg}
               />
             </div>
           </div>
