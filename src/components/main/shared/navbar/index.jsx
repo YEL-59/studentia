@@ -9,10 +9,12 @@ import { useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 import Enflag from "@/assets/svg/enflag";
 import LanguageSwitcher from "./languageswitcher";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const list = [
     // { label: "Home", to: "/" },
@@ -45,12 +47,12 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full py-4 relative z-[1000] ${
-        isSticky ? "md:sticky md:top-0" : ""
+        isSticky ? 'md:sticky md:top-0' : ''
       } shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]`}
       style={{
-        backgroundColor: "#070622",
+        backgroundColor: '#070622',
         backgroundImage: `url(${navbg})`,
-        backgroundSize: "cover",
+        backgroundSize: 'cover',
       }}
     >
       {/* Gradient border-b */}
@@ -63,7 +65,7 @@ const Navbar = () => {
 
         <ul className="hidden lg:flex gap-8">
           {list.map((item, i) => {
-            const isActive = item.to.startsWith("#")
+            const isActive = item.to.startsWith('#')
               ? window.location.hash === item.to
               : location.pathname === item.to;
 
@@ -72,7 +74,7 @@ const Navbar = () => {
                 <a
                   href={item.to}
                   className={`text-[16px] not-italic font-semibold leading-[160%] transition relative ${
-                    isActive ? "gradient-text" : "text-[#A1A1A1]"
+                    isActive ? 'gradient-text' : 'text-[#A1A1A1]'
                   }`}
                 >
                   {item.label}
@@ -87,7 +89,7 @@ const Navbar = () => {
               variant="outline"
               className="rounded-lg bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5 font-['Space_Grotesk']"
               style={{
-                boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
+                boxShadow: '0px 20px 30px -10px rgba(96, 73, 188, 0.6)',
               }}
             >
               Signin
@@ -97,7 +99,7 @@ const Navbar = () => {
             <Button
               className="relative rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5 font-['Space_Grotesk']"
               style={{
-                boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
+                boxShadow: '0px 20px 30px -10px rgba(96, 73, 188, 0.6)',
               }}
             >
               Signup
@@ -110,15 +112,10 @@ const Navbar = () => {
 
             {/* Dark/Light Mode Toggle */}
             <button
-              onClick={() => document.documentElement.classList.toggle("dark")}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-md border border-[#6049bc] text-white hover:bg-[#6049bc] transition"
-              aria-label="Toggle Dark Mode"
             >
-              {document.documentElement.classList.contains("dark") ? (
-                <Sun size={18} />
-              ) : (
-                <Moon size={18} />
-              )}
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
         </div>
@@ -140,8 +137,8 @@ const Navbar = () => {
                       onClick={() => setIsOpen(false)}
                       className={`text-[14px] font-semibold leading-normal transition ${
                         location.pathname === item.to
-                          ? "text-[#B3A162]"
-                          : "text-foreground hover:text-primary"
+                          ? 'text-[#B3A162]'
+                          : 'text-foreground hover:text-primary'
                       }`}
                     >
                       {item.label}

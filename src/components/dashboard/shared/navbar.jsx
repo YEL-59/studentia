@@ -1,12 +1,12 @@
 import searchIcon from '@/assets/icons/search-icon.svg';
+import profileIcon from '@/assets/profile.png';
+import ukFlagIcon from '@/assets/uk-flag.png';
 import { Input } from '@/components/ui/input';
 import { Bell, ChevronDown, Moon } from 'lucide-react';
 import { useState } from 'react';
-import profileIcon from '@/assets/profile.png';
-import ukFlagIcon from '@/assets/uk-flag.png';
 
 export default function Navbar() {
-  const [notifications, setNotifications] = useState(6);
+  const [notifications] = useState(6);
 
   return (
     <nav className="h-full flex items-center justify-between px-4 sm:px-6 py-2 bg-[#1C202B] text-white">
@@ -34,11 +34,7 @@ export default function Navbar() {
 
         {/* Language */}
         <div className="flex items-center gap-1 cursor-pointer">
-          <img
-            src={ukFlagIcon}
-            alt="English"
-            className="w-12 h-8 rounded-sm"
-          />
+          <img src={ukFlagIcon} alt="English" className="w-12 h-8 rounded-sm" />
           <span className="text-sm">English</span>
           <ChevronDown className="w-4 h-4" />
         </div>
