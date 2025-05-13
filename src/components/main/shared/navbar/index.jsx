@@ -1,15 +1,13 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { Link, useLocation } from "react-router";
-import logo from "../../../../assets/logo.png";
-import navbg from "../../../../assets/Stars.png";
-import { useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
-import Enflag from "@/assets/svg/enflag";
-import LanguageSwitcher from "./languageswitcher";
-import { useTheme } from "next-themes";
+import whiteModeLogo from '@/assets/white-mode-logo.png';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router';
+import logo from '../../../../assets/logo.png';
+import navbg from '../../../../assets/Stars.png';
+import LanguageSwitcher from './languageswitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +16,10 @@ const Navbar = () => {
 
   const list = [
     // { label: "Home", to: "/" },
-    { label: "Features", to: "#features" },
-    { label: "Pricing", to: "#pricing" },
-    { label: "FAQs", to: "#faq" },
-    { label: "Blogs", to: "#blogs" },
+    { label: 'Features', to: '#features' },
+    { label: 'Pricing', to: '#pricing' },
+    { label: 'FAQs', to: '#faq' },
+    { label: 'Blogs', to: '#blogs' },
   ];
   const [isSticky, setIsSticky] = useState(false);
 
@@ -40,17 +38,16 @@ const Navbar = () => {
       setIsSticky(window.scrollY > threshold);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav
       className={`w-full py-4 relative z-[1000] ${
         isSticky ? 'md:sticky md:top-0' : ''
-      } shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)]`}
+      } shadow-[0px_25px_60px_-15px_rgba(180,195,229,0.20)] dark:bg-[#070622] bg-[#F9F9F9]`}
       style={{
-        backgroundColor: '#070622',
         backgroundImage: `url(${navbg})`,
         backgroundSize: 'cover',
       }}
@@ -60,7 +57,11 @@ const Navbar = () => {
 
       <div className="container mx-auto flex items-center justify-between px-4">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-15" />
+          <img
+            src={theme === 'dark' ? logo : whiteModeLogo}
+            alt="Logo"
+            className="h-15"
+          />
         </Link>
 
         <ul className="hidden lg:flex gap-8">
@@ -87,7 +88,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button
               variant="outline"
-              className="rounded-lg bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5 font-['Space_Grotesk']"
+              className="rounded-[12px] bg-transparent text-[16px] font-normal default-text  border-[#6049bc] px-5 py-5 font-['Space_Grotesk']"
               style={{
                 boxShadow: '0px 20px 30px -10px rgba(96, 73, 188, 0.6)',
               }}
@@ -97,7 +98,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <Button
-              className="relative rounded-lg bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5 font-['Space_Grotesk']"
+              className="relative rounded-[12px] bg-[#6049bc] hover:border-[#6049bc] text-white border-0 text-[16px] px-5 py-5 font-['Space_Grotesk']"
               style={{
                 boxShadow: '0px 20px 30px -10px rgba(96, 73, 188, 0.6)',
               }}
@@ -113,7 +114,7 @@ const Navbar = () => {
             {/* Dark/Light Mode Toggle */}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-md border border-[#6049bc] text-white hover:bg-[#6049bc] transition"
+              className="p-2 rounded-[12px] border border-[#6049bc] dark:text-white text-[#070622] hover:bg-[#6049bc] transition"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>

@@ -162,7 +162,7 @@ export default function PricingTabs() {
           <TabsList className="dark:bg-[#10122e] bg-[#F9F9F9] px-4 py-7 border border-[#D24AC966] rounded-full flex gap-2 mb-5">
             <TabsTrigger
               value="monthly"
-              className="cursor-pointer dark:data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
+              className="cursor-pointer dark:data-[state=active]:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
             >
               Monthly
             </TabsTrigger>

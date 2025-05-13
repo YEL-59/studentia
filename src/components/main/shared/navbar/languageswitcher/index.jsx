@@ -26,10 +26,10 @@ export default function LanguageSwitcher() {
   }, []);
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div className="relative inline-block text-left " ref={dropdownRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-2 border border-[#6049bc] rounded-md text-white text-sm hover:bg-[#6049bc] transition"
+        className="flex items-center gap-2 px-3 py-2 border border-[#6049bc] rounded-[12px] dark:text-white text-[#070622] text-sm hover:bg-[#6049bc] transition roiunded"
       >
         {languages.find((lang) => lang.code === i18n.language).icon}
         {languages
@@ -39,7 +39,7 @@ export default function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute mt-2 w-40 bg-[#1e1b4b] text-white rounded-md shadow-lg z-50">
+        <div className="absolute mt-2 w-40 bg-[#1e1b4b] text-white shadow-lg z-50 rounded-[12px]">
           {languages.map((lang) => (
             <button
               key={lang.code}
