@@ -90,7 +90,9 @@ export default function Testimonials() {
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold">Testimonials</h2>
-        <p className="text-sm mt-2 text-gray-300">What Saying Our Customers</p>
+        <p className="text-sm mt-2 dark:text-gray-300 text-[#070622]">
+          What Saying Our Customers
+        </p>
       </div>
 
       <div className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 p-3 md:p-0">
@@ -98,8 +100,8 @@ export default function Testimonials() {
           <Card
             key={index}
             className={clsx(
-              'bg-[#11152c]/90 text-white p-4 border border-white/10 transition-all duration-300 max-w-[350px]',
-              'hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]'
+              'dark:bg-[#11152c]/90 bg-grey-800 dark:text-white text-[#070622] p-4 border dark:border-white/10 border-gray-10 transition-all duration-300 max-w-[350px]',
+              'dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] rounded-[22px]'
             )}
           >
             <CardContent className="space-y-3 p-0">
@@ -114,7 +116,9 @@ export default function Testimonials() {
                   <p className="text-sm text-gray-400">{item.role}</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-300">{item.text}</p>
+              <p className="text-sm dark:text-gray-300 text-gray-500">
+                {item.text}
+              </p>
             </CardContent>
           </Card>
         ))}
@@ -122,12 +126,15 @@ export default function Testimonials() {
 
       {/* Fade Gradient when not showing all */}
       {!showAll && (
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#070622] via-[#070622]/90 to-transparent z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/90 to-transparent dark:bg-gradient-to-t dark:from-[#070622] dark:via-[#070622]/90 dark:to-transparent z-20 pointer-events-none" />
       )}
 
       {/* Button */}
       <div className="relative z-30 mt-6 flex justify-center">
-        <Button onClick={() => setShowAll(!showAll)}>
+        <Button
+          onClick={() => setShowAll(!showAll)}
+          className={`rounded-[12px] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] h-9 px-6 py-4 flex items-center justify-center cursor-pointer text-white`}
+        >
           {showAll ? 'Show Less' : 'Read More'}
         </Button>
       </div>
