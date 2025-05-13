@@ -44,7 +44,7 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className="flex items-center justify-center bg-[#070622] py-10 md:py-20 overflow-hidden px-4">
+    <section className="flex items-center justify-center bg-[#fff] dark:bg-[#070622] py-10 md:py-20 overflow-hidden px-4">
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 relative">
         {/* Left Text Area */}
         <div className="text-white space-y-6 relative z-10">
@@ -59,7 +59,7 @@ export default function FAQSection() {
           <div className="relative w-full max-w-md border-2 border-[#36393B] rounded">
             <Input
               placeholder="Your email here"
-              className="bg-[#070622] text-white placeholder:text-white/60 border-none pr-28 py-5 sm:py-6 md:py-7"
+              className="bg-[#fff] dark:bg-[#070622] text-white placeholder:text-white/60 border-none pr-28 py-5 sm:py-6 md:py-7"
             />
             <Button
               className="absolute right-1 top-1/2 -translate-y-1/2 px-4 bg-[#7b2cbf] hover:bg-[#9d4edd] text-white h-8 text-xs sm:text-sm"

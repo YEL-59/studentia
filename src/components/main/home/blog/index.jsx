@@ -97,7 +97,7 @@ export default function BlogCarousel() {
   }, [slider]);
 
   return (
-    <section className="py-16 bg-[#0F0C29] text-white text-center p-3">
+    <section className="py-16 dark:bg-[#0F0C29] bg-[#fff] text-white text-center p-3">
       <h2
         className="text-white text-center font-['Space_Grotesk'] text-3xl md:text-[48px] font-bold leading-[132%] tracking-[-0.48px]"
         data-aos="fade-up"
@@ -125,9 +125,12 @@ export default function BlogCarousel() {
             className="keen-slider__slide bg-[#1A1730] text-left rounded-xl overflow-hidden "
           >
             <Card
-              className="bg-gradient-to-br from-[#221C4A] via-[#30255A] to-[#3B2B6C]
-               shadow-none p-5 border-2 border-transparent rounded-xl
-               hover:border-[#7A43A4] transition-all duration-300"
+              className="shadow-none p-5 border-2 border-transparent rounded-xl
+             hover:border-[#7A43A4] transition-all duration-300
+             dark:bg-gradient-to-br dark:from-[#221C4A] dark:via-[#30255A] dark:to-[#3B2B6C]"
+              style={{
+                backgroundColor: "#EDF0FA",
+              }}
             >
               <img
                 src={blog.image}
@@ -143,7 +146,7 @@ export default function BlogCarousel() {
               />
 
               <CardContent className="p-0">
-                <div className="flex items-center space-x-2 text-xs text-[#9CA3AF] mb-2 px-2 py-1 rounded w-[fit-content]">
+                <div className="flex items-center space-x-2 text-xs text-black dark:text-[#9CA3AF] mb-2 px-2 py-1 rounded w-[fit-content]">
                   <span
                     className="px-2 py-1 rounded"
                     style={{
@@ -158,10 +161,10 @@ export default function BlogCarousel() {
                   <span>{blog.date}</span>
                 </div>
 
-                <h3 className="overflow-hidden text-white text-ellipsis whitespace-nowrap font-sans text-[24px] font-semibold leading-[110%] mb-1">
+                <h3 className="overflow-hidden text-black dark:text-white text-ellipsis whitespace-nowrap font-sans text-[24px] font-semibold leading-[110%] mb-1">
                   {blog.title}
                 </h3>
-                <p className="overflow-hidden text-[#BCBCBC] text-ellipsis whitespace-nowrap font-sans text-base font-normal leading-[160%] ">
+                <p className="overflow-hidden text-black dark:text-[#BCBCBC] text-ellipsis whitespace-nowrap font-sans text-base font-normal leading-[160%] ">
                   {blog.desc}
                 </p>
               </CardContent>
