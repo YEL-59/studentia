@@ -91,9 +91,9 @@ export default function UltimateModel() {
   const [visibleCount, setVisibleCount] = useState(6);
 
   return (
-    <section className="bg-[#070622] dark:bg-[#F9F9F9] text-center py-10 px-4 text-white dark:text-[#070622]">
+    <section className="dark:bg-[#070622] bg-[#F9F9F9] text-center py-10 px-4 text-white dark:text-[#070622]">
       <h2
-        className="text-3xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold text-white dark:text-[#070622]"
+        className="text-3xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold dark:text-white text-[#070622]"
         style={{ fontFamily: 'var(--font-grotesk)' }}
         data-aos="fade-down"
         data-aos-delay="200"
@@ -101,7 +101,7 @@ export default function UltimateModel() {
         Unlimited models to get started
       </h2>
       <p
-        className="text-[20px] leading-[132%] tracking-[-0.4px] font-medium font-grotesk text-center text-[#F9F9F9] dark:text-[#070622] mb-10"
+        className="text-[20px] leading-[132%] tracking-[-0.4px] font-medium font-grotesk text-center dark:text-[#F9F9F9] text-[#070622] mb-10"
         style={{ fontFamily: 'var(--font-grotesk)' }}
         data-aos="fade-up"
         data-aos-delay="300"
@@ -171,10 +171,10 @@ export default function UltimateModel() {
 
                   <div className="relative z-10">
                     <CardContent className="text-left space-y-3 flex-grow">
-                      <h3 className="text-[18px] turncate md:text-[40px] font-medium leading-[132%] tracking-[-0.8px] text-[var(--60-background-website,#FFF)] dark:text-[#070622] font-['Space_Grotesk']">
+                      <h3 className="text-[18px] turncate md:text-[40px] font-medium leading-[132%] tracking-[-0.8px] dark:text-[var(--60-background-website,#FFF)] text-[#070622] font-['Space_Grotesk']">
                         {title}
                       </h3>
-                      <p className="text-[12px] md:text-[20px] font-normal leading-[164%] text-[var(--Light-Neutrals-Website,#BCBCBC)] dark:text-[#1C202B] font-['Space_Grotesk']">
+                      <p className="text-[12px] md:text-[20px] font-normal leading-[164%] dark:text-[var(--Light-Neutrals-Website,#BCBCBC)] text-[#1C202B] font-['Space_Grotesk']">
                         {description}
                       </p>
                     </CardContent>
