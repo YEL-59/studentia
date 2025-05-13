@@ -9,10 +9,10 @@ import video from "../../../../assets/dashboard.mp4";
 const Banner = () => {
   return (
     <div
-      className="p-5 md:p-10 bg-[#070622] text-white h-full"
+      className="p-5 md:p-10 bg-[#070622] dark:bg-[#F9F9F9] text-white h-full"
       style={{
         backgroundImage: `url(${bannerbg})`,
-        backgroundSize: "cover",
+        backgroundSize: 'cover',
       }}
     >
       <div className="py-[50px]">
@@ -27,18 +27,18 @@ const Banner = () => {
             data-aos="fade-down"
             data-aos-delay="200"
           >
-            <div className="h-2 w-2 rounded-full bg-white"></div>
-            <h1 className="text-[12px] text-white font-normal leading-[164%] font-['Space_Grotesk']">
+            <div className="h-2 w-2 rounded-full bg-white dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)]"></div>
+            <h1 className="text-[12px] text-white dark:text-[#070622] font-normal leading-[164%] font-['Space_Grotesk']">
               New feature: Grammar Checker
             </h1>
           </div>
 
           {/* Heading & Subheading */}
           <div data-aos="zoom-in" data-aos-delay="400">
-            <h1 className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[112px] leading-tight font-bold text-center tracking-tight font-['Space_Grotesk']">
+            <h1 className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[112px] leading-tight font-bold text-center tracking-tight font-['Space_Grotesk'] dark:text-[#070622]">
               Ultimate AI Creator For
               <span className="h-[100px]">
-                {" "}
+                {' '}
                 <TypingEffect />
               </span>
             </h1>
@@ -57,10 +57,10 @@ const Banner = () => {
           {/* Buttons */}
           <div data-aos="fade-up" data-aos-delay="700">
             <div className="flex gap-4">
-              <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out">
+              <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] dark:text-[#F9F9F9]">
                 Start Explore now
               </Button>
-              <Button className="bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] border border-[#9d4edd] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out">
+              <Button className="bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] dark:text-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] border border-[#9d4edd] dark:border-[#7A43A4] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out dark:bg-[#F9F9F9]">
                 See feature
               </Button>
             </div>
@@ -77,7 +77,7 @@ const Banner = () => {
               className="absolute left-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full z-0 blur-[160px]"
               style={{
                 background:
-                  "radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)",
+                  'radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)',
               }}
             />
 
@@ -86,7 +86,7 @@ const Banner = () => {
               className="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full z-0 blur-[160px]"
               style={{
                 background:
-                  "radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)",
+                  'radial-gradient(59.43% 50% at 50% 50%, #C7EDFD 0%, #82C8E5 49.48%)',
               }}
             />
 

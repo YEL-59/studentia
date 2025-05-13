@@ -1,11 +1,12 @@
-import { StrictMode, useEffect } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import ReactLenis from "lenis/react";
-import { RouterProvider } from "react-router";
-import { router } from "./routes";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import ReactLenis from 'lenis/react';
+import { StrictMode, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router';
+import './index.css';
+import { router } from './routes';
+import { ThemeProvider } from './lib/ThemeProvider';
 
 function AppInitializer() {
   useEffect(() => {
@@ -22,8 +23,10 @@ function AppInitializer() {
   );
 }
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppInitializer />
+    <ThemeProvider>
+      <AppInitializer />
+    </ThemeProvider>
   </StrictMode>
 );

@@ -35,10 +35,10 @@ export function VideoThumbnail({ videoUrl, imageUrl }) {
 
   return (
     <div
-      className="relative flex items-center justify-center w-full aspect-video overflow-hidden"
+      className="relative flex items-center justify-center w-full aspect-video overflow-hidden bg-[#070622]"
       style={{
-        borderRadius: "16px",
-        border: "0px solid rgba(255, 255, 255, 0.13)",
+        borderRadius: '16px',
+        border: '0px solid rgba(255, 255, 255, 0.13)',
         // background: imageUrl
         //   ? `url(${imageUrl}) lightgray 0px 0px / cover no-repeat`
         //   : "none",
