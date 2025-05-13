@@ -5,8 +5,10 @@ import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import './index.css';
-import { router } from './routes';
 import { ThemeProvider } from './lib/ThemeProvider';
+import { router } from './routes';
+
+import './i18n';
 
 function AppInitializer() {
   useEffect(() => {

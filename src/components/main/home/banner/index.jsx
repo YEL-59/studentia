@@ -1,6 +1,7 @@
 // import bannerbg from '@/assets/Stars.png';
 import darkModeBanner from '@/assets/dark-mode-stars.png';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 import dashboardbg from '../../../../assets/bashboardbg.png';
 import video from '../../../../assets/dashboard.mp4';
 import AvatarGroup from '../AvatarGroup';
@@ -8,6 +9,8 @@ import { VideoThumbnail } from '../VideoThumbnail';
 import { TypingEffect } from '../typingeffect';
 
 const Banner = () => {
+  const { t } = useTranslation('home');
+
   return (
     <div className="p-5 md:p-10 dark:bg-[#070622] bg-[#F9F9F9] text-white h-full">
       <div
@@ -30,14 +33,14 @@ const Banner = () => {
             >
               <div className="h-2 w-2 rounded-full bg-white dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)]"></div>
               <h1 className="text-[12px] dark:text-white text-[#070622] font-normal leading-[164%] font-['Space_Grotesk']">
-                New feature: Grammar Checker
+                {t('banner.badge')}
               </h1>
             </div>
 
             {/* Heading & Subheading */}
             <div data-aos="zoom-in" data-aos-delay="400">
               <h1 className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[112px] leading-tight font-bold text-center tracking-tight font-['Space_Grotesk'] text-[#070622] dark:text-white">
-                Ultimate AI Creator For
+                {t('banner.title')}
                 <span className="h-[100px]">
                   {' '}
                   <TypingEffect />
@@ -45,8 +48,7 @@ const Banner = () => {
               </h1>
 
               <p className="text-[#F9F9F9] text-center font-bold text-[20px] leading-[132%] tracking-[-0.2px] font-['Space_Grotesk'] mt-4">
-                Our innovative AI enhances your writing and elevates
-                productivity while keeping your unique voice intact.
+                {t('banner.description')}
               </p>
             </div>
 
@@ -59,10 +61,10 @@ const Banner = () => {
             <div data-aos="fade-up" data-aos-delay="700">
               <div className="flex gap-4">
                 <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] dark:text-[#F9F9F9]">
-                  Start Explore now
+                  {t('banner.primaryAction')}
                 </Button>
                 <Button className="dark:bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] dark:text-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] border dark:border-[#9d4edd] border-[#7A43A4] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out bg-[#F9F9F9]">
-                  See feature
+                  {t('banner.secondaryAction')}
                 </Button>
               </div>
             </div>
