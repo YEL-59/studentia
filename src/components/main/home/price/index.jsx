@@ -101,32 +101,37 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
       </div>
       <div className="text-3xl font-bold dark:text-white text-[#070622] text-start">
         ${price}{' '}
-        <span className="text-base font-medium text-white/50">/Month</span>
+        <span className="text-base font-medium dark:text-white/50 text-[#070622]">
+          /Month
+        </span>
       </div>
-      <p className="text-white font-['Manrope'] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
+      <p className="dark:text-white text-[#070622] font-['Manrope'] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
         Provides for contact management and task tracking. Ideal for small
         teams.
       </p>
       <hr className="border-white/10 mb-4" />
       <div>
-        <p className="mb-1 text-white font-['Space_Grotesk'] text-base font-medium leading-[132%] tracking-[-0.32px] text-start">
+        <p className="mb-1 dark:text-white text-[#070622] font-['Space_Grotesk'] text-base font-medium leading-[132%] tracking-[-0.32px] text-start">
           Functionalities includes
         </p>
-        <ul className="space-y-2 mt-2 text-white">
+        <ul className="space-y-2 mt-2 dark:text-white text-[#070622]">
           <li className="flex items-center gap-2">
-            <Check size={16} className="text-white" /> GPT 4: {tokens1}
+            <Check size={16} className="dark:text-white text-[#070622]" /> GPT
+            4: {tokens1}
           </li>
           <li className="flex items-center gap-2">
-            <Check size={16} className="text-white" /> GPT 3.5: {tokens2}
+            <Check size={16} className="dark:text-white text-[#070622]" /> GPT
+            3.5: {tokens2}
           </li>
           {images && (
             <li className="flex items-center gap-2">
-              <Check size={16} className="text-white" /> {images} Images
+              <Check size={16} className="dark:text-white text-[#070622]" />{' '}
+              {images} Images
             </li>
           )}
           {features.map((feature, i) => (
             <li key={i} className="flex items-center gap-2">
-              <Check size={16} className="text-white" />
+              <Check size={16} className="dark:text-white text-[#070622]" />
               {feature}
             </li>
           ))}
@@ -135,7 +140,7 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
     </div>
 
     <div className="mt-6">
-      <Button className="w-full text-white hover:opacity-90">
+      <Button className="w-full text-white hover:opacity-90 rounded-[16px] dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)]">
         Get Started
       </Button>
     </div>

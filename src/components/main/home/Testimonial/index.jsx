@@ -82,7 +82,7 @@ export default function Testimonials() {
 
   return (
     <div
-      className="relative bg-[#070622] text-white py-10 px-4 sm:px-8 overflow-hidden"
+      className="relative dark:bg-[#070622] bg-[#F9F9F9] dark:text-white text-[#070622] py-10 px-4 sm:px-8 overflow-hidden"
       //   style={{
       //     background:
       //       "linear-gradient(183deg, rgba(9,9,11,0) 2.85%, #070622 94.26%, #000 94.26%)",
@@ -98,8 +98,8 @@ export default function Testimonials() {
           <Card
             key={index}
             className={clsx(
-              "bg-[#11152c]/90 text-white p-4 border border-white/10 transition-all duration-300 max-w-[350px]",
-              "hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]"
+              'bg-[#11152c]/90 text-white p-4 border border-white/10 transition-all duration-300 max-w-[350px]',
+              'hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]'
             )}
           >
             <CardContent className="space-y-3 p-0">
@@ -128,7 +128,7 @@ export default function Testimonials() {
       {/* Button */}
       <div className="relative z-30 mt-6 flex justify-center">
         <Button onClick={() => setShowAll(!showAll)}>
-          {showAll ? "Show Less" : "Read More"}
+          {showAll ? 'Show Less' : 'Read More'}
         </Button>
       </div>
 
