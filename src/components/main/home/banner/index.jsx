@@ -1,5 +1,5 @@
 // import bannerbg from '@/assets/Stars.png';
-import darkModeBanner from '@/assets/dark-mode-stars.png';
+import darkModeBanner from '@/assets/white-mode-stars.png';
 import { Button } from '@/components/ui/button';
 import dashboardbg from '../../../../assets/bashboardbg.png';
 import video from '../../../../assets/dashboard.mp4';
@@ -58,7 +58,7 @@ const Banner = () => {
             {/* Buttons */}
             <div data-aos="fade-up" data-aos-delay="700">
               <div className="flex gap-4">
-                <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] dark:text-[#F9F9F9]">
+                <Button className="font-medium capitalize text-[16px] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] text-[#F9F9F9]">
                   Start Explore now
                 </Button>
                 <Button className="dark:bg-[#101531] hover:bg-[#1a1a2e] font-semibold text-[16px] text-[#9d4edd] dark:text-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] border dark:border-[#9d4edd] border-[#7A43A4] py-5 px-5 rounded-[8px] shadow-md transition duration-300 ease-in-out bg-[#F9F9F9]">

@@ -118,7 +118,7 @@ export default function UltimateModel() {
             ) => (
               <div
                 key={idx}
-                className="relative w-full group rounded-xl overflow-hidden "
+                className="relative w-full group rounded-[16px] overflow-hidden "
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 // data-aos="fade-up"
@@ -185,13 +185,14 @@ export default function UltimateModel() {
           )}
       </div>
       <div className="flex flex-col items-center text-center justify-center w-full h-full mt-10">
-        <Button
+        <button
           onClick={() => {
             setVisibleCount(visibleCount === tools.length ? 3 : tools.length);
           }}
+          className={`rounded-[12px] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] h-9 px-6 py-4 flex items-center justify-center cursor-pointer`}
         >
           {visibleCount === tools.length ? 'See Less' : 'See More'}
-        </Button>
+        </button>
       </div>
     </section>
   );

@@ -94,13 +94,13 @@ export const pricingPlans = {
 };
 
 const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
-  <div className="border border-[#7A43A4] rounded-2xl bg-transparent hover:bg-[linear-gradient(180deg,rgba(122,67,164,0.3),rgba(96,73,188,0.17))] [box-shadow:0px_6px_15px_-2px_rgba(16,24,40,0.08)] p-6 shadow-lg w-full sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] min-h-[660px] flex flex-col justify-between">
+  <div className="border border-[#7A43A4] rounded-2xl bg-transparent dark:hover:bg-[linear-gradient(180deg,rgba(122,67,164,0.3),rgba(96,73,188,0.17))] [box-shadow:0px_6px_15px_-2px_rgba(16,24,40,0.08)] p-6 shadow-lg w-full sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] min-h-[660px] flex flex-col justify-between">
     <div>
-      <div className="text-sm text-white/60 rounded-full border w-fit mx-auto px-3 py-1 mb-2">
+      <div className="text-sm dark:text-white/60 text-[#070622] rounded-full border dark:border-white/60 border-[#070622] w-fit mx-auto px-3 py-1 mb-2">
         {title}
       </div>
-      <div className="text-3xl font-bold text-white text-start">
-        ${price}{" "}
+      <div className="text-3xl font-bold dark:text-white text-[#070622] text-start">
+        ${price}{' '}
         <span className="text-base font-medium text-white/50">/Month</span>
       </div>
       <p className="text-white font-['Manrope'] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
@@ -144,26 +144,26 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
 
 export default function PricingTabs() {
   return (
-    <section className="bg-[#070622] py-10 px-4 text-center">
-      <h2 className="text-white text-center font-bold text-3xl md:text-[48px] leading-[63.36px] tracking-[-0.48px] font-['Space_Grotesk']">
+    <section className="dark:bg-[#070622] bg-[#F9F9F9] py-10 px-4 text-center">
+      <h2 className="dark:text-white text-[#070622] text-center font-bold text-3xl md:text-[48px] leading-[63.36px] tracking-[-0.48px] font-['Space_Grotesk']">
         Our Pricing
       </h2>
-      <p className="text-[#F9F9F9] text-center font-bold text-[20px] leading-[26.4px] tracking-[-0.2px] font-['Space_Grotesk'] mt-4">
+      <p className="dark:text-[#F9F9F9] text-[#070622] text-center font-bold text-[20px] leading-[26.4px] tracking-[-0.2px] font-['Space_Grotesk'] mt-4">
         Simple Pricing, Unbeatable Value
       </p>
 
       <Tabs defaultValue="monthly" className="w-full container mx-auto py-10">
         <div className="flex justify-center mb-4">
-          <TabsList className="bg-[#10122e] px-4 py-7 border border-[#D24AC966] rounded-full flex gap-2 mb-5">
+          <TabsList className="dark:bg-[#10122e] bg-[#F9F9F9] px-4 py-7 border border-[#D24AC966] rounded-full flex gap-2 mb-5">
             <TabsTrigger
               value="monthly"
-              className="cursor-pointer data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white px-6 py-4 text-primary border border-[#D24AC966] rounded-[12px] "
+              className="cursor-pointer dark:data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
             >
               Monthly
             </TabsTrigger>
             <TabsTrigger
               value="yearly"
-              className="cursor-pointer data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white px-6 py-4 text-primary border border-[#D24AC966] rounded-[12px] "
+              className="cursor-pointer dark:data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
             >
               Yearly
             </TabsTrigger>

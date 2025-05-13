@@ -64,7 +64,7 @@ const HowItWork = () => {
         {steps.map(({ step, title, description }) => (
           <Card
             key={step}
-            className="relative w-full h-full min-h-[260px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between"
+            className="relative w-full h-full min-h-[260px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between rounded-[16px]"
             data-aos="zoom-in"
             data-aos-delay={`${step * 200}`}
             data-aos-duration="800"
