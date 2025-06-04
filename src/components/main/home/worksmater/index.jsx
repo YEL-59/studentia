@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import bannerbg from "../../../../assets/Stars.png";
 import cardbg from "../../../../assets/worksmaterbg.png";
-import bgBanner from '@/assets/white-mode-stars.png';
+import bgBanner from "@/assets/white-mode-stars.png";
 
 const statsData = [
   {
@@ -71,50 +71,32 @@ const WorkSmater = () => {
   }, []);
 
   return (
-    <>
-      <h1 className="dark:text-[#F9F9F9] dark:bg-[#070622] bg-[#F9F9F9] text-[#070622] text-center font-[Space_Grotesk] text-[24px] md:text-[48px] not-italic font-bold leading-[132%] tracking-[-0.48px]">
+    <div className="dark:bg-[#070622] bg-[#F9F9F9] py-16 md:py-28">
+      <h1 className="dark:text-[#F9F9F9] text-[#070622] mb-10 text-center font-[Space_Grotesk] text-[24px] md:text-[46px] not-italic font-bold leading-[132%] tracking-[-0.48px]">
         Work smarter, not harder with Student-AI!
       </h1>
 
-      <div className="md:py-10 dark:bg-[#070622] bg-[#F9F9F9] text-[#7A43A4] ">
-        <div
-          style={{
-            backgroundImage: `url(${bgBanner})`,
-            backgroundSize: 'cover',
-          }}
-        >
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center p-3 ">
+      <div className="dark:bg-[#070622] bg-[#F9F9F9] text-[#7A43A4]">
+        <div>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center p-3">
             {counts.map((stat, index) => (
-              <div
-                key={index}
-                className="p-5 h-[125px] w-[300px] mx-auto aspect-[300/195] rounded-2xl border-0  "
-                style={{
-                  // borderRight: "2px dashed #e5e7eb",
-                  backgroundImage: `url(${stat.image})`,
-                  backgroundSize: 'cover',
-                }}
-                data-aos="fade-up"
-                data-aos-delay={200 + index * 100}
-                data-aos-duration="800"
-              >
-                <div>
-                  <h1 className="text-center text-[40px] font-bold leading-[124%] tracking-[-1.6px] font-['Space_Grotesk']">
-                    {stat.type === 'percentage'
-                      ? `${stat.currentCount}%`
-                      : stat.type === 'count'
-                      ? `${stat.currentCount / 1000}K`
-                      : stat.currentCount}
-                  </h1>
-                  <p className="text-[#BCBCBC] text-center font-[Space_Grotesk] text-[20px] not-italic font-medium leading-[132%] tracking-[-0.48px]">
-                    {stat.label}
-                  </p>
-                </div>
+              <div className="border-r last:border-none border-[#7045ac]">
+                <h2 className="text-center text-primary text-[24px] md:text-[42px] lg:text-[65px] xl:text-[80px] font-Space font-bold">
+                  {stat.type === "percentage"
+                    ? `${stat.currentCount}%`
+                    : stat.type === "count"
+                    ? `${stat.currentCount / 1000}K`
+                    : stat.currentCount}
+                </h2>
+                <p className="text-center text-[#BCBCBC] text-xl">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

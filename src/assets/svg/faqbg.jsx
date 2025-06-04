@@ -19,8 +19,8 @@ const Faqbg = () => {
             id="filter0_f_680_3263"
             x="0.425781"
             y="0.788086"
-            width="1461.57"
-            height="1100"
+            width="700"
+            height="600"
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB"
           >

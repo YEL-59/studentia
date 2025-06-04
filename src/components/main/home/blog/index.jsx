@@ -97,7 +97,7 @@ export default function BlogCarousel() {
   }, [slider]);
 
   return (
-    <section className="py-16 dark:bg-[#0F0C29] bg-[#fff] text-white text-center p-3">
+    <section className="py-16 md:pb-36 dark:bg-[#060722] bg-[#fff] text-white text-center p-3">
       <h2
         className="text-white text-center font-['Space_Grotesk'] text-3xl md:text-[48px] font-bold leading-[132%] tracking-[-0.48px]"
         data-aos="fade-up"
@@ -122,7 +122,7 @@ export default function BlogCarousel() {
         {blogs.map((blog, idx) => (
           <div
             key={idx}
-            className="keen-slider__slide bg-[#1A1730] text-left rounded-xl overflow-hidden "
+            className="keen-slider__slide bg-[#16143d] text-left rounded-xl overflow-hidden "
           >
             <Card
               className="shadow-none p-5 border-2 border-transparent rounded-xl
@@ -135,7 +135,7 @@ export default function BlogCarousel() {
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-48 object-cover rounded-[10px]"
+                className="w-full h-[240px] object- rounded-[20px]"
                 style={{
                   boxShadow: `
       0px 1px 3px 0px rgba(50, 50, 50, 0.20),
@@ -174,15 +174,15 @@ export default function BlogCarousel() {
       </div>
 
       {/* Pagination Dots */}
-      <div className="mt-6 flex justify-center space-x-2">
+      <div className="mt-8 flex justify-center items-center space-x-2">
         {blogs.map((_, i) => (
           <button
             key={i}
             onClick={() => slider.current?.moveToIdx(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 border-2 ${
+            className={`transition-all duration-300 cursor-pointer ${
               currentSlide === i
-                ? "bg-primary border-primary"
-                : "bg-[#6B7280] border-transparent hover:border-purple-500"
+                ? "w-8 h-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
+                : "w-3 h-3 rounded-full bg-white hover:bg-gray-300"
             }`}
           />
         ))}

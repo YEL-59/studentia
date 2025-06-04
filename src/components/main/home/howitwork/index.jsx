@@ -6,7 +6,7 @@ import circlebg from "../../../../assets/howitworkbg.png";
 import LogoMarquee from "../logomarque";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import darkBgCircle from '@/assets/dark-circle.png';
+import darkBgCircle from "@/assets/dark-circle.png";
 
 const steps = [
   {
@@ -39,13 +39,13 @@ const HowItWork = () => {
   }, []);
 
   return (
-    <section className="dark:bg-[#070622] bg-[#F9F9F9] py-10  text-center px-4">
-      <div className="container mx-auto md:mb-10">
+    <section className="dark:bg-[#070622] bg-[#F9F9F9] py-10 text-center px-4">
+      <div className="container mx-auto md:mb-20">
         <LogoMarquee />
       </div>
       <h2
-        className="text-3xl md:text-[64px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold dark:text-white text-[#070622]"
-        style={{ fontFamily: 'var(--font-grotesk)' }}
+        className="text-3xl md:text-[54px] leading-[132%] tracking-[-0.64px] font-grotesk font-bold dark:text-white text-[#070622]"
+        style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-down"
         data-aos-delay="200"
       >
@@ -53,7 +53,7 @@ const HowItWork = () => {
       </h2>
       <p
         className="text-[12px] md:text-[20px] leading-[132%] tracking-[-0.4px] font-medium font-grotesk text-center dark:text-[#F9F9F9] text-[#1C202B] mb-10"
-        style={{ fontFamily: 'var(--font-grotesk)' }}
+        style={{ fontFamily: "var(--font-grotesk)" }}
         data-aos="fade-up"
         data-aos-delay="300"
       >
@@ -64,7 +64,7 @@ const HowItWork = () => {
         {steps.map(({ step, title, description }) => (
           <Card
             key={step}
-            className="relative w-full h-full min-h-[260px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between rounded-[16px]"
+            className="relative w-full h-full min-h-[280px] text-center border-[#7A43A4] bg-gradient-to-b from-[rgba(43,43,43,0.08)] to-[rgba(32,32,32,0)] backdrop-blur p-6 flex flex-col justify-between rounded-[16px]"
             data-aos="zoom-in"
             data-aos-delay={`${step * 200}`}
             data-aos-duration="800"
@@ -82,14 +82,14 @@ const HowItWork = () => {
                     <img
                       src={circlebg}
                       alt="Step background"
-                      className="block dark:hidden"
+                      className="hidden dark:block"
                     />
 
                     {/* Dark mode image */}
                     <img
                       src={darkBgCircle}
                       alt="Step background"
-                      className="hidden dark:block"
+                      className="block dark:hidden"
                     />
                   </div>
                   <span className="relative z-10 text-white text-center text-[63.546px] not-italic font-bold font-['ADLaM_Display'] leading-[112%] tracking-[-1.271px]">
@@ -102,7 +102,7 @@ const HowItWork = () => {
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="dark:text-[#9A98B9] text-[#070622] text-center font-['Space_Grotesk'] text-[11px] md:text-[16px] not-italic font-normal leading-[164%]">
+                <p className="dark:text-[#9A98B9] text-[#070622] text-center font-['Space_Grotesk'] text-[11px] md:text-[16px] not-italic font-normal leading-[164%] mt-5">
                   {description}
                 </p>
               </CardContent>

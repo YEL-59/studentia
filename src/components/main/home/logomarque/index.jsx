@@ -10,7 +10,13 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo3, logo4];
 
 const LogoMarquee = () => {
   return (
-    <div className="max-w-[800px] mx-auto dark:bg-[#070622] bg-[#F9F9F9]">
+    <div className="max-w-[1400px] mx-auto dark:bg-[#070622] bg-[#F9F9F9] relative">
+      {/* Left blur overlay */}
+      <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-[#F9F9F9] dark:from-[#070622] to-transparent z-10 pointer-events-none" />
+
+      {/* Right blur overlay */}
+      <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-[#F9F9F9] dark:from-[#070622] to-transparent z-10 pointer-events-none" />
+
       <Marquee
         speed={40}
         gradient={false}

@@ -1,12 +1,12 @@
-import Enflag from '@/assets/svg/enflag';
-import Ukflag from '@/assets/svg/ukflag';
-import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import Enflag from "@/assets/svg/enflag";
+import Ukflag from "@/assets/svg/ukflag";
+import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
-  { code: 'en', label: 'English', icon: <Enflag className="w-5 h-5" /> },
-  { code: 'fr', label: 'Français', icon: <Ukflag className="w-5 h-5" /> },
+  { code: "en", label: "English", icon: <Ukflag className="w-5 h-5" /> },
+  { code: "fr", label: "Français", icon: <Enflag className="w-5 h-5" /> },
 ];
 
 export default function LanguageSwitcher() {
@@ -21,8 +21,8 @@ export default function LanguageSwitcher() {
         setOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (

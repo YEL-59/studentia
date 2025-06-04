@@ -29,8 +29,8 @@ const AccordionTrigger = React.forwardRef(
         {children}
         {/* Dynamic icon change */}
         <span className="ml-2 transition-transform duration-200">
-          <Plus className="h-4 w-4 text-primary group-data-[state=open]:hidden" />
-          <Minus className="h-4 w-4 text-primary hidden group-data-[state=open]:block" />
+          <Plus className="h-5 w-5 text-white group-data-[state=open]:hidden" />
+          <Minus className="h-5 w-5 text-white hidden group-data-[state=open]:block" />
         </span>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

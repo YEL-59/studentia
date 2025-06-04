@@ -1,4 +1,3 @@
-import Faqbg from "@/assets/svg/faqbg";
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import faqBg from "../../../../assets/faq-bg.png";
 
 const faqData = [
   {
@@ -48,7 +48,7 @@ export default function FAQSection() {
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 relative">
         {/* Left Text Area */}
         <div className="text-white space-y-6 relative z-10">
-          <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-sm text-gray-400 max-w-md">
@@ -56,53 +56,52 @@ export default function FAQSection() {
             full support and clear any doubts that you might have.
           </p>
 
-          <div className="relative w-full max-w-md border-2 border-[#36393B] rounded">
+          <div className="relative w-full max-w-md border rounded-[10px] border-[#36393B] bg-[#13152e] mt-10">
             <Input
-              placeholder="Your email here"
-              className="bg-[#fff] dark:bg-[#070622] text-white placeholder:text-white/60 border-none pr-28 py-5 sm:py-6 md:py-7"
+              placeholder="Have another questions?"
+              className="bg-[#fff] dark:bg-[#13152e] text-white border-none pr-28 pl-5 py-5 sm:py-6 md:py-7 placeholder:font-medium placeholder:text-[#BCBCBC] placeholder:text-[17px]"
             />
             <Button
-              className="absolute right-1 top-1/2 -translate-y-1/2 px-4 bg-[#7b2cbf] hover:bg-[#9d4edd] text-white h-8 text-xs sm:text-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 px-4 bg-[#7b2cbf] hover:bg-[#9d4edd] text-white h-9 text-xs sm:text-sm rounded-full cursor-pointer"
               size="sm"
             >
-              Subscribe
+              Ask Question
             </Button>
           </div>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="relative space-y-4 z-10">
+        <div
+          className="relative space-y-4 z-10 bg-cover"
+          style={{
+            backgroundImage: `url(${faqBg})`,
+          }}
+        >
           <Accordion
             type="single"
             collapsible
             defaultValue={`faq-${faqData[0].index}`}
-            className="w-full space-y-2"
+            className="w-full space-y-2 "
           >
             {faqData.map((item) => (
               <AccordionItem
                 key={`faq-${item.index}`}
                 value={`faq-${item.index}`}
-                className="border border-[#36393B] rounded-lg bg-gradient-to-br from-[#2B2B5C]/30 to-[#1A1A3C]/30 backdrop-blur-md"
+                className="border border-[#433c61] rounded-lg bg-gradient-to-br from-[#2B2B5C]/30 to-[#1A1A3C]/30 backdrop-blur-[10px]"
               >
-                <AccordionTrigger className="text-white text-sm font-medium px-4 py-3 hover:no-underline">
+                <AccordionTrigger className="text-white text-sm font-medium px-4 py-4 hover:no-underline font-Space [&>svg]:text-white">
                   {item.question}
                 </AccordionTrigger>
+
                 {item.answer && (
-                  <AccordionContent className="text-gray-300 text-sm px-4 pb-4 whitespace-pre-line">
-                    <div className="w-[95%] mx-auto border-t border-[#36393B] mb-4" />
-                    {item.answer}
+                  <AccordionContent className="text-[#BCBCBC] text-sm px-4 pb-4 whitespace-pre-line">
+                    <div className="w-[95%] mx-auto border-t border-white/10 mb-4" />
+                    <span className="font-Space">{item.answer}</span>
                   </AccordionContent>
                 )}
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-
-        {/* SVG Background */}
-        <div className="absolute inset-0 flex justify-end items-center pointer-events-none">
-          <div className="translate-x-32 sm:translate-x-56">
-            <Faqbg />
-          </div>
         </div>
       </div>
     </section>

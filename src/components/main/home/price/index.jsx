@@ -100,12 +100,12 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
         {title}
       </div>
       <div className="text-3xl font-bold dark:text-white text-[#070622] text-start">
-        ${price}{' '}
+        ${price}{" "}
         <span className="text-base font-medium dark:text-white/50 text-[#070622]">
           /Month
         </span>
       </div>
-      <p className="dark:text-white text-[#070622] font-['Manrope'] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
+      <p className="dark:text-white text-[#070622] text-base font-normal leading-[150%] tracking-[-0.32px] mt-2 mb-4 text-start">
         Provides for contact management and task tracking. Ideal for small
         teams.
       </p>
@@ -125,7 +125,7 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
           </li>
           {images && (
             <li className="flex items-center gap-2">
-              <Check size={16} className="dark:text-white text-[#070622]" />{' '}
+              <Check size={16} className="dark:text-white text-[#070622]" />{" "}
               {images} Images
             </li>
           )}
@@ -140,7 +140,7 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
     </div>
 
     <div className="mt-6">
-      <Button className="w-full text-white hover:opacity-90 rounded-[16px] dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)]">
+      <Button className="w-full dark:text-white hover:opacity-90 py-5 cursor-pointer rounded-md dark:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)]">
         Get Started
       </Button>
     </div>
@@ -149,7 +149,7 @@ const PlanCard = ({ title, price, tokens1, tokens2, images, features }) => (
 
 export default function PricingTabs() {
   return (
-    <section className="dark:bg-[#070622] bg-[#F9F9F9] py-10 px-4 text-center">
+    <section className="dark:bg-[#070622] bg-[#F9F9F9] py-10 lg:pt-10 px-4 text-center">
       <h2 className="dark:text-white text-[#070622] text-center font-bold text-3xl md:text-[48px] leading-[63.36px] tracking-[-0.48px] font-['Space_Grotesk']">
         Our Pricing
       </h2>
@@ -162,13 +162,13 @@ export default function PricingTabs() {
           <TabsList className="dark:bg-[#10122e] bg-[#F9F9F9] px-4 py-7 border border-[#D24AC966] rounded-full flex gap-2 mb-5">
             <TabsTrigger
               value="monthly"
-              className="cursor-pointer dark:data-[state=active]:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
+              className="cursor-pointer dark:data-[state=active]:border-transparent dark:data-[state=active]:text-white dark:data-[state=active]:bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
             >
               Monthly
             </TabsTrigger>
             <TabsTrigger
               value="yearly"
-              className="cursor-pointer dark:data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
+              className="cursor-pointer dark:data-[state=active]:border-transparent dark:data-[state=active]:text-white dark:data-[state=active]:bg-gradient-to-b from-primary to-secondary data-[state=active]:text-white text-[#070622] px-6 py-4 dark:text-primary border border-[#D24AC966] rounded-[12px] "
             >
               Yearly
             </TabsTrigger>

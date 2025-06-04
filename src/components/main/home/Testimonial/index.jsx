@@ -89,8 +89,8 @@ export default function Testimonials() {
       //   }}
     >
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold">Testimonials</h2>
-        <p className="text-sm mt-2 dark:text-gray-300 text-[#070622]">
+        <h2 className="text-[48px] font-bold">Testimonials</h2>
+        <p className="text-lg mt-2 dark:text-gray-300 text-[#070622]">
           What Saying Our Customers
         </p>
       </div>
@@ -100,8 +100,8 @@ export default function Testimonials() {
           <Card
             key={index}
             className={clsx(
-              'dark:bg-[#11152c]/90 bg-grey-800 dark:text-white text-[#070622] p-4 border dark:border-white/10 border-gray-10 transition-all duration-300 max-w-[350px]',
-              'dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] rounded-[22px]'
+              "dark:bg-[#060b24]/90 bg-grey-800 dark:text-white text-[#070622] p-4 border dark:border-white/10 border-gray-10 transition-all duration-300 max-w-[350px]",
+              "dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] rounded-[22px]"
             )}
           >
             <CardContent className="space-y-3 p-0">
@@ -133,9 +133,9 @@ export default function Testimonials() {
       <div className="relative z-30 mt-6 flex justify-center">
         <Button
           onClick={() => setShowAll(!showAll)}
-          className={`rounded-[12px] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] h-9 px-6 py-4 flex items-center justify-center cursor-pointer text-white`}
+          className={`rounded-[12px] bg-[linear-gradient(180deg,_#7A43A4_0%,_#6049BC_100%)] h-9 px-6 py-6 flex items-center justify-center cursor-pointer text-white`}
         >
-          {showAll ? 'Show Less' : 'Read More'}
+          {showAll ? "Show Less" : "Read More"}
         </Button>
       </div>
 
