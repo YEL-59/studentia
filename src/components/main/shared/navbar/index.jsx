@@ -147,18 +147,20 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden md:flex gap-4">
-          <div className="hidden md:block">
-            <button
-              className="rounded-[12px] cursor-pointer bg-transparent text-[16px] font-normal text-[#6049bc] dark:text-white border border-[#6049bc] px-5 py-2 font-['Space_Grotesk'] hover:bg-[#6049bc]/10 transition-all duration-300"
-              style={{
-                boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
-              }}
-            >
-              Signin
-            </button>
-          </div>
+          <Link to="/">
+            <div className="hidden md:block">
+              <button
+                className="rounded-[12px] cursor-pointer bg-transparent text-[16px] font-normal text-[#6049bc] dark:text-white border border-[#6049bc] px-5 py-2 font-['Space_Grotesk'] hover:bg-[#6049bc]/10 transition-all duration-300"
+                style={{
+                  boxShadow: "0px 20px 30px -10px rgba(96, 73, 188, 0.6)",
+                }}
+              >
+                Signin
+              </button>
+            </div>
+          </Link>
 
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <button
               className="relative rounded-[12px] bg-[#6049bc] hover:bg-[#7A43A4] duration-200 text-white border-0 text-[16px] px-5 py-2 font-['Space_Grotesk'] cursor-pointer transition-all"
               style={{
@@ -167,7 +169,7 @@ const Navbar = () => {
             >
               Signup
             </button>
-          </div>
+          </div> */}
 
           <div className="hidden md:flex items-center gap-3">
             {/* Language Selector */}

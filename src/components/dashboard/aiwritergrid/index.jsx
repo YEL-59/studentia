@@ -173,7 +173,7 @@ export default function Aiwritergrid({ tools, favorites, setFavorites }) {
 
               <Card
                 className={clsx(
-                  "relative z-10 bg-transparent border p-6 h-[300px] w-[490px] aspect-[490/300] backdrop-blur",
+                  "relative z-10 bg-transparent border-0 p-6 h-[300px] w-[470px] aspect-[400/300] backdrop-blur",
                   hoveredIdx === idx
                     ? "border-[#82C8E5]"
                     : `border-[${defaultColor}]`

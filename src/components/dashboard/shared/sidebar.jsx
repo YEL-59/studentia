@@ -24,10 +24,10 @@ function Sidebar() {
   const routeMap = {
     "Writing tools": "/dashboard/writing-tools/ai-writers",
     "Revision Tools": "/dashboard/revision-tools",
-    "Ai Tutor": "/dashboard/ai-tutors",
-    'Documents': "/dashboard/documents/all",
+    // "Ai Tutor": "/dashboard/ai-tutors",
+    Documents: "/dashboard/documents/all",
     "Subscription Panel": "/dashboard/subscription-panel",
-    'Account': "/dashboard/account",
+    Account: "/dashboard/account",
     "Admin Panel": "/dashboard/admin-panel",
   };
 
@@ -43,7 +43,7 @@ function Sidebar() {
       { name: "Ai Quiz", route: "/dashboard/revision-tools/ai-quiz" },
       { name: "Ai Podcast", route: "/dashboard/revision-tools/podcast" },
     ],
-    'Documents': [
+    Documents: [
       { name: "All documents", route: "/dashboard/documents/all" },
       { name: "All Codes", route: "/dashboard/documents/codes" },
       { name: "Workbooks", route: "/dashboard/documents/workbooks" },
@@ -108,11 +108,11 @@ function Sidebar() {
       downArrow: downArrowIcon,
       hasSubmenu: true,
     },
-    {
-      icon: aiTutorsIcon,
-      title: "Ai Tutor",
-      hasSubmenu: false,
-    },
+    // {
+    //   icon: aiTutorsIcon,
+    //   title: "Ai Tutor",
+    //   hasSubmenu: false,
+    // },
     {
       icon: documentIcon,
       title: "Documents",
@@ -182,8 +182,8 @@ function Sidebar() {
                   <div
                     className={`flex items-center justify-between rounded-[6px] px-4 py-[10px] cursor-pointer ${
                       isActive
-                        ? 'bg-[linear-gradient(180deg,#7A43A4_0%,#6049BC_100%)]'
-                        : 'border border-[#E6A0E2] hover:bg-[#2D3240]'
+                        ? "bg-[linear-gradient(180deg,#7A43A4_0%,#6049BC_100%)]"
+                        : "border border-[#E6A0E2] hover:bg-[#2D3240]"
                     } transition-all duration-300`}
                     onClick={() => handleMenuItemClick(tool.title)}
                   >
@@ -191,7 +191,7 @@ function Sidebar() {
                       <img src={tool.icon} alt="icon" />
                       <p
                         className={`text-base font-medium leading-[132%] tracking-[-0.316px] ${
-                          isActive ? 'text-white' : 'text-[#E6A0E2]'
+                          isActive ? "text-white" : "text-[#E6A0E2]"
                         }`}
                       >
                         {tool.title}
@@ -214,8 +214,8 @@ function Sidebar() {
                           key={item.name}
                           className={`flex items-center gap-4 pl-8 py-3 rounded trasition-all duration-300${
                             activeSubItem === item.name
-                              ? 'bg-[#2D3240] border rounded-[16px] border-[#2D3240]'
-                              : ''
+                              ? "bg-[#2D3240] border rounded-[16px] border-[#2D3240]"
+                              : ""
                           }`}
                           onClick={() =>
                             handleSubItemClick(item.name, item.route)

@@ -1,9 +1,9 @@
-import searchIcon from '@/assets/icons/search-icon.svg';
-import profileIcon from '@/assets/profile.png';
-import ukFlagIcon from '@/assets/uk-flag.png';
-import { Input } from '@/components/ui/input';
-import { Bell, ChevronDown, Moon } from 'lucide-react';
-import { useState } from 'react';
+import searchIcon from "@/assets/icons/search-icon.svg";
+import profileIcon from "@/assets/profile.png";
+import ukFlagIcon from "@/assets/uk-flag.png";
+import { Input } from "@/components/ui/input";
+import { Bell, ChevronDown, Moon } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [notifications] = useState(6);
@@ -33,14 +33,14 @@ export default function Navbar() {
         </div>
 
         {/* Language */}
-        <div className="flex items-center gap-1 cursor-pointer">
+        {/* <div className="flex items-center gap-1 cursor-pointer">
           <img src={ukFlagIcon} alt="English" className="w-12 h-8 rounded-sm" />
           <span className="text-sm">English</span>
           <ChevronDown className="w-4 h-4" />
-        </div>
+        </div> */}
 
         {/* Theme Toggle */}
-        <Moon className="w-5 h-5 cursor-pointer" />
+        {/* <Moon className="w-5 h-5 cursor-pointer" /> */}
 
         {/* User Info */}
         <div className="flex items-center gap-2 cursor-pointer">
